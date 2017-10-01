@@ -1,0 +1,1168 @@
+{
+  "users": [
+    {
+    "id":"u000001",
+	"name": "猫岁",
+	"password": "123",
+    "emaill": "773817248@qq.com",
+	"description":"",
+	"isLoad": false,
+    "photo": ""
+    },
+    {
+    "id":"u000002",
+	"name": "测试君2号",
+	"password": "123",
+    "emaill": "ceshi1@ceshi.com",
+	"description":"",
+	"isLoad": false,
+    "photo": ""
+    },    
+    {
+    "id":"u000003",
+	"name": "测试君3号",
+	"password": "123",
+    "emaill": "ceshi3@ceshi.com",
+	"description":"",
+	"isLoad": false,
+    "photo": ""
+    },    
+    {
+    "id":"u000004",
+	"name": "测试君4号",
+	"password": "123",
+    "emaill": "ceshi2@ceshi.com",
+	"description":"",
+	"isLoad": false,
+    "photo": ""
+    },    
+    {
+    "id":"u000005",
+	"name": "测试君5号",
+	"password": "123",
+    "emaill": "ceshi5@ceshi.com",
+	"description":"",
+	"isLoad": false,
+    "photo": ""
+    },    
+    {
+    "id":"u000006",
+	"name": "测试君6号",
+	"password": "123",
+    "emaill": "ceshi6@ceshi.com",
+	"description":"",
+	"isLoad": false,
+    "photo": ""
+    },    
+	{
+    "id":"u000007",
+	"name": "测试君7号",
+	"password": "123",
+    "emaill": "ceshi7@ceshi.com",
+	"description":"",
+	"isLoad": false,
+    "photo": ""
+    },    
+    {
+    "id":"u000008",
+	"name": "测试君8号",
+	"password": "123",
+    "emaill": "ceshi8@ceshi.com",
+	"description":"",
+	"isLoad": false,
+    "photo": ""
+    },    
+    {
+    "id":"u000009",
+	"name": "测试君9号",
+	"password": "123",
+    "emaill": "ceshi9@ceshi.com",
+	"description":"",
+	"isLoad": false,
+    "photo": ""
+    },    
+    {
+    "id":"u0000010",
+	"name": "测试君0号",
+	"password": "123",
+    "emaill": "ceshi0@ceshi.com",
+	"description":"",
+	"isLoad": false,
+    "photo": ""
+    }
+  ],
+  "authors": [
+  {
+    "id":"a000001",
+	"name": "priest",
+	"description": "无",
+	"editor":"猫岁",
+    "novel": [
+      {
+	  "id":"n000001",
+      "name": "《默读》",
+	  "editor":"猫岁",
+	  "collect": ["c0000001","c0000002"],
+	  "author":"priest",
+      "type": "原创",
+      "progress":"已完成",
+      "length":"中长篇",
+      "time": "2016",
+      "taste": "清水",
+      "actor":"费渡，骆闻舟",
+      "web":"晋江",
+      "tip":["悬疑推理","现代","强强","刑侦","文笔好","正剧","情敌变情人"],
+      "comment": [
+		  {
+		  "id":"u000001",
+		  "username": "猫岁",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 9,
+		  "text": "很棒棒哦"
+		  },
+		  {
+		  "id":"u000010",
+		  "username": "测试君0号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君1号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 7,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000007",
+		  "username": "测试君7号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 4,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君2号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  }
+		]
+      },
+      {
+	  "id":"n000003",
+      "name": "《大哥》",
+	  "editor":"猫岁",
+	  "collect": ["c0000001","c0000002"],
+	  "author":"priest",
+      "type": "原创",
+      "progress":"已完成",
+      "length":"中长篇",
+      "time": "2013",
+      "taste": "清水",
+      "actor":"魏谦, 魏之远",
+      "web":"晋江",
+      "tip":["年下","正能量","伪兄弟","养成","文笔好","正能量","微现实向","励志"],
+      "comment": [
+		  {
+		  "id":"u000001",
+		  "username": "猫岁",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 9,
+		  "text": "很棒棒哦"
+		  },
+		  {
+		  "id":"u000010",
+		  "username": "测试君0号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君1号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 7,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000007",
+		  "username": "测试君7号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 4,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君2号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  }
+		]
+      },
+      {
+	  "id":"n000006",
+      "name": "《六爻》",
+	  "editor":"猫岁",
+	  "collect": ["c0000001","c0000002"],
+	  "author":"priest",
+      "type": "原创",
+      "progress":"已完成",
+      "length":"中长篇",
+      "time": "2016",
+      "taste": "清水",
+      "actor":"费渡，骆闻舟",
+      "web":"晋江",
+      "tip":["修真","古风","强强","师兄弟","成长的故事","正剧","事儿精臭美攻"],
+      "comment": [
+		  {
+		  "id":"u000001",
+		  "username": "猫岁",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 9,
+		  "text": "很棒棒哦"
+		  },
+		  {
+		  "id":"u000010",
+		  "username": "测试君0号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君1号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 7,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000007",
+		  "username": "测试君7号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 4,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君2号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  }
+		]
+      },
+	  {
+	  "id":"n000008",
+      "name": "《镇魂》",
+	  "editor":"猫岁",
+	  "collect": ["c0000001","c0000002"],
+	  "author":"priest",
+      "type": "原创",
+      "progress":"已完成",
+      "length":"中长篇",
+      "time": "2016",
+      "taste": "清水",
+      "actor":"赵云澜, 沈巍",
+      "web":"晋江",
+      "tip":["灵异","玄幻","强强","自以为是攻的流氓受","上古洪荒"],
+      "comment": [
+		  {
+		  "id":"u000001",
+		  "username": "猫岁",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 9,
+		  "text": "很棒棒哦"
+		  },
+		  {
+		  "id":"u000010",
+		  "username": "测试君0号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君1号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 7,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000007",
+		  "username": "测试君7号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 4,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君2号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  }
+		]
+      }
+    ]
+  },
+  {
+    "id":"a000002",
+	"name": "墨香铜臭",
+	"description": "无",    
+	"editor":"猫岁",
+    "novel": [
+      {
+	  "id":"n000004",
+      "name": "《重生之人渣反派自救系统》",
+	  "editor":"猫岁",
+	  "collect": ["c0000001","c0000002"],
+	  "author":"墨香铜臭",
+      "type": "原创",
+      "progress":"已完成",
+      "length":"中长篇",
+      "time": "2014",
+      "taste": "普通",
+      "actor":"沈清秋, 洛冰河",
+      "web":"晋江",
+      "tip":["穿书","修真","师徒年下","古风","系统","少女攻","吐槽受"],
+      "comment": [
+		  {
+		  "id":"u000001",
+		  "username": "猫岁",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 9,
+		  "text": "很棒棒哦"
+		  },
+		  {
+		  "id":"u000010",
+		  "username": "测试君0号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君1号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 7,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000007",
+		  "username": "测试君7号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 4,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君2号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  }
+		]
+      },
+      {
+	  "id":"n000002",
+      "name": "《魔道祖师[重生]》",
+	  "editor":"猫岁",
+	  "collect": ["c0000001","c0000002"],
+	  "author":"墨香铜臭",
+      "type": "原创",
+      "progress":"已完成",
+      "length":"中长篇",
+      "time": "2015~2016",
+      "taste": "普通",
+      "actor":"魏无羡（魏婴）, 蓝忘机（蓝湛）",
+      "web":"晋江",
+      "tip":["古风","重生","修真","冰山闷骚攻","暗恋","剧情流","萌"],
+      "comment": [
+		  {
+		  "id":"u000001",
+		  "username": "猫岁",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 9,
+		  "text": "很棒棒哦"
+		  },
+		  {
+		  "id":"u000010",
+		  "username": "测试君0号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君1号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 7,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000007",
+		  "username": "测试君7号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 4,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君2号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  }
+		]
+      }
+    ]
+  },
+  {
+    "id":"a000003",
+	"name": "顾雪柔",
+	"description": "",
+	"editor":"猫岁",
+    "novel": [
+      {
+	  "id":"n000007",
+      "name": "《乱世为王》",
+	  "editor":"猫岁",
+	  "collect": ["c0000001","c0000002"],
+	  "author":"顾雪柔",
+      "type": "原创",
+      "progress":"已完成",
+      "length":"中长篇",
+      "time": "2012-2013",
+      "taste": "普通",
+      "actor":"游淼, 李治烽, 聂丹, 赵超",
+      "web":"晋江",
+      "tip":["古风","忠犬攻","乱世","得此攻君夫复何求","文笔好","正剧","种田","主仆"],
+      "comment": [
+		  {
+		  "id":"u000001",
+		  "username": "猫岁",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 9,
+		  "text": "很棒棒哦"
+		  },
+		  {
+		  "id":"u000010",
+		  "username": "测试君0号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君1号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 7,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000007",
+		  "username": "测试君7号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 4,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君2号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  }
+		]
+      }
+    ]
+  },
+  {
+    "id":"a000004",
+	"name": "",
+	"description": "微笑的猫",
+	"editor":"猫岁",
+    "novel": [
+      {
+	  "id":"n000005",
+      "name": "《不疯魔不成活》",
+	  "editor":"猫岁",
+	  "collect": ["c0000001","c0000002"],
+	  "author":"priest",
+      "type": "原创",
+      "progress":"已完成",
+      "length":"中长篇",
+      "time": "2016",
+      "taste": "清水",
+      "actor":"叶臻,陶可",
+      "web":"晋江",
+      "tip":["师生","现代","校园","温馨","he","搞笑","年上"],
+      "comment": [
+		  {
+		  "id":"u000001",
+		  "username": "猫岁",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 9,
+		  "text": "很棒棒哦"
+		  },
+		  {
+		  "id":"u000010",
+		  "username": "测试君0号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君1号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 7,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000007",
+		  "username": "测试君7号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 4,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君2号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  }
+		]
+      }
+    ]
+  },
+  {
+    "id":"a000005",
+	"name": "空灯流远",
+	"description": "",
+	"editor":"猫岁",
+    "novel": [
+      {
+	  "id":"n000009",
+      "name": "《灰塔笔记》",
+	  "editor":"猫岁",
+	  "collect": ["c0000001","c0000002"],
+	  "author":"空灯流远",
+      "type": "原创",
+      "progress":"已完成",
+      "length":"中长篇",
+      "time": "2011",
+      "taste": "普通",
+      "actor":"安得蒙·加西亚, 艾伦·卡斯特",
+      "web":"晋江",
+      "tip":["欧风","二战","密码学","虐","文笔好","最be的he","图灵","致郁"],
+      "comment": [
+		  {
+		  "id":"u000001",
+		  "username": "猫岁",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 9,
+		  "text": "很棒棒哦"
+		  },
+		  {
+		  "id":"u000010",
+		  "username": "测试君0号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君1号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 7,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000007",
+		  "username": "测试君7号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 4,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君2号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  }
+		]
+      }
+    ]
+  },
+  {
+    "id":"a000006",
+	"name": "困倚危楼",
+	"description": "",
+	"editor":"猫岁",
+    "novel": [
+      {
+	  "id":"n000010",
+      "name": "《貌合神离》",
+	  "editor":"猫岁",
+	  "collect": ["c0000001","c0000002"],
+	  "author":"困倚危楼",
+      "type": "原创",
+      "progress":"已完成",
+      "length":"中长篇",
+      "time": "2015",
+      "taste": "普通",
+      "actor":"沈默, 季明轩",
+      "web":"晋江",
+      "tip":["狗血","现代","失忆梗","包养","傲娇攻","破镜重圆","反转"],
+      "comment": [
+		  {
+		  "id":"u000001",
+		  "username": "猫岁",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 9,
+		  "text": "很棒棒哦"
+		  },
+		  {
+		  "id":"u000010",
+		  "username": "测试君0号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君1号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 7,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000007",
+		  "username": "测试君7号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 4,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君2号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  }
+		]
+      },
+	  {
+	  "id":"n000012",
+      "name": "《阶下囚(折枝)》",
+	  "editor":"猫岁",
+	  "collect": ["c0000001","c0000002"],
+	  "author":"困倚危楼",
+      "type": "原创",
+      "progress":"已完成",
+      "length":"中长篇",
+      "time": "2014",
+      "taste": "普通",
+      "actor":"段凌, 陆修文",
+      "web":"晋江",
+      "tip":["狗血","古代","师兄弟","武侠","腹黑痴情受"],
+      "comment": [
+		  {
+		  "id":"u000001",
+		  "username": "猫岁",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 9,
+		  "text": "很棒棒哦"
+		  },
+		  {
+		  "id":"u000010",
+		  "username": "测试君0号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君1号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 7,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000007",
+		  "username": "测试君7号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 4,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君2号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  }
+		]
+    },
+    {
+	  "id":"n000013",
+      "name": "《提灯看刺刀》",
+	  "editor":"猫岁",
+	  "collect": ["c0000001","c0000002"],
+	  "author":"淮上",
+      "type": "原创",
+      "progress":"已完成",
+      "length":"中长篇",
+      "time": "2015",
+      "taste": "普通",
+      "actor":"韩越, 楚慈",
+      "web":"晋江",
+      "tip":["高干","现代","强制爱","三观扭曲","相爱相杀","女王受"],
+      "comment": [
+		  {
+		  "id":"u000001",
+		  "username": "猫岁",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 9,
+		  "text": "很棒棒哦"
+		  },
+		  {
+		  "id":"u000010",
+		  "username": "测试君0号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君1号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 7,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000007",
+		  "username": "测试君7号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 4,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君2号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  }
+		]
+      }
+    ]
+  },
+  {
+    "id":"a000007",
+	"name": "空灯流远",
+	"description": "",
+	"editor":"猫岁",
+    "novel": [
+      {
+	  "id":"n000009",
+      "name": "《灰塔笔记》",
+	  "editor":"猫岁",
+	  "collect": ["c0000001","c0000002"],
+	  "author":"空灯流远",
+      "type": "原创",
+      "progress":"已完成",
+      "length":"中长篇",
+      "time": "2011",
+      "taste": "普通",
+      "actor":"安得蒙·加西亚, 艾伦·卡斯特",
+      "web":"晋江",
+      "tip":["欧风","二战","密码学","虐","文笔好","最be的he","图灵","致郁"],
+      "comment": [
+		  {
+		  "id":"u000001",
+		  "username": "猫岁",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 9,
+		  "text": "很棒棒哦"
+		  },
+		  {
+		  "id":"u000010",
+		  "username": "测试君0号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君1号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 7,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000007",
+		  "username": "测试君7号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 4,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君2号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  }
+		]
+      }
+    ]
+  },
+  {
+    "id":"a000008",
+	"name": "水千丞",
+	"description": "",
+	"editor":"猫岁",
+    "novel": [
+      {
+	  "id":"n000011",
+      "name": "《养父(捡到一个小龙人/龙血)》",
+	  "editor":"猫岁",
+	  "collect": ["c0000001","c0000002"],
+	  "author":"水千丞",
+      "type": "原创",
+      "progress":"已完成",
+      "length":"中长篇",
+      "time": "2012",
+      "taste": "普通",
+      "actor":"单鸣, 沈长泽",
+      "web":"晋江",
+      "tip":["伪父子","现代","强强","养成","异能","军旅","1v1"],
+      "comment": [
+		  {
+		  "id":"u000001",
+		  "username": "猫岁",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 9,
+		  "text": "很棒棒哦"
+		  },
+		  {
+		  "id":"u000010",
+		  "username": "测试君0号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君1号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 7,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000007",
+		  "username": "测试君7号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 4,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君2号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  }
+		]
+      }  
+    ]
+  },
+  {
+    "id":"a000009",
+	"name": "淮上",
+	"description": "",
+	"editor":"猫岁",
+    "novel": [
+      {
+	  "id":"n000014",
+      "name": "《离婚》",
+	  "editor":"猫岁",
+	  "collect": ["c0000001","c0000002"],
+	  "author":"淮上",
+      "type": "原创",
+      "progress":"已完成",
+      "length":"中长篇",
+      "time": "2015",
+      "taste": "普通",
+      "actor":"靳炎,蒋衾",
+      "web":"晋江",
+      "tip":["狗血","现代","竹马","强强","娱乐圈","破镜重圆","搞笑"],
+      "comment": [
+		  {
+		  "id":"u000001",
+		  "username": "猫岁",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 9,
+		  "text": "很棒棒哦"
+		  },
+		  {
+		  "id":"u000010",
+		  "username": "测试君0号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君1号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 7,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000007",
+		  "username": "测试君7号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 4,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君2号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  }
+		]
+      }
+	]
+  },
+  {
+    "id":"a000009",
+	"name": "海派三叔",
+	"description": "",
+	"editor":"猫岁",
+    "novel": [
+      {
+	  "id":"n000015",
+      "name": "《盗墓笔记》",
+	  "editor":"猫岁",
+	  "collect": ["c0000001","c0000002"],
+	  "author":"南派三叔",
+      "type": "原创",
+      "progress":"已完成",
+      "length":"中长篇",
+      "time": "2015",
+      "taste": "清水",
+      "actor":"吴邪,张起灵,胖子,吴三省,潘子",
+      "web":"晋江",
+      "tip":["盗墓","现代","非耽美","烂尾","瓶邪","玄幻","结局是坑"],
+      "comment": [
+		  {
+		  "id":"u000001",
+		  "username": "猫岁",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 9,
+		  "text": "很棒棒哦"
+		  },
+		  {
+		  "id":"u000010",
+		  "username": "测试君0号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君1号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 7,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000007",
+		  "username": "测试君7号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 4,
+		  "text": "很棒棒哦"
+		  },		  
+		  {
+		  "id":"u000002",
+		  "username": "测试君2号",
+		  "rateTime": 1469271264000,
+		  "state":"看过",
+		  "score": 8,
+		  "text": "很棒棒哦"
+		  }
+		]
+      }
+	]
+  }
+ ],
+ "collection": [
+  {
+    "id":"c000001",
+	"name": "扫文单1号",
+	"description": "无",
+	"editor":"猫岁",
+    "novel": ["《离婚》","《大哥》","《不疯魔不成活》","《灰塔笔记》"]
+  },
+  {
+    "id":"c000002",
+	"name": "扫文单2号",
+	"description": "无",
+	"editor":"猫岁",
+    "novel": ["《离婚》","《大哥》","《不疯魔不成活》","《灰塔笔记》"]
+  },
+  {
+    "id":"c000003",
+	"name": "扫文单3号",
+	"description": "无",
+	"editor":"猫岁",
+    "novel": ["《离婚》","《大哥》","《不疯魔不成活》","《灰塔笔记》"]
+  },
+  {
+    "id":"c000004",
+	"name": "扫文单4号",
+	"description": "无",
+	"editor":"猫岁",
+    "novel": ["《离婚》","《大哥》","《不疯魔不成活》","《灰塔笔记》"]
+  },
+  {
+    "id":"c000005",
+	"name": "扫文单5号",
+	"description": "无",
+	"editor":"猫岁",
+    "novel": ["《貌合神离》","《大哥》","《不疯魔不成活》","《灰塔笔记》"]
+  },
+  {
+    "id":"c000001",
+	"name": "扫文单1号",
+	"description": "无",
+	"editor":"猫岁",
+    "novel": ["《离婚》","《大哥》","《不疯魔不成活》","《灰塔笔记》"]
+  },
+  {
+    "id":"c000006",
+	"name": "扫文单6号",
+	"description": "无",
+	"editor":"猫岁",
+    "novel": ["《离婚》","《大哥》","《不疯魔不成活》","《灰塔笔记》"]
+  },
+  {
+    "id":"c000007",
+	"name": "扫文单7号",
+	"description": "无",
+	"editor":"猫岁",
+    "novel": ["《离婚》","《大哥》","《不疯魔不成活》","《灰塔笔记》"]
+  },
+  {
+    "id":"c000008",
+	"name": "扫文单8号",
+	"description": "无",
+	"editor":"猫岁",
+    "novel": ["《离婚》","《大哥》","《不疯魔不成活》","《灰塔笔记》"]
+  },
+  {
+    "id":"c000009",
+	"name": "扫文单9号",
+	"description": "无",
+	"editor":"猫岁",
+    "novel": ["《离婚》","《大哥》","《不疯魔不成活》","《灰塔笔记》"]
+  },
+  {
+    "id":"c0000010",
+	"name": "扫文单10号",
+	"description": "无",
+	"editor":"猫岁",
+    "novel": ["《离婚》","《大哥》","《不疯魔不成活》","《灰塔笔记》"]
+  }
+ ]
+}
+ 

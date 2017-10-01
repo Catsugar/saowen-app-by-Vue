@@ -1,0 +1,83 @@
+﻿
+<!--主体-->
+<section class="main comWidth">
+<!--左边-->
+  <div class="main-left">
+      <h3><b>搜索结果</b></h3>
+      <% if (novels.length) { %> 
+      <ul class="collection-box">
+      <% novels.forEach(function(novel){ %>  
+        <li>
+          <a href='/novel/<%= novel.id %>' class="title"><%= novel.name %></a>
+          &nbsp;&nbsp;&nbsp;&nbsp;作者：
+          <a href='/author/<%= novel.author.id %>' class="author"><%=novel.author.name %></a>
+          &nbsp;&nbsp;&nbsp;&nbsp;评分：
+          <% var avg=0 %>
+          <% novel.comments.forEach(function(comment){ %> 
+            <% avg+=comment.score %>
+          <% }) %> 
+          <% avg =avg/novel.comments.length %>
+          <%=avg.toFixed(2) %>
+          <% for(var i=0;i<Math.floor(avg/2);i++){ %>
+            <i class="score iconfont icon-star"></i>
+          <% } %>
+          <% for(var i=0;i<Math.floor(avg)%2;i++){ %>
+            <i class="score iconfont icon-wujiaoxing"></i>
+          <% } %>
+          <br>
+          <b><%=novel.type %></b>/
+           <b><%=novel.progress %></b>/
+           <b><%=novel.len %></b>/
+           <b><%=novel.year %></b>/
+           <b><%=novel.taste %></b>/
+           <b><%=novel.actor %></b>/
+           <b><%=novel.web %></b><br>
+           <hr> 
+           <% if (novel.tags.length) { %> 
+              <% novel.tags.forEach(function(tag){ %>  
+                <a href="/result?key=<%=tag %>&p=0" class="label"><%=tag %></a> 
+              <% }) %> 
+            <% } %>
+        </li>
+        <% }) %>
+      </ul>
+      <% } %> 
+      <!---页码-->
+      <% if (totalPage>1) { %> 
+      <ul class="pagination">
+        <li><a href="/result?key=<%=KEY %>&p=0">首页</a></li>
+        <% if(currentPage==totalPage){  %> 
+          <li><a>&laquo;</a></li>
+        <% }else{ %>
+          <li><a href="/result?key=<%=KEY %>&p=<%=(currentPage-1) %>">&laquo;</a></li>
+        <% } %>  
+        <% if(currentPage>2){  %> 
+          <% var last=((currentPage+3)<totalPage)?(currentPage+3):totalPage %>
+          <% for(var i=currentPage-2;i<last;i++){ %>
+            <% if (i==currentPage) { %> 
+              <li ><a id="curpage" href="/result?key=<%=KEY %>&p=<%=i %>"><%=(i+1) %></a></li>
+            <% }else{ %>
+              <li><a href="/result?key=<%=KEY %>&p=<%=i %>"><%=(i+1) %></a></li>
+            <% } %>
+          <% } %>
+        <% }else{ %>
+          <% var last=(totalPage<5)?totalPage:5 %>
+          <% for(var i=0;i<last;i++){ %>
+            <% if (i==currentPage) { %> 
+              <li ><a id="curpage" href="/result?key=<%=KEY %>&p=<%=i %>"><%=(i+1) %></a></li>
+            <% }else{ %>
+              <li><a href="/result?key=<%=KEY %>&p=<%=i %>"><%=(i+1) %></a></li>
+            <% } %>
+          <% } %>
+        <% } %> 
+        <% if(currentPage+1==totalPage){  %> 
+          <li><a>&raquo;</a></li>
+        <% }else{ %>
+          <li><a href="/result?key=<%=KEY %>&p=<%=currentPage+1 %>">&raquo;</a></li>
+        <% } %> 
+        <li><a href="/result?key=<%=KEY %>&p=<%=(totalPage-1) %>">末页</a></li> 
+      </ul>
+      <% } %>
+  </div>
+  <% include includes/right %>
+</section>

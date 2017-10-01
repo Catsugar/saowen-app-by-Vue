@@ -1,0 +1,369 @@
+/**************以上是预设****************/
+@charset "utf-8";
+body,div,li,a,h1,h2,h3,h4,h5,ul,span {
+   margin: 0px;
+   padding: 0px;
+   color:#333;
+   text-decoration:none;
+   font: 16px "Microsoft Yahei", "微软雅黑";}
+body{background-color:rgb(239,238,235);}
+li{list-style:none;}
+i{font-style:normal;}
+.title,.author{font-size:14px;font-weight:bold;opacity:1;color:#666;}
+.title:hover,.author:hover{opacity:0.6;color:#F00;font-weight:bold;}
+a:link,a:hover,a:active,a:visited{text-decoration:none;}
+.footer a:link,a:hover,a:active,a:visited{text-decoration:none;color:#333;}
+.favor{font-size:18px;}
+/**************封面****************/
+.logo{
+	height:40%;
+	margin: auto;  
+    position: absolute;  
+    top: 0; left: 0; bottom: 0; right: 0;  }
+.cover img{
+	height:100%;
+	animation: cat 1s ease alternate infinite;
+    -webkit-animation: cat 1s ease alternate infinite;}
+.copyright{
+	position: absolute;
+	bottom:2rem;
+	width:100%;}
+.copyright h3{
+	font-size:2rem;
+	line-height:3rem;
+	text-align:center;
+	font-weight:bold;}
+.copyright p{
+	font-size:1.25rem;
+	text-align:center;}
+@-webkit-keyframes cat {
+0%{box-shadow: 0 0 0.2rem rgba(0,0,0,0.5);}
+to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
+}
+/**************注册与登录****************/
+.login-btn{
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: row nowrap;	
+	justify-content:flex-start;}
+.login li i{padding:10px 20px;font-size:24px;line-height:40px;}
+.login ul li,{height: 40px;line-height:40px;}
+.login-content input{
+	width:86%;
+	height:36px;
+	border-radius:5px;
+	padding-left:12%;
+	margin-top:20px;
+	margin-left:7%;
+	border:1px solid #999;
+	font-size:1.5rem;}
+.login-content i{
+	font-size:24px;
+	color:#999;
+	position:absolute;
+	margin-top:25px;
+	padding-left:10%;}
+.login-content div{
+	width:86%;
+	margin-left:7%;
+	margin-top:20px;
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: row nowrap;	
+	justify-content:space-between;}
+.login-content div button{
+	width:40%}
+.login h3{
+	font-size:2rem;
+	line-height:3rem;
+	text-align:center;
+	font-weight:bold;
+	position:fixed;
+	top:39rem;
+	width:100%;}
+.login p{
+	font-size:1.25rem;
+	text-align:center;
+	position: fixed;
+	top:42rem;
+	width:100%;}
+/***************页头*******************/
+.header ul{
+  	position: fixed;
+  	width:100%;
+  	height: 40px;
+	line-height:40px;
+	top:0;
+  	display: -webkit-flex;
+	display: flex;
+	flex-flow: row nowrap;	
+	justify-content:space-between;
+	background-color:rgb(39, 39, 41);
+	border-bottom: 0.15rem solid #040000;
+	box-shadow: 0 0.25rem 0.25rem rgba(0,0,0,0.5);
+	z-index:300;}
+.header ul li,.header ul li h3{color:#fff;height: 40px;line-height:40px;}
+.header ul li h3{font-weight:bold;}
+.header i{padding:10px;font-size:24px;}
+.search {
+	position:absolute;
+	top:5px;
+	left:12%;
+	bottom:5px;
+	width:76%;
+	height:30px;
+	border:none;
+	border-radius:5px;
+    background-color:#666;
+	color:#FFF;
+	display:none;
+	z-index:400;}
+/**************首页****************/
+.content{
+	width:100%;
+	padding:43px 0 60px 0;
+	min-height:100% !important;
+	height:auto;
+	font-size:14px;}
+/**************首页****************/
+.home li{
+	padding:10px;
+	margin-bottom:1rem;
+	background-color:#FFF;
+	border-bottom:1px solid #999;
+	border-top:1px solid #999;
+	/*box-shadow: 0 0.25rem 0.25rem rgba(0,0,0,0.5);*/}
+.status{color:#999;font-size:14px;}
+.home hr{
+	border:1px dashed #999;
+	padding:0;
+	margin:1rem 0;}
+.novel-bottom{font-size:14px;}
+.comment{overflow:hidden;}
+.comment p{
+	padding-top:1rem;
+	font-size:13px;
+	line-height:20px;
+	text-indent:30px;}
+/********************************文单列表*********************************/
+.collectlist-box{
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: row wrap;	
+	justify-content:space-around;}
+.collectlist-box li{
+	flex:1 1 auto
+	width:33.3%;
+	min-width:160px;
+	margin-top:20px;
+	font-size:13px;
+	color:#666;
+	position:relative;}
+.collectlist-box li div{
+	border:1px solid #999;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	width:160px;
+    height:160px;
+	border-radius:0.5rem;
+	transition:all ease 1s;}
+.collectlist-box li div a{
+	width:160px;height:160px;display:block;
+	padding:20px 10px;
+	border-radius:0.5rem;
+	transition:all ease 1s;
+	background-color:rgba(255,255,255,0.4);}
+.collectlist-box li div a:hover{background-color:rgba(51,51,51,0.6);}
+.collectlist-box li div a:hover h3,
+.collectlist-box li div a:hover h5{color:#FFF;}
+.collectlist-box li h3{
+	font-weight:bold;
+	font-size:20px;
+	line-height:36px;
+	text-align:center;}
+.collectlist-box li h5{
+	line-height:28px;
+	font-size:14px;
+	font-weight:bold;
+	text-align:center;}
+.collectlist-box li span{
+	line-height:3rem;
+	font-size:1.5rem;}
+/********************************排行*********************************/
+.rank-btn{
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: row nowrap;	
+	justify-content:space-around;}
+.rank-btn li{
+	float:1 1 auto;
+	width:100%;
+	text-align:center;}
+.rank-content{
+	background-color:#fff;
+	width:100%;min-height:100%;}
+.rank-list{width:100%;height:100%;display:block;}	
+.rank-list li{
+	width:100%;
+	padding:10px 20px;
+	border-bottom:1px dotted #999;}
+.rank-list li,span,i{font-size:14px;}
+/**************我的****************/
+.backheader{
+	padding:30px;
+	height:160px;
+	display: -webkit-flex;
+	display: flex;
+	flex-flow: row nowrap;	
+	justify-content:flex-start;
+	border-bottom:1px solid #ccc;}
+.backimg{
+	margin-right:3rem;}
+.backtitle{
+	border-left:1px solid #CCC;
+	height:100px;
+	padding-left:30px;}
+.backtitle span{
+	margin-top:1.5rem;
+	display:block;}
+.backtitle b{
+	height:3rem;
+	line-height:3rem;
+	font-size:2rem;}
+/********实现切换效果**********/
+.op-content{   
+    overflow: hidden;
+    height:0;
+    transition: height .5s;}
+.op{display:none;}
+.op:checked+label .op-content{
+	display:block;
+	height:auto;}
+.backlist input+label{width:100%;}
+.backlist h3{
+	height:35px;
+	line-height:35px;
+	border-bottom:1px solid #ccc;}
+.backlist h3{padding-left:2rem;}
+.backlist li{
+	padding-left:4rem;
+	background-color:#FFF;}
+.backlist h3 i{
+	font-size:24px;
+	color:#999;}
+/**************页脚****************/
+.footer ul{
+  	position: fixed;
+  	width:100%;
+  	height: 50px;
+	bottom:0;
+  	display: -webkit-flex;
+	display: flex;
+	flex-flow: row nowrap;	
+	justify-content:space-around;
+	background-color:#fff;
+	border-top:1px solid #999;}
+.footer ul li,.footer ul li a{
+	margin-top:2px;
+	font-size:12px;}
+.footer ul li i{
+	font-size:25px;}
+/***************搜索页***************/
+.search-content h3{
+	margin:2rem;
+	font-weight:bold;}
+.search-content li{
+	width:100%;
+	padding:10px;
+	margin-bottom:1rem;
+	background-color:#FFF;
+	border-bottom:1px solid #999;
+	border-top:1px solid #999;}
+.search-content b{font-size:1.25rem;}
+.search-content hr{
+	padding:0px;
+	margin:7px 0;
+	border:1px dotted #CCC;}
+/***************小说页***************/
+.novel-box,.love-box,.commentbox, .collection-box li,.authorlist-box li{
+	border-top:1px solid #999;
+    border-bottom:1px solid #999;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	padding:20px;
+	font-size:14px;
+	color:#666;
+	position:relative;}
+.novel-box h1{
+	font-size:2.5rem;
+	font-weight:bold;}
+.novel-box,.commentbox,.collection-box li{
+	margin-top:10px;background-color:#fff;line-height:24px;}
+.authorlist-box li{line-height:24px;background-color:#fff;}
+.authorlist-box li hr{border:1px dotted #999;}
+.love-box{
+	margin-bottom:20px;
+	background-color:#eee;
+	line-height:24px;}
+.novel-box h1{display:inline-block;}
+.novel-box p{text-indent:2rem;}
+.novel-box table{border-top:2px dotted #aaa;width:100%;}
+.love-box input{
+	width:150px;
+	font-size:13px;
+	height:30px;
+	line-height:30px;
+	margin-top:5px;}
+.commentbtn{margin-right:1rem;}
+/********实现切换效果**********/
+.state{
+	display:none;}
+.state:checked+label{
+	color:#FFF;
+	font-weight:bold;
+	background-color:#C00;}
+/********实现切换效果**********/
+.love-box button{
+	margin-left:20px;
+	margin-top:-5px;}
+.score { 
+	color:#F66;
+	margin-left:5px;
+	font-size:20px;}
+textarea{
+	width:100%;
+	height:auto;
+	min-height:80px;
+	margin-bottom:10px;}	
+.commentbox{clear:both;
+	display:block;
+    margin-top:40px;}
+.commentbox li{
+	display:block;
+	margin-bottom:10px;
+	line-height:24px;
+	text-align:left;
+	font-size: 13px;
+	border-bottom:1px dotted #aaa;}
+.commentbox li img{
+	width:20px;  
+    height:20px;
+	margin-right:10px;}
+.commentbox li a{color:#999;margin-right:10px;font-size: 13px;}
+.commentbox li, .commentbox li a,.commentbox li img{vertical-align:baseline;}
+/******小说页*****/
+.novellist-box li{
+	border-top:1px solid #999;
+    border-bottom:1px solid #999;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	padding:20px;
+	width:100%;
+	font-size:14px;
+	color:#666;
+	margin-top:10px;
+	background-color:#fff;
+	line-height:24px;}
+.author-content h1{font-size:3rem;}
+.author-content > h3{padding:10px 20px 0 20px;}
+.author-content hr{
+	padding:0px;
+	margin:7px 0;
+	border:1px dotted #CCC;}
