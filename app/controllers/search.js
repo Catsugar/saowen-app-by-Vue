@@ -21,14 +21,13 @@ var count=8;//每页几条数据
     .populate('author').populate('comments').sort({'meta.updateAt': -1}).exec(function(err, allnovels) {  
       if(err){console.log(err);} 
       authors.find({$or: [{'name': { $regex: KEY, $options: 'i' }}]})
-      .populate({path:'novels', populate:[{path:'author'},{path:'comments'}]}).sort({'meta.updateAt': -1}).exec(function(err, allauthors) {
+      .populate({path:'novels', populate:[{path:'author'},{path:'comments'}]}).sort({'meta.updateAt': -1}).exec(function(err, authors) {
         if(err){console.log(err);} 
         allauthors.forEach(function(author){
           author.novels.forEach(function(novel){
             allnovels.push(novel);
           })
         })
-        var novels=allnovels.slice(num,num+count);
         res.render('search',{
           title:KEY+'的搜索结果：',
             novels: novels,

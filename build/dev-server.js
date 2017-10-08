@@ -51,7 +51,6 @@ var walk = function(path) {
 }
 //创建服务器实例，设置端口
 app.set('views','./app/views');
-app.set('view engine','ejs');
 app.use(cookieParser());
 app.use(require('connect-multiparty')());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -126,7 +125,7 @@ var partials = require('express-partials');
 app.use(partials());
 app.locals.moment = require('moment'); 
 //引用模块
-require('../routes/routes')(app);
+require('../config/routes')(app);
 
 var uri = 'http://localhost:' + port
 

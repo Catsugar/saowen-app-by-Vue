@@ -16,11 +16,6 @@ $(document).ready(function(){
 		j++;
 	}
 	$(window).trigger('scroll');
-	//文章页点赞
-	$('.score').click(function(){
-		$(this).toggleClass("icon-star");
-		$(this).toggleClass("icon-wujiaoxing");
-	})
 	//输入框拉长
 	$('textarea').focus(function(){
 	    $(this).animate({

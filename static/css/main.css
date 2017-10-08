@@ -116,23 +116,23 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	border-radius:5px;
     background-color:#666;
 	color:#FFF;
-	display:none;
-	z-index:400;}
+	display:none;}
 /**************首页****************/
 .content{
 	width:100%;
 	padding:43px 0 60px 0;
 	min-height:100% !important;
 	height:auto;
-	font-size:14px;}
+	font-size:14px;
+	z-index: 200
+}
 /**************首页****************/
 .home li{
 	padding:10px;
 	margin-bottom:1rem;
 	background-color:#FFF;
 	border-bottom:1px solid #999;
-	border-top:1px solid #999;
-	/*box-shadow: 0 0.25rem 0.25rem rgba(0,0,0,0.5);*/}
+	border-top:1px solid #999;}
 .status{color:#999;font-size:14px;}
 .home hr{
 	border:1px dashed #999;
@@ -251,6 +251,9 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	font-size:24px;
 	color:#999;}
 /**************页脚****************/
+.footer{
+	z-index: 400
+}
 .footer ul{
   	position: fixed;
   	width:100%;
@@ -306,6 +309,7 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 .novel-box h1{display:inline-block;}
 .novel-box p{text-indent:2rem;}
 .novel-box table{border-top:2px dotted #aaa;width:100%;}
+.novel-box table tr > th:first-child{width:30%;}
 .love-box input{
 	width:150px;
 	font-size:13px;
@@ -350,19 +354,19 @@ textarea{
 .commentbox li a{color:#999;margin-right:10px;font-size: 13px;}
 .commentbox li, .commentbox li a,.commentbox li img{vertical-align:baseline;}
 /******小说页*****/
-.novellist-box li{
+.novellist-box li:first-child{
 	border-top:1px solid #999;
+}
+.novellist-box li{
     border-bottom:1px solid #999;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	padding:20px;
 	width:100%;
 	font-size:14px;
 	color:#666;
-	margin-top:10px;
 	background-color:#fff;
 	line-height:24px;}
 .author-content h1{font-size:3rem;}
-.author-content > h3{padding:10px 20px 0 20px;}
+.author-content > h3{padding:10px 20px;}
 .author-content hr{
 	padding:0px;
 	margin:7px 0;
