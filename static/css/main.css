@@ -55,7 +55,8 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	padding-left:12%;
 	margin-top:20px;
 	margin-left:7%;
-	border:1px solid #999;
+	//border:1px solid #999;
+	box-shadow: inset 0px -1px 1px -1px #999;
 	font-size:1.5rem;}
 .login-content i{
 	font-size:24px;
@@ -99,7 +100,7 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	flex-flow: row nowrap;	
 	justify-content:space-between;
 	background-color:rgb(39, 39, 41);
-	border-bottom: 0.15rem solid #040000;
+	border-bottom: 1px solid #040000;
 	box-shadow: 0 0.25rem 0.25rem rgba(0,0,0,0.5);
 	z-index:300;}
 .header ul li,.header ul li h3{color:#fff;height: 40px;line-height:40px;}
@@ -135,7 +136,7 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	border-top:1px solid #999;}
 .status{color:#999;font-size:14px;}
 .home hr{
-	border:1px dashed #999;
+	border-top:1px dotted #aaa;
 	padding:0;
 	margin:1rem 0;}
 .novel-bottom{font-size:14px;}
@@ -152,22 +153,23 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	flex-flow: row wrap;	
 	justify-content:space-around;}
 .collectlist-box li{
-	flex:1 1 auto
-	width:33.3%;
-	min-width:160px;
+	flex:1 1 auto;
+	justify-content:space-around;
+	min-width:120px;
+	height: 140px;
 	margin-top:20px;
-	font-size:13px;
-	color:#666;
-	position:relative;}
+	font-size:12px;
+	color:#666;}
 .collectlist-box li div{
 	border:1px solid #999;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	width:160px;
-    height:160px;
+	width:110px;
+    height:110px;
+    margin: 0 auto;
 	border-radius:0.5rem;
 	transition:all ease 1s;}
 .collectlist-box li div a{
-	width:160px;height:160px;display:block;
+	width:110px;height:110px;display:block;
 	padding:20px 10px;
 	border-radius:0.5rem;
 	transition:all ease 1s;
@@ -177,17 +179,20 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 .collectlist-box li div a:hover h5{color:#FFF;}
 .collectlist-box li h3{
 	font-weight:bold;
-	font-size:20px;
-	line-height:36px;
+	font-size:16px;
+	line-height:20px;
 	text-align:center;}
-.collectlist-box li h5{
-	line-height:28px;
-	font-size:14px;
-	font-weight:bold;
+.collectlist-box li h5,.collectlist-box li h5 i{
+	font-size:11px;
+	line-height: 14px;
 	text-align:center;}
-.collectlist-box li span{
-	line-height:3rem;
-	font-size:1.5rem;}
+.collectlist-box li p{
+	width:110px;
+	margin: 0 auto;
+}
+.collectlist-box li span,.collectlist-box li span i{
+	line-height:2rem;
+	font-size:12px;}
 /********************************排行*********************************/
 .rank-btn{
 	display: -webkit-flex;
@@ -206,7 +211,8 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	width:100%;
 	padding:10px 20px;
 	border-bottom:1px dotted #999;}
-.rank-list li,span,i{font-size:14px;}
+.rank-list li,span,i{font-size:12px;}
+.rank-list li a{font-size:13px;}
 /**************我的****************/
 .backheader{
 	padding:30px;
@@ -274,18 +280,21 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 .search-content h3{
 	margin:2rem;
 	font-weight:bold;}
+.search-content li:first-child{
+	border-top:1px solid #999;
+}
 .search-content li{
 	width:100%;
 	padding:10px;
 	margin-bottom:1rem;
 	background-color:#FFF;
 	border-bottom:1px solid #999;
-	border-top:1px solid #999;}
+	}
 .search-content b{font-size:1.25rem;}
 .search-content hr{
 	padding:0px;
 	margin:7px 0;
-	border:1px dotted #CCC;}
+	border-top:1px dotted #999;}
 /***************小说页***************/
 .novel-box,.love-box,.commentbox, .collection-box li,.authorlist-box li{
 	border-top:1px solid #999;
@@ -308,7 +317,7 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	line-height:24px;}
 .novel-box h1{display:inline-block;}
 .novel-box p{text-indent:2rem;}
-.novel-box table{border-top:2px dotted #aaa;width:100%;}
+.novel-box table{border-top:1px dotted #aaa;width:100%;}
 .novel-box table tr > th:first-child{width:30%;}
 .love-box input{
 	width:150px;
@@ -370,4 +379,4 @@ textarea{
 .author-content hr{
 	padding:0px;
 	margin:7px 0;
-	border:1px dotted #CCC;}
+	border-top:1px dotted #999;}

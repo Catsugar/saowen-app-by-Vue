@@ -21,6 +21,14 @@ import Header from './components/Header.vue'
 //import Login from './components/Login.vue'
 export default {
   name: 'app',
+  data(){
+    return {
+        comments: {}
+    }
+  },
+  created(){
+    this.$http.get('').then
+  }
   components: {
     myHeader: Header
   }
