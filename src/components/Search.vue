@@ -1,42 +1,31 @@
 <template>
-<transition name="fade">
-  <div class="content author-content">
-    <h3><b>搜索结果：</b>&nbsp;&nbsp;&nbsp;&nbsp;共<i>10</i>篇</h3>
-    <ul class="novellist-box">
-        <li>
-           <a href="" class="title">《杀破狼》</a>&nbsp;&nbsp;&nbsp;&nbsp;评分：
-           <i class="score iconfont icon-wujiaoxing"></i>
-           <i class="score iconfont icon-wujiaoxing"></i>
-           <i class="score iconfont icon-wujiaoxing"></i>
-           <i class="score iconfont icon-wujiaoxing"></i>
-           <i class="score iconfont icon-wujiaoxing"></i><br>
-           <b>原创</b>/<b>已完结</b>/<b>中长</b>/<b>2016</b>/<b>清水</b>/<b>费渡、骆闻舟</b><br>
-           <hr>
-           <a class="label">默认标签</a> <a class="label">主要标签</a> <a class="label">成功标签</a> <a class="label">信息标签</a> <a class="label">警告标签</a> <a class="label">危险标签</a></th>
-        </li>
-        <li>
-           <a href="" class="title">《杀破狼》</a>&nbsp;&nbsp;&nbsp;&nbsp;评分：
-           <i class="score iconfont icon-wujiaoxing"></i>
-           <i class="score iconfont icon-wujiaoxing"></i>
-           <i class="score iconfont icon-wujiaoxing"></i>
-           <i class="score iconfont icon-wujiaoxing"></i>
-           <i class="score iconfont icon-wujiaoxing"></i><br>
-           <b>原创</b>/<b>已完结</b>/<b>中长</b>/<b>2016</b>/<b>清水</b>/<b>费渡、骆闻舟</b><br>
-           <hr>
-           <a class="label">默认标签</a> <a class="label">主要标签</a> <a class="label">成功标签</a> <a class="label">信息标签</a> <a class="label">警告标签</a> <a class="label">危险标签</a></th>
-        </li>
-        <li>
-           <a href="" class="title">《杀破狼》</a>&nbsp;&nbsp;&nbsp;&nbsp;评分：
-           <i class="score iconfont icon-wujiaoxing"></i>
-           <i class="score iconfont icon-wujiaoxing"></i>
-           <i class="score iconfont icon-wujiaoxing"></i>
-           <i class="score iconfont icon-wujiaoxing"></i>
-           <i class="score iconfont icon-wujiaoxing"></i><br>
-           <b>原创</b>/<b>已完结</b>/<b>中长</b>/<b>2016</b>/<b>清水</b>/<b>费渡、骆闻舟</b><br>
-           <hr>
-           <a class="label">默认标签</a> <a class="label">主要标签</a> <a class="label">成功标签</a> <a class="label">信息标签</a> <a class="label">警告标签</a> <a class="label">危险标签</a></th>
-        </li>
-    </ul>
+<transition name="slide">
+  <div class="content search-content">
+    <form>
+      <input type="text" class="search center-block" placeholder="搜索作者、作品或者标签" id="search">
+      <button type="submit" class="iconfont icon-sousuo searchbtn"></button>
+    </form>
+    <h3><b>热门tag</b></h3>
+    <div class="tag-box">
+      <span><a href="" class="label label-default">文笔好</a></span> 
+      <span><a href="" class="label label-default">狗血</a></span>
+      <span><a href="" class="label label-default">年下</a></span>
+      <span><a href="" class="label label-default">搞笑</a></span>
+      <span><a href="" class="label label-default">校园</a></span>
+      <span><a href="" class="label label-default">生子</a></span>   
+      <span><a href="" class="label label-default">古风</a></span>
+      <span><a href="" class="label label-default">强强</a></span>
+      <span><a href="" class="label label-default">虐</a></span>   
+      <span><a href="" class="label label-default">he</a></span>
+      <span><a href="" class="label label-default">短篇</a></span>
+      <span><a href="" class="label label-default">脑洞</a></span>   
+      <span><a href="" class="label label-default">文笔好</a></span> 
+      <span><a href="" class="label label-default">娱乐圈</a></span> 
+      <span><a href="" class="label label-default">奇幻</a></span>
+      <span><a href="" class="label label-default">主攻</a></span>
+      <span><a href="" class="label label-default">1V1</a></span> 
+      <span><a href="" class="label label-default">重生</a></span>   
+    </div>
   </div>
 </transition>
 </template>

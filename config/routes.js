@@ -1,37 +1,40 @@
-//加载各个模块
+//api
 var Render = require('../app/controllers/render.js'); 
 var Add = require('../app/controllers/add.js'); 
 var Admin = require('../app/controllers/admin.js'); 
 var Del = require('../app/controllers/delete.js'); 
 var Love = require('../app/controllers/love.js'); 
+var express = require('express');
 var Edit = require('../app/controllers/edit.js'); 
-var Search = require('../app/controllers/search.js'); 
+var apiRoutes=express.Router();
+  //各种模型路由
+  apiRoutes.get('/cover', Render.cover);
+  apiRoutes.get('/login', Render.login);
+  apiRoutes.get('/comments', Render.index);
+  apiRoutes.get('/collectlist', Render.collectlist);
+  apiRoutes.get('/ranklist', Render.ranklist);
+  apiRoutes.get('/myhome', Render.myhome);
+  apiRoutes.get('/author/:id', Render.author);
+  apiRoutes.get('/collect/:id', Render.collect);
+  apiRoutes.get('/novel/:id', Render.novel);
+  apiRoutes.get('/result', Render.result);
+  apiRoutes.use('/api',apiRoutes);
+
+module.exports = apiRoutes;
+
+
 //*********************抛出模块
-module.exports=function (app) {
+/*module.exports=function (app) {
   app.use((req, res, next) => {
     var _user = req.session.user;
     res.locals.user = _user;
     next();
-  });
-  //各种模型路由
-  app.route('/cover').get(Render.cover);
-  app.route('/login').get(Render.login);
+  });*/
 
-  app.route('/').get(Render.index);
-  app.route('/collectlist').get(Render.collectlist);
-  app.route('/ranklist').get(Render.ranklist);
-  app.route('/home').get(Render.home);
-
-
-  app.route('/author/:id').get(Render.author);
-  app.route('/collect/:id').get(Render.collect);
-  app.route('/novel/:id').get(Render.novel);
-  app.route('/search').post(Search.search);
-  app.route('/result').get(Search.result);
 
   
-  
-  /*app.route('/new/novel').post(Add.Addnovel);
+  /*app.route('/search').post(Search.search);
+  app.route('/new/novel').post(Add.Addnovel);
   app.route('/new/collect').post(Add.Addcover,Add.Addcollect);
   app.route('/new/comment').post(Add.Addcomment);
   app.route('/new/user').post(Admin.Adduser);//注册
@@ -44,8 +47,8 @@ module.exports=function (app) {
   app.route('/back/love').post(Love.Love);//收藏
   app.route('/back/cancel').post(Love.Cancel);//取消收藏
   app.route('/user/signin').post(Admin.Signin);//登录
-  app.route('/user/logout').get(Admin.Logout);//登出*/
-}
+  app.route('/user/logout').get(Admin.Logout);//登出
+}*/
 
 
 

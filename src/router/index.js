@@ -11,6 +11,7 @@ import Collect from '@/components/Collect'
 import Author from '@/components/Author'
 import Novel from '@/components/Novel'
 import Search from '@/components/Search'
+import Result from '@/components/Result'
 
 Vue.use(Router)
 Vue.use(Resource)
@@ -65,6 +66,11 @@ export default new Router({
       path: '/search',
       name: 'Search',
       component: Search
+    },
+    {
+      path: '/result',
+      name: 'Result',
+      component: Result
     }
   ]
 })

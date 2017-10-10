@@ -2,11 +2,10 @@
 <!--头部-->
   <div class="header" >
     <ul>
-      <li><i class="iconfont icon-fanhui1" id="backbtn"></i></li>
+      <li><router-link to="/" ><i class="iconfont icon-fanhui1"></i></router-link></li>
       <li><h3>扫文小院</h3></li>
-      <li><i class="iconfont icon-sousuo" id="searchbtn"></i></li>
+      <li><router-link to="/search" ><i class="iconfont icon-sousuo"></i></router-link></li>
     </ul>
-    <input type="text" class="search center-block" id="search">
   </div>
 </template>
 

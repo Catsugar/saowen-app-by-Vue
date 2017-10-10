@@ -19,16 +19,23 @@
 import Header from './components/Header.vue'
 //import Cover from './components/Cover.vue'
 //import Login from './components/Login.vue'
+const ERR_OK=0;
 export default {
   name: 'app',
   data(){
     return {
-        comments: {}
+      comments: {}
     }
   },
   created(){
-    this.$http.get('').then
-  }
+    this.$http.get('/api/index').then((response) => {
+      response = response.body;
+      if (response.errno===ERR_OK){
+        this.comments=response.data;
+        console.log( this.comments);
+      }
+    })
+  },
   components: {
     myHeader: Header
   }

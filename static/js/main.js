@@ -1,12 +1,5 @@
 var tips=["label-default","label-primary","label-success","label-info","label-warning","label-danger"];
 $(document).ready(function(){
-	//点击搜索显示搜索框
-	$('#searchbtn').click(function(){
-		$('#search').fadeIn("fast");
-	})
-	$('#backbtn').click(function(){
-		$('#search').fadeOut("fast");
-	})
 	//给标签添加颜色
 	var j=0;
 	var k=0;

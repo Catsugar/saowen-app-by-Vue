@@ -18,6 +18,7 @@ var express = require('express'),
 var port=process.env.PORT || 3000;//设置端口
 var app=express();//启动web服务器
 var fs=require('fs');
+var api = require('../config/routes');
 //启动数据库
 mongoose.connect('mongodb://localhost:27017/saowen', {useMongoClient: true,});
 mongoose.connection.on('connected', () => {
@@ -50,9 +51,9 @@ var walk = function(path) {
     })
 }
 //创建服务器实例，设置端口
-app.set('views','./app/views');
 app.use(cookieParser());
 app.use(require('connect-multiparty')());
+app.use(api);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
   secret: 'saowen',
@@ -65,8 +66,6 @@ if('development'===app.get('env')){
   app.locals.pretty=true;
   //mongoose.set('debug',true);
 }
-
-
 var webpack = require('webpack')
 var proxyMiddleware = require('http-proxy-middleware')
 var webpackConfig = (process.env.NODE_ENV === 'testing' || process.env.NODE_ENV === 'production')
@@ -78,6 +77,7 @@ var autoOpenBrowser = !!config.dev.autoOpenBrowser
 // Define HTTP proxies to your custom API backend
 // https://github.com/chimurai/http-proxy-middleware
 var proxyTable = config.dev.proxyTable
+
 
 var compiler = webpack(webpackConfig)
 
@@ -124,8 +124,7 @@ app.use(staticPath, express.static('./static'))
 var partials = require('express-partials');
 app.use(partials());
 app.locals.moment = require('moment'); 
-//引用模块
-require('../config/routes')(app);
+
 
 var uri = 'http://localhost:' + port
 

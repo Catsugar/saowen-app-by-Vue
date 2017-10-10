@@ -103,21 +103,29 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	border-bottom: 1px solid #040000;
 	box-shadow: 0 0.25rem 0.25rem rgba(0,0,0,0.5);
 	z-index:300;}
-.header ul li,.header ul li h3{color:#fff;height: 40px;line-height:40px;}
+.header ul li,.header ul li h3,.header ul li i{color:#fff;height: 40px;line-height:40px;}
 .header ul li h3{font-weight:bold;}
 .header i{padding:10px;font-size:24px;}
-.search {
-	position:absolute;
-	top:5px;
-	left:12%;
-	bottom:5px;
-	width:76%;
-	height:30px;
-	border:none;
-	border-radius:5px;
-    background-color:#666;
-	color:#FFF;
-	display:none;}
+/**************页脚****************/
+.footer{
+	z-index: 400
+}
+.footer ul{
+  	position: fixed;
+  	width:100%;
+  	height: 50px;
+	bottom:0;
+  	display: -webkit-flex;
+	display: flex;
+	flex-flow: row nowrap;	
+	justify-content:space-around;
+	background-color:#fff;
+	border-top:1px solid #999;}
+.footer ul li,.footer ul li a{
+	margin-top:2px;
+	font-size:12px;}
+.footer ul li i{
+	font-size:25px;}
 /**************首页****************/
 .content{
 	width:100%;
@@ -256,45 +264,8 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 .backlist h3 i{
 	font-size:24px;
 	color:#999;}
-/**************页脚****************/
-.footer{
-	z-index: 400
-}
-.footer ul{
-  	position: fixed;
-  	width:100%;
-  	height: 50px;
-	bottom:0;
-  	display: -webkit-flex;
-	display: flex;
-	flex-flow: row nowrap;	
-	justify-content:space-around;
-	background-color:#fff;
-	border-top:1px solid #999;}
-.footer ul li,.footer ul li a{
-	margin-top:2px;
-	font-size:12px;}
-.footer ul li i{
-	font-size:25px;}
-/***************搜索页***************/
-.search-content h3{
-	margin:2rem;
-	font-weight:bold;}
-.search-content li:first-child{
-	border-top:1px solid #999;
-}
-.search-content li{
-	width:100%;
-	padding:10px;
-	margin-bottom:1rem;
-	background-color:#FFF;
-	border-bottom:1px solid #999;
-	}
-.search-content b{font-size:1.25rem;}
-.search-content hr{
-	padding:0px;
-	margin:7px 0;
-	border-top:1px dotted #999;}
+
+
 /***************小说页***************/
 .novel-box,.love-box,.commentbox, .collection-box li,.authorlist-box li{
 	border-top:1px solid #999;
@@ -380,3 +351,40 @@ textarea{
 	padding:0px;
 	margin:7px 0;
 	border-top:1px dotted #999;}
+/**********搜索页**************/
+.search {
+	width:100%;
+	height:35px;
+	margin-top: 40px;
+	border:none;
+	border-radius:5px;
+    background-color:#fff;
+	color:#666;
+    padding-left:20px;
+    padding-right: 25px;}
+.search-content{
+	padding: 20px;}
+.search-content h3{
+	border-bottom: 1px solid #ccc;
+	line-height: 30px;
+	margin-bottom:15px;
+}
+.tag-box span a{
+	font-size: 12px;
+	background-color:#fff;
+}
+.tag-box span{
+	padding: 5px;
+	display: inline-block;
+}
+.searchbtn{
+	background-color: #fff;
+	border: none;
+	color:#CCC;
+	font-size:18px;
+	width: 25px;
+	position: absolute;
+	right:25px;
+	top:68px;
+	display: inline-block;
+}
