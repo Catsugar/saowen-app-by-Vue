@@ -1,5 +1,4 @@
 <template>
-<transition name="fade">
   <div class="content author-content">
     <h3><b>搜索结果：</b>&nbsp;&nbsp;&nbsp;&nbsp;共<i>10</i>篇</h3>
     <ul class="novellist-box">
@@ -38,7 +37,6 @@
         </li>
     </ul>
   </div>
-</transition>
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <myHeader></myHeader>
-    <router-view></router-view>
+    <transition name="fade" mode="out-in"><router-view></router-view></transition>
     <!--尾部-->
     <div class="footer">
       <ul>
@@ -19,22 +19,11 @@
 import Header from './components/Header.vue'
 //import Cover from './components/Cover.vue'
 //import Login from './components/Login.vue'
-const ERR_OK=0;
 export default {
   name: 'app',
   data(){
     return {
-      comments: {}
     }
-  },
-  created(){
-    this.$http.get('/api/index').then((response) => {
-      response = response.body;
-      if (response.errno===ERR_OK){
-        this.comments=response.data;
-        console.log( this.comments);
-      }
-    })
   },
   components: {
     myHeader: Header

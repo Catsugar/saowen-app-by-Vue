@@ -9,7 +9,7 @@ body,div,li,a,h1,h2,h3,h4,h5,ul,span {
 body{background-color:rgb(239,238,235);}
 li{list-style:none;}
 i{font-style:normal;}
-.title,.author{font-size:14px;font-weight:bold;opacity:1;color:#666;}
+.title,.author{font-size:13px;font-weight:bold;opacity:1;color:#333;}
 .title:hover,.author:hover{opacity:0.6;color:#F00;font-weight:bold;}
 a:link,a:hover,a:active,a:visited{text-decoration:none;}
 .footer a:link,a:hover,a:active,a:visited{text-decoration:none;color:#333;}
@@ -142,7 +142,7 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	background-color:#FFF;
 	border-bottom:1px solid #999;
 	border-top:1px solid #999;}
-.status{color:#999;font-size:14px;}
+
 .home hr{
 	border-top:1px dotted #aaa;
 	padding:0;
@@ -154,6 +154,20 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	font-size:13px;
 	line-height:20px;
 	text-indent:30px;}
+.comment-header a,.comment-header span{
+	vertical-align: middle;
+	line-height: 60px;
+	display: inline-block;
+	margin-right: 10px;}
+.status{color:#999;}
+.leftphoto{
+	width: 60px;
+	height:60px;
+	display: inline-block;
+	border-radius: 50%;
+	background-size:cover;
+	background-position: center;}
+
 /********************************文单列表*********************************/
 .collectlist-box{
 	display: -webkit-flex;
@@ -231,6 +245,12 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	justify-content:flex-start;
 	border-bottom:1px solid #ccc;}
 .backimg{
+	width: 100px;
+	height:100px;
+	display: inline-block;
+	border-radius: 50%;
+	background-size:cover;
+	background-position: center;
 	margin-right:3rem;}
 .backtitle{
 	border-left:1px solid #CCC;

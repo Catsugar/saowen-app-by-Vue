@@ -1,5 +1,4 @@
 <template>
-<transition name="fade">
   <div class="content author-content">
         <div class="novel-box">
       <h1><b>淮上</b></h1>&nbsp;&nbsp;&nbsp;&nbsp;by<i>猫岁</i>&nbsp;&nbsp;&nbsp;&nbsp;共<i>10</i>人收藏
@@ -45,7 +44,6 @@
         </li>
     </ul>
   </div>
-</transition>
 </template>
 
 <script>

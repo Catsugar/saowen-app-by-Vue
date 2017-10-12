@@ -35,7 +35,6 @@ var count=8;//每页几条数据
   /************主界面********/
  //首页
   exports.index=function(req,res){
-    console.log(req.session);
     if(req.session){
       var _user =req.session.user;
     }else{
@@ -53,19 +52,19 @@ var count=8;//每页几条数据
   }
   //书单
   exports.collectlist=function(req,res){
-    console.log(req.session);
     if(req.session){
       var _user =req.session.user;
     }else{
       var _user =undefined;
     }  
-    collections.find({}).populate('editor').sort({'meta.updateAt': -1}).exec(function(err, allcollections) { 
+    console.log(collections);
+    collections.find({}).populate('editor').sort({'meta.updateAt': -1}).exec(function(err, collections) { 
       if(err){console.log(err);};
       res.json({
         errno:0,
         title:'书单',
-        collections: collections,
-        _user:_user || undefined
+        collections:collections,
+        _user:_user
       })
     })
   }

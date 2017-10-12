@@ -1,5 +1,4 @@
 <template>
-<transition name="slide">
   <div class="content search-content">
     <form>
       <input type="text" class="search center-block" placeholder="搜索作者、作品或者标签" id="search">
@@ -27,7 +26,6 @@
       <span><a href="" class="label label-default">重生</a></span>   
     </div>
   </div>
-</transition>
 </template>
 
 <script>

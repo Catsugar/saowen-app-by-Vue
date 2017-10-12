@@ -1,10 +1,9 @@
 <template>
-<transition name="fade">
   <div class="content">
     <!---我的-->
     <div class="tab-pane" id="myback">
       <div class="backheader">
-          <div  class="backimg"><img src="static/images/0.jpg" class="img-circle" height="100px"></div>
+          <div style="background-image:url('/static/photo/1506099488117.jpeg')" class="backimg"></div>
           <div class="backtitle"><span><b>猫岁君</b><br>ID：<i>000001</i></span></div>
       </div>
       <div class="backlist">
@@ -43,7 +42,6 @@
       </div>
     </div>   
   </div>
-</transition>
 </template>
 
 <script>

@@ -1,5 +1,4 @@
 <template>
-<transition name="fade">
   <div class="content ">
     <div class="novel-box">
       <h1>默读</h1>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -46,7 +45,6 @@
         <li><img src="static/images/4.jpg"><a href="">实验君：</a>英俊的博主么么哒！<a href="" class="reply pull-right">回复</a></li>
     </ul>
   </div>
-</transition>
 </template>
 
 <script>
