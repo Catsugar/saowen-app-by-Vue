@@ -5,11 +5,17 @@
       <ul class="collectlist-box">
         <!---item-->
         <li v-for="collect in collections">
-          <div style="background:url(static/back/b0.jpg) center center no-repeat"><a href="" >
-          <h3>{{collect.name}}</h3>
-          <h5>by&nbsp;<i>{{collect.editor.name}}</i></h5>
-          <button type="button" class="btn btn-xs btn-danger center-block">收藏</button></a></div>
-          <p><span class="pull-left">共<i>11</i>篇文</span><span class="pull-right">共<i>{{collect.loved.length}}</i>人收藏</span></p>
+          <div v-bind:style="collect.cover">
+          <a href="" >
+            <h3>{{collect.name}}</h3>
+            <h5>by&nbsp;<i>{{collect.editor.name}}</i></h5>
+            <button type="button" class="btn btn-xs btn-danger center-block">收藏</button>
+          </a>
+          </div>
+          <p>
+            <span class="pull-left">共<i>{{collect.novels.length}}</i>篇文</span>
+            <span class="pull-right">共<i>{{collect.loved.length}}</i>人收藏</span>
+          </p>
         </li>
       </ul>
     </div>
@@ -33,6 +39,10 @@ export default {
         this.collections=response.collections;
         this.title=response.title;
         this._user=response._user;
+        this.collections.forEach(function(collection){
+          //图片地址加载
+          collection.cover = 'background-image:url(/static/'+collection.cover+')';
+        })
       }
     })
   }

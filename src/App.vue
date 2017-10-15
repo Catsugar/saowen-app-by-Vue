@@ -12,21 +12,34 @@
         <li><router-link to="/myhome"><i class="iconfont icon-wode1"></i><br>我的</router-link></li>
       </ul>
     </div>
+    <myCover v-on:isCover="isCover" v-on:isLogin="isLogin" v-show="isCover"></myCover>
+    <myLogin v-show="isLogin"></myLogin>
   </div>
   </template>
 
 <script>
 import Header from './components/Header.vue'
-//import Cover from './components/Cover.vue'
-//import Login from './components/Login.vue'
+import Cover from './components/Cover.vue'
+import Login from './components/Login.vue'
 export default {
   name: 'app',
   data(){
     return {
+      isLogin: false,
+      isCover: false
     }
   },
   components: {
-    myHeader: Header
+    myHeader: Header,
+    myCover: Cover,
+    myLogin: Login
+  },
+  methods: {
+    showLogin: function(){
+      this.isLogin=true;
+      this.isCover=false;
+      console.log('大笨蛋55555555555555');
+    }
   }
 }
 </script>

@@ -13,7 +13,7 @@
                <li v-for="novel in novelRanks">
                  <a href="" class="title">{{novel.name}}</a>
                  &nbsp;&nbsp;作者：<a href="" class="author">{{novel.author.name}}</a>
-                 <span class="pull-right"><b>{{novel.comments.length}}</b>人评分&nbsp;<b>{{novel.comments.length}}</b></span> 
+                 <span class="pull-right"><b>{{novel.comments.length}}</b>人评分&nbsp;<b>{{novel.avg.toFixed(2)}}</b></span> 
                </li>
              </ul>
          </div>
@@ -59,8 +59,15 @@ export default {
         this.novelRanks=response.novelRanks;
         this.authorRanks=response.authorRanks;
         this.collectionRanks=response.collectionRanks;
-        this.title=response.title;
         this._user=response._user;
+        this.novelRanks.forEach(function(novel){
+          var avg=0;
+          novel.comments.forEach(function(comment){
+            avg+=comment.score;
+          })
+          avg = avg/ novel.comments.length;
+          novel.avg=avg;
+        })
       }
     })
   }

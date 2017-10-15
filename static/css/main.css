@@ -15,6 +15,14 @@ a:link,a:hover,a:active,a:visited{text-decoration:none;}
 .footer a:link,a:hover,a:active,a:visited{text-decoration:none;color:#333;}
 .favor{font-size:18px;}
 /**************封面****************/
+.cover{
+	width: 100%;
+	height: 100%;
+	z-index: 600;}
+.login{
+	width: 100%;
+	height: 100%;
+	z-index: 500;}
 .logo{
 	height:40%;
 	margin: auto;  
@@ -107,9 +115,7 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 .header ul li h3{font-weight:bold;}
 .header i{padding:10px;font-size:24px;}
 /**************页脚****************/
-.footer{
-	z-index: 400
-}
+.footer{z-index: 400}
 .footer ul{
   	position: fixed;
   	width:100%;
@@ -177,43 +183,53 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 .collectlist-box li{
 	flex:1 1 auto;
 	justify-content:space-around;
-	min-width:120px;
-	height: 140px;
+	min-width:160px;
+	height: 150px;
 	margin-top:20px;
 	font-size:12px;
 	color:#666;}
 .collectlist-box li div{
-	border:1px solid #999;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-	width:110px;
-    height:110px;
+	width:150px;
+    height:120px;
     margin: 0 auto;
-	border-radius:0.5rem;
+	border-top-left-radius:0.5rem; 
+	border-top-right-radius:0.5rem;
+	background-size:cover;
+	background-position: center;
 	transition:all ease 1s;}
 .collectlist-box li div a{
-	width:110px;height:110px;display:block;
+	width:150px;height:120px;display:block;
 	padding:20px 10px;
 	border-radius:0.5rem;
 	transition:all ease 1s;
-	background-color:rgba(255,255,255,0.4);}
+	background-color:rgba(255,255,255,0.3);}
 .collectlist-box li div a:hover{background-color:rgba(51,51,51,0.6);}
 .collectlist-box li div a:hover h3,
-.collectlist-box li div a:hover h5{color:#FFF;}
+.collectlist-box li div a:hover h5,
+.collectlist-box li div a:hover h5 i{color:#FFF;text-shadow: 1px 1px 1px #000;}
 .collectlist-box li h3{
 	font-weight:bold;
 	font-size:16px;
-	line-height:20px;
+	text-shadow: 1px 1px 1px #EEE;
+	line-height:30px;
 	text-align:center;}
 .collectlist-box li h5,.collectlist-box li h5 i{
-	font-size:11px;
-	line-height: 14px;
-	text-align:center;}
+	font-size:12px;
+	line-height: 16px;
+	text-align:center;
+	padding-bottom: 10px;
+	text-shadow: 1px 1px 1px #EEE;}
 .collectlist-box li p{
-	width:110px;
+	width:150px;
+	height: 30px;
 	margin: 0 auto;
-}
+	padding:0 5px;
+	background-color:#fff;
+	border-bottom-left-radius:0.5rem; 
+	border-bottom-right-radius:0.5rem;
+	line-height: 30px;}
 .collectlist-box li span,.collectlist-box li span i{
-	line-height:2rem;
+	line-height: 30px;
 	font-size:12px;}
 /********************************排行*********************************/
 .rank-btn{

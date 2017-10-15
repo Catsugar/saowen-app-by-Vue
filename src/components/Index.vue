@@ -41,7 +41,6 @@ export default {
       response = response.body;
       if (response.errno===ERR_OK){
         this.comments=response.comments;
-        this.title=response.title;
         this._user=response._user;
         this.comments.forEach(function(comment){
           //图片地址加载
