@@ -12,15 +12,12 @@
 <script>
 export default {
   name: 'hello',
-  props: ['isLogin', 'isCover'],
   data () {
     return {
     }
   },
   methods: {
     showLogin: function(){
-      this.isLogin=true;
-      this.isCover=false;
       console.log('大笨蛋55555555555555');
     }
   }

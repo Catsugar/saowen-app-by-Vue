@@ -10,13 +10,19 @@
 	 <div class="tab-pane fade in active" id="login-in">
 	   <i class="iconfont icon-wode1"></i><input type="text" placeholder="用户名" ><br>
        <i class="iconfont icon-quanxian"></i><input type="password" placeholder="密码" ><br>
-	   <div><button type="button" class="btn btn-default">登录</button><button type="button" class="btn btn-danger" >取消</button></div>
+	   <div>
+       <button type="button" v-on:click="Login" class="btn btn-default">登录</button>
+       <button type="button" v-on:click="clean" class="btn btn-danger" >取消</button>
+     </div>
 	 </div>
      <div class="tab-pane fade" id="login-up">
 	   <i class="iconfont icon-youxiang"></i><input type="text"  placeholder="邮箱" ><br>
        <i class="iconfont icon-wode1"></i><input type="text"  placeholder="用户名" ><br>
        <i class="iconfont icon-quanxian"></i><input type="password"  placeholder="密码" ><br>
-	   <div><button type="button" class="btn btn-default">注册</button><button type="button" class="btn btn-danger">取消</button></div>
+	   <div>
+       <button type="button" v-on:click="register" class="btn btn-default">注册</button>
+       <button type="button" v-on:click="clean" class="btn btn-danger">取消</button>
+      </div>
 	 </div>
    </div>
    <h3 class="center-block">看什喵？！</h3>
@@ -25,7 +31,20 @@
 </template>
 
 <script>
+export default {
+  methods: {
+    Login: function(){
+      console.log('我是登录君····················');
+    },
+    register: function(){
+      console.log('我是注册妹子~~~~~~~~~~~');
+    },
+    clean: function(){
+      console.log('我是注册妹子~~~~~~~~~~~');
+    }
 
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

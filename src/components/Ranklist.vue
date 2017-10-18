@@ -62,11 +62,15 @@ export default {
         this._user=response._user;
         this.novelRanks.forEach(function(novel){
           var avg=0;
-          novel.comments.forEach(function(comment){
-            avg+=comment.score;
-          })
-          avg = avg/ novel.comments.length;
-          novel.avg=avg;
+          if (novel.comments!==[]){
+            novel.comments.forEach(function(comment){
+              avg+=comment.score;
+            })
+            avg = avg/ novel.comments.length;
+            novel.avg=avg;
+          } else {
+            novel.avg='未评分';
+          }
         })
       }
     })
