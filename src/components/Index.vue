@@ -5,17 +5,19 @@
       <ul>
         <!--item-->
         <li v-for="comment in comments" >
-          <div class="comment-header">
+          <div class="comment-header" :id="comment.userID.id">
             <a :style="comment.userID.photo" class="leftphoto"></a>
-            <a class="title" href=""><b>{{comment.userID.name}}</b></a>
+            <a class="title" ><b>{{comment.userID.name}}</b></a>
             <span class="status">{{comment.state}}</span>
             <span class="pull-right" style="font-size:12px;">{{comment.meta.updateAt}}</span>
           </div>
           <hr>
-          <div class="novel-bottom"> 
-            <a href="" class="title">{{comment.novelID.name}}</a>&nbsp;&nbsp;&nbsp;&nbsp;作者：<a href="" class="author">{{comment.novelID.author.name}}</a>&nbsp;&nbsp;&nbsp;&nbsp;评分：<b>{{comment.score.toFixed(2)}}</b><br>            
-            <a v-for="tag in comment.novelID.tags" class="label">{{tag}}</a> 
-            <div class="comment">
+          <div class="novel-bottom" > 
+            <a :id="comment.novelID.id" class="title">{{comment.novelID.name}}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            作者：<a :id="comment.novelID.author.id"  class="author">{{comment.novelID.author.name}}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            评分：<b>{{comment.score.toFixed(2)}}</b><br>             
+            <div class="comment">     
+              <a v-for="tag in comment.novelID.tags" class="label label-default" >{{tag}}</a>
               <p>{{comment.text}}</p>
             </div>
           </div>
@@ -26,6 +28,7 @@
 </template>
 
 <script>
+const tips=['label-default', 'label-primary', 'label-success', 'label-info', 'label-warning', 'label-danger'];
 const ERR_OK=0;
 var moment = require('moment');
 export default {
@@ -49,9 +52,19 @@ export default {
           comment.meta.updateAt = moment(comment.meta.updateAt).format('YYYY/DD/MM     hh:mm:ss');
         })
       }
-    })
+    });
+    //给标签添加颜色
+    var j=0;
+    var labels=document.getElementsByTagName('label');
+    console.log(labels);
+    for (var i=0; i<labels.length; i++){
+      if (i%tips.length === 0){ j=0; }
+      labels[i].className=tips[j];
+      j++;
+    }
   }
 }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

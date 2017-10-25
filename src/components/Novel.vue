@@ -1,28 +1,29 @@
 <template>
   <div class="content ">
     <div class="novel-box">
-      <h1>默读</h1>&nbsp;&nbsp;&nbsp;&nbsp;
-      作者：<a href="" class="author">priest</a>
+      <h1>{{novel.name}}</h1>&nbsp;&nbsp;&nbsp;&nbsp;
+      作者：<a href="" class="author">{{novel.author.name}}</a>
       <a href="" class="edit">&nbsp;&nbsp;&nbsp;&nbsp;<i class="iconfont icon-comment-pen"></i></a>
       <span class="dropdown pull-right">
          <button type="button" class="btn dropdown-toggle btn-warning btn-sm" id="dropdownMenu1" data-toggle="dropdown">加入扫文单</button>
          <ul class="dropdown-menu pull-left" role="menu" aria-labelledby="dropdownMenu1">
              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">扫文单1</a></li>
-             <li role="presentation"><a role="menuitem" tabindex="-1" href="#">扫文单1</a></li>
          </ul>
        </span>
       <br>
-      共<i>10</i>人评分<br>
+      共<i>{{novel.comments.length}}</i>人评分<br>
       评分：<i class="score iconfont icon-wujiaoxing"></i><i class="score iconfont icon-wujiaoxing" ></i><i class="score iconfont icon-wujiaoxing"></i><i class="score iconfont icon-wujiaoxing"></i><i class="score iconfont icon-wujiaoxing"></i><br>
       <table>
-        <tr><th>类型：</th><th>原创</th></tr>
-        <tr><th>进度：</th><th>已完结</th></tr>
-        <tr><th>篇幅：</th><th>中长</th></tr>
-        <tr><th>时间：</th><th>2016</th></tr>
-        <tr><th>口味：</th><th>清水</th></tr>
-        <tr><th>人物：</th><th>费渡、骆闻舟</th></tr>
-        <tr><th>首发地址：</th><th>晋江</th></tr>
-        <tr><th>常用标签：</th><th><a class="label">默认标签</a> <a class="label">主要标签</a> <a class="label">成功标签</a> <a class="label">信息标签</a> <a class="label">警告标签</a> <a class="label">危险标签</a></th></tr>
+        <tr><th>类型：</th><th>{{novel.type}}</th></tr>
+        <tr><th>进度：</th><th>{{novel.progress}}</th></tr>
+        <tr><th>篇幅：</th><th>{{novel.len}}</th></tr>
+        <tr><th>时间：</th><th>{{novel.year}}</th></tr>
+        <tr><th>口味：</th><th>{{novel.taste}}</th></tr>
+        <tr><th>人物：</th><th>{{novel.actor}}</th></tr>
+        <tr><th>首发地址：</th><th>{{novel.web}}</th></tr>
+        <tr><th>常用标签：</th><th>
+        <a class="label label-default" v-for="tag in novel.tags">默认标签</a> 
+        </th></tr>
       </table>
     </div>
     <div class="love-box">
@@ -37,22 +38,43 @@
    <textarea ></textarea>
     <button type="button" class="btn btn-danger pull-right btn-sm commentbtn">评论</button>
     <ul class="commentbox">
-        <li><img src="static/images/1.jpg"><a href="">实验君：</a>英俊的博主么英俊的博主么英俊,的博主么英俊的博主么英俊的博主么英俊的博
-        主么英俊的博主么英俊的博主么英俊的博主么英俊的博主么英俊的博主么英俊的博主么英俊的博主么英俊的博主么英俊的博主么英俊
-        的博主么英俊的博主么英俊的博主么英俊的博主么么<a href="" class="reply pull-right">回复</a></li>
-        <li><img src="static/images/2.jpg"><a href="">实验君：</a>英俊的博主么么哒！英俊的博主么么哒！英俊的博主么么哒！英俊的博主么么哒！英俊的博主么么哒！英俊的博主么么哒！英俊的博主么么哒！英俊的博主么么哒！英俊的博主么么哒！英俊的博主么么哒！英俊的博主么么哒！英俊的博主么么哒！英俊的博主么么哒！英俊的博主么么哒！英俊的博主么么哒！英俊的博主么么哒！<a href="" class="reply pull-right">回复</a></li>
-        <li><img src="static/images/3.jpg"><a href="">实验君：</a>英俊的博主么么哒！<a href="" class="reply pull-right">回复</a></li>
-        <li><img src="static/images/4.jpg"><a href="">实验君：</a>英俊的博主么么哒！<a href="" class="reply pull-right">回复</a></li>
+      <li v-for="comment in novel.comments">
+        <img src="static/images/1.jpg">
+        <a href="">{{comment.userID.name}}：</a>
+        {{comment.text}}
+        <span class="reply pull-right" style="font-size:12px;">{{comment.meta.updateAt}}</span>
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
+const ERR_OK=0;
+var moment = require('moment');
 export default {
-  name: 'hello',
-  data () {
+  data(){
     return {
+      user: {},
+      _user: {}
     }
+  },
+  props: ['id'],
+  created(){
+    var id='n000012';
+    console.log(id);
+    this.$http.get('/novel/'+id).then((response) => {
+      response = response.body;
+      if (response.errno===ERR_OK){
+        this.novel=response.novel;
+        this._user=response._user;
+        this.novel.comments.forEach(function(comment){
+          //图片地址加载
+          comment.userID.photo = 'background-image:url(/static/'+comment.userID.photo+')';
+          //时间格式话
+          comment.meta.updateAt = moment(comment.meta.updateAt).format('YYYY/DD/MM     hh:mm:ss');
+        })
+      }
+    });
   }
 }
 </script>

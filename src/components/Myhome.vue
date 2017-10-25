@@ -45,7 +45,31 @@
 </template>
 
 <script>
-
+const ERR_OK=0;
+var moment = require('moment');
+export default {
+  data(){
+    return {
+      user: {},
+      _user: {}
+    }
+  },
+  created(){
+    this.$http.get('/myhome/'+'id').then((response) => {
+      response = response.body;
+      if (response.errno===ERR_OK){
+        this.comments=response.comments;
+        this._user=response._user;
+        this.comments.forEach(function(comment){
+          //图片地址加载
+          comment.userID.photo = 'background-image:url(/static/'+comment.userID.photo+')';
+          //时间格式话
+          comment.meta.updateAt = moment(comment.meta.updateAt).format('YYYY/DD/MM     hh:mm:ss');
+        })
+      }
+    });
+  }
+}
 </script>
 
 

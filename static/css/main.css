@@ -14,6 +14,12 @@ i{font-style:normal;}
 a:link,a:hover,a:active,a:visited{text-decoration:none;}
 .footer a:link,a:hover,a:active,a:visited{text-decoration:none;color:#333;}
 .favor{font-size:18px;}
+.label{
+    margin-right: 5px;
+    opacity: 1;
+    display: inline-block;
+}
+.label:hover{ opacity:0.6}   
 /**************封面****************/
 .cover{
 	width: 100%;
@@ -153,7 +159,8 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	border-top:1px dotted #aaa;
 	padding:0;
 	margin:1rem 0;}
-.novel-bottom{font-size:14px;}
+.novel-bottom{font-size:14px;overflow:hidden;}
+.tagbox{width: 100%;}
 .comment{overflow:hidden;}
 .comment p{
 	padding-top:1rem;
