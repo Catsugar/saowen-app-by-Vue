@@ -13,7 +13,7 @@ var apiRoutes=express.Router();
   apiRoutes.get('/comments', Render.index);
   apiRoutes.get('/collectlist', Render.collectlist);
   apiRoutes.get('/ranklist', Render.ranklist);
-  apiRoutes.get('/myhome/:id', Render.myhome);
+  apiRoutes.get('/user/:id', Render.user);
   apiRoutes.get('/author/:id', Render.author);
   apiRoutes.get('/collect/:id', Render.collect);
   apiRoutes.get('/novel/:id', Render.novel);

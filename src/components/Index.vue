@@ -5,19 +5,20 @@
       <ul>
         <!--item-->
         <li v-for="comment in comments" >
-          <div class="comment-header" :id="comment.userID.id">
-            <a :style="comment.userID.photo" class="leftphoto"></a>
-            <a class="title" ><b>{{comment.userID.name}}</b></a>
+          <router-link class="comment-header" :to="'/user/'+comment.userID.id">
+            <span :style="comment.userID.photo" class="leftphoto"></span>
+            <span class="title" ><b>{{comment.userID.name}}</b></span>
             <span class="status">{{comment.state}}</span>
             <span class="pull-right" style="font-size:12px;">{{comment.meta.updateAt}}</span>
-          </div>
+          </router-link>
           <hr>
           <div class="novel-bottom" > 
-            <a :id="comment.novelID.id" class="title">{{comment.novelID.name}}</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            作者：<a :id="comment.novelID.author.id"  class="author">{{comment.novelID.author.name}}</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            评分：<b>{{comment.score.toFixed(2)}}</b><br>             
+            <router-link :to="'/novel/'+comment.novelID.id" class="title">{{comment.novelID.name}}</router-link>
+            &nbsp;&nbsp;&nbsp;&nbsp;作者：
+            <router-link :to="'/author/'+comment.novelID.author.id" class="author">{{comment.novelID.author.name}}</router-link>
+            &nbsp;&nbsp;&nbsp;&nbsp;评分：<b>{{comment.score.toFixed(2)}}</b><br>             
             <div class="comment">     
-              <a v-for="tag in comment.novelID.tags" class="label label-default" >{{tag}}</a>
+              <router-link :to="'/result?key='+tag" v-for="(tag,index) in comment.novelID.tags":key="tag" :class="['label', tips[index%6]]" >{{tag}}</router-link>
               <p>{{comment.text}}</p>
             </div>
           </div>
@@ -28,7 +29,7 @@
 </template>
 
 <script>
-const tips=['label-default', 'label-primary', 'label-success', 'label-info', 'label-warning', 'label-danger'];
+
 const ERR_OK=0;
 var moment = require('moment');
 export default {
@@ -36,13 +37,15 @@ export default {
     return {
       comments: [],
       title: '',
-      _user: {}
+      _user: {},
+      tips: []
     }
   },
   created(){
     this.$http.get('/api/comments').then((response) => {
       response = response.body;
       if (response.errno===ERR_OK){
+        this.tips=['label-default', 'label-primary', 'label-success', 'label-info', 'label-warning', 'label-danger'];
         this.comments=response.comments;
         this._user=response._user;
         this.comments.forEach(function(comment){
@@ -53,15 +56,6 @@ export default {
         })
       }
     });
-    //给标签添加颜色
-    var j=0;
-    var labels=document.getElementsByTagName('label');
-    console.log(labels);
-    for (var i=0; i<labels.length; i++){
-      if (i%tips.length === 0){ j=0; }
-      labels[i].className=tips[j];
-      j++;
-    }
   }
 }
 

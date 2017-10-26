@@ -9,7 +9,7 @@ body,div,li,a,h1,h2,h3,h4,h5,ul,span {
 body{background-color:rgb(239,238,235);}
 li{list-style:none;}
 i{font-style:normal;}
-.title,.author{font-size:13px;font-weight:bold;opacity:1;color:#333;}
+.title,.author{font-size:14px;font-weight:bold;opacity:1;color:#333;}
 .title:hover,.author:hover{opacity:0.6;color:#F00;font-weight:bold;}
 a:link,a:hover,a:active,a:visited{text-decoration:none;}
 .footer a:link,a:hover,a:active,a:visited{text-decoration:none;color:#333;}
@@ -18,6 +18,7 @@ a:link,a:hover,a:active,a:visited{text-decoration:none;}
     margin-right: 5px;
     opacity: 1;
     display: inline-block;
+    font-size: 12px;
 }
 .label:hover{ opacity:0.6}   
 /**************封面****************/
@@ -308,18 +309,16 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	font-size:24px;
 	color:#999;}
 
-
 /***************小说页***************/
 .novel-box,.love-box,.commentbox, .collection-box li,.authorlist-box li{
-	border-top:1px solid #999;
     border-bottom:1px solid #999;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	padding:20px;
-	font-size:14px;
+	font-size:13px;
 	color:#666;
 	position:relative;}
 .novel-box h1{
-	font-size:2.5rem;
+	font-size:2rem;
 	font-weight:bold;}
 .novel-box,.commentbox,.collection-box li{
 	margin-top:10px;background-color:#fff;line-height:24px;}
@@ -340,6 +339,25 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	line-height:30px;
 	margin-top:5px;}
 .commentbtn{margin-right:1rem;}
+.commentbox p,.commentbox span,.commentbox b{
+	line-height: 25px;
+	vertical-align: middle;
+}
+.commentbox p{
+	text-indent: 3rem;
+}
+.smallphoto{
+	width: 20px;
+	height:20px;
+	display: inline-block;
+	margin-right:8px;
+	background-size:cover;
+	background-position: center;}
+.replytime{
+	color:#999;
+	font-size: 12px;
+	display: block;
+}
 /********实现切换效果**********/
 .state{
 	display:none;}

@@ -6,7 +6,7 @@ import Login from '@/components/Login'
 import Index from '@/components/Index'
 import Collectlist from '@/components/Collectlist'
 import Ranklist from '@/components/Ranklist'
-import Myhome from '@/components/Myhome'
+import User from '@/components/user'
 import Collect from '@/components/Collect'
 import Author from '@/components/Author'
 import Novel from '@/components/Novel'
@@ -45,20 +45,25 @@ export default new Router({
     {
       path: '/myhome',
       name: 'Myhome',
-      component: Myhome
+      component: User
     },
     {
-      path: '/collect',
+      path: '/user/:id',
+      name: 'User',
+      component: User
+    },
+    {
+      path: '/collect/:id',
       name: 'Collect',
       component: Collect
     },
     {
-      path: '/author',
+      path: '/author/:id',
       name: 'Author',
       component: Author
     },
     {
-      path: '/novel',
+      path: '/novel/:id',
       name: 'Novel',
       component: Novel
     },

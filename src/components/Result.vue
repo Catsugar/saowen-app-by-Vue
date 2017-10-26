@@ -11,29 +11,12 @@
            <i class="score iconfont icon-wujiaoxing"></i><br>
            <b>原创</b>/<b>已完结</b>/<b>中长</b>/<b>2016</b>/<b>清水</b>/<b>费渡、骆闻舟</b><br>
            <hr>
-           <a class="label">默认标签</a> <a class="label">主要标签</a> <a class="label">成功标签</a> <a class="label">信息标签</a> <a class="label">警告标签</a> <a class="label">危险标签</a></th>
-        </li>
-        <li>
-           <a href="" class="title">《杀破狼》</a>&nbsp;&nbsp;&nbsp;&nbsp;评分：
-           <i class="score iconfont icon-wujiaoxing"></i>
-           <i class="score iconfont icon-wujiaoxing"></i>
-           <i class="score iconfont icon-wujiaoxing"></i>
-           <i class="score iconfont icon-wujiaoxing"></i>
-           <i class="score iconfont icon-wujiaoxing"></i><br>
-           <b>原创</b>/<b>已完结</b>/<b>中长</b>/<b>2016</b>/<b>清水</b>/<b>费渡、骆闻舟</b><br>
-           <hr>
-           <a class="label">默认标签</a> <a class="label">主要标签</a> <a class="label">成功标签</a> <a class="label">信息标签</a> <a class="label">警告标签</a> <a class="label">危险标签</a></th>
-        </li>
-        <li>
-           <a href="" class="title">《杀破狼》</a>&nbsp;&nbsp;&nbsp;&nbsp;评分：
-           <i class="score iconfont icon-wujiaoxing"></i>
-           <i class="score iconfont icon-wujiaoxing"></i>
-           <i class="score iconfont icon-wujiaoxing"></i>
-           <i class="score iconfont icon-wujiaoxing"></i>
-           <i class="score iconfont icon-wujiaoxing"></i><br>
-           <b>原创</b>/<b>已完结</b>/<b>中长</b>/<b>2016</b>/<b>清水</b>/<b>费渡、骆闻舟</b><br>
-           <hr>
-           <a class="label">默认标签</a> <a class="label">主要标签</a> <a class="label">成功标签</a> <a class="label">信息标签</a> <a class="label">警告标签</a> <a class="label">危险标签</a></th>
+           <a class="label">默认标签</a>
+           <a class="label">主要标签</a> 
+           <a class="label">成功标签</a> 
+           <a class="label">信息标签</a> 
+           <a class="label">警告标签</a> 
+           <a class="label">危险标签</a></th>
         </li>
     </ul>
   </div>

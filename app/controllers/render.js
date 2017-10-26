@@ -95,7 +95,7 @@ var count=8;//每页几条数据
     })
   }
 //我的 
-  exports.myhome=function(req,res){
+  exports.user=function(req,res){
     console.log(req.session);
     if(req.session){
       var _user =req.session.user;
@@ -167,11 +167,10 @@ var count=8;//每页几条数据
   }
   //小说详情
   exports.novel=function(req,res){
-    console.log(req.session);
     if(req.session){
-      var _user =req.session.user;
+      var User =req.session.user;
     }else{
-      var _user =undefined;
+      var User =undefined;
     }
     var userID=(User!==undefined) ? User._id:undefined;
     var ID = req.params.id;
