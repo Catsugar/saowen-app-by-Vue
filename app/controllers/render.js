@@ -5,7 +5,6 @@ var authors=require('../models/author.js');
 var collections=require('../models/collection.js');
 var comments=require('../models/comment.js');
 var _underscore=require('underscore');
-var count=8;//每页几条数据
 //covel
   exports.cover=function(req,res){
     console.log(req.session);
@@ -44,7 +43,6 @@ var count=8;//每页几条数据
       if(err){console.log(err);}
       res.json({
         errno:0,
-        title:'看什喵？！',
         comments: comments,
         _user:_user
       })
@@ -57,12 +55,10 @@ var count=8;//每页几条数据
     }else{
       var _user =undefined;
     }  
-    console.log(collections);
     collections.find({}).populate('editor').sort({'meta.updateAt': -1}).exec(function(err, collections) { 
       if(err){console.log(err);};
       res.json({
         errno:0,
-        title:'书单',
         collections:collections,
         _user:_user
       })
@@ -84,7 +80,6 @@ var count=8;//每页几条数据
           if(err){console.log(err);}   
           res.json({
             errno:0,
-            title:'排行榜',
             novelRanks:novelRanks,
             authorRanks:authorRanks,
             collectionRanks:collectionRanks,
@@ -112,7 +107,7 @@ var count=8;//每页几条数据
     .exec(function(err,user) {
       if(err){console.log(err);};
       res.json({
-        //title: user.name+'的后台',
+        errno:0,
         user: user,
         _user:_user
       })
@@ -136,7 +131,6 @@ var count=8;//每页几条数据
       if(err){console.log(err);};
       res.json({
         errno:0,
-        title:'作者:'+ author.name,
         author: author,
         _user:_user
       })
@@ -159,7 +153,6 @@ var count=8;//每页几条数据
       if(err){console.log(err);};
       res.json({
         errno:0,
-        title:'书单:'+ collection.name,
         collection: collection,
         _user:_user
       })
@@ -185,7 +178,6 @@ var count=8;//每页几条数据
         if(_user==null){_user=undefined;}
         res.json({
           errno:0,
-          title:'小说:'+novel.name,
           novel: novel,
           _user:_user
         })
@@ -194,7 +186,6 @@ var count=8;//每页几条数据
   }
 //搜索页
   exports.result=function(req,res){
-    console.log(req.session);
     if(req.session){
       var _user =req.session.user;
     }else{
@@ -213,7 +204,6 @@ var count=8;//每页几条数据
           })
         })
         res.json({
-          title:KEY+'的搜索结果：',
           errno:0,
           allnovels: allnovels,
           _user:_user,

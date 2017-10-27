@@ -6,11 +6,11 @@
         <!---item-->
         <li v-for="collect in collections">
           <div v-bind:style="collect.cover">
-          <a href="" >
+          <router-link :to="'/collect/'+collect.id">
             <h3>{{collect.name}}</h3>
             <h5>by&nbsp;<i>{{collect.editor.name}}</i></h5>
             <button type="button" class="btn btn-xs btn-danger center-block">收藏</button>
-          </a>
+          </router-link>
           </div>
           <p>
             <span class="pull-left">共<i>{{collect.novels.length}}</i>篇文</span>

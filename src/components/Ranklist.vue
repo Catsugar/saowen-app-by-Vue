@@ -11,8 +11,9 @@
          <div class="tab-pane fade in active" id="novel-rank">
              <ul class="novel-list rank-list">
                <li v-for="novel in novelRanks">
-                 <a href="" class="title">{{novel.name}}</a>
-                 &nbsp;&nbsp;作者：<a href="" class="author">{{novel.author.name}}</a>
+                 <router-link :to="'/novel/'+novel.id" class="title">{{novel.name}}</router-link>
+                 &nbsp;&nbsp;作者：
+                 <router-link :to="'/author/'+novel.author.id" class="author">{{novel.author.name}}</router-link>
                  <span class="pull-right"><b>{{novel.comments.length}}</b>人评分&nbsp;<b>{{novel.avg.toFixed(2)}}</b></span> 
                </li>
              </ul>
@@ -20,8 +21,9 @@
          <div class="tab-pane fade" id="author-rank">
              <ul class="author-list rank-list">
                <li v-for="author in authorRanks">
-                 <a href="" class="author">{{author.name}}</a>
-                 &nbsp;&nbsp;代表作：<span v-if="author.novels" class="author">{{author.novels[0].name}}</span>
+                 <router-link :to="'/author/'+author.id" class="author">{{author.name}}</router-link>
+                 &nbsp;&nbsp;代表作：
+                 <router-link :to="'/novel/'+author.novels[0].id" v-if="author.novels" class="author">{{author.novels[0].name}}</router-link>
                  <span class="pull-right">共<b>{{author.loved.length}}</b>人收藏</span>
                </li>
              </ul>
@@ -29,7 +31,7 @@
          <div class="tab-pane fade" id="collect-rank">
              <ul class="collection-list rank-list">
                <li v-for="collect in collectionRanks">【推荐】
-                 <a href="" class="author">{{collect.name}}</a>
+                 <router-link :to="'/collect/'+collect.id" class="author">{{collect.name}}</router-link>
                  &nbsp;&nbsp;共<i>{{collect.loved.length}}</i>人收藏
                  <span class="badge pull-right"><i>{{collect.novels.length}}</i>篇</span>
                </li>
