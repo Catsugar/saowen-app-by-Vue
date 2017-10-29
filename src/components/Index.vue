@@ -16,9 +16,9 @@
             <router-link :to="'/novel/'+comment.novelID.id" class="title">{{comment.novelID.name}}</router-link>
             &nbsp;&nbsp;&nbsp;&nbsp;作者：
             <router-link :to="'/author/'+comment.novelID.author.id" class="author">{{comment.novelID.author.name}}</router-link>
-            &nbsp;&nbsp;&nbsp;&nbsp;评分：<b>{{comment.score.toFixed(2)}}</b><br>             
-            <div class="comment">     
-              <router-link :to="'/result?key='+tag" v-for="(tag,index) in comment.novelID.tags":key="tag" :class="['label', tips[index%6]]" >{{tag}}</router-link>
+            &nbsp;&nbsp;&nbsp;&nbsp;评分：<b>{{comment.score.toFixed(2)}}</b><br>         
+            <div class="comment">  
+              <Tagbox :tags="comment.novelID.tags"></Tagbox>   
               <p>{{comment.text}}</p>
             </div>
           </div>
@@ -29,23 +29,23 @@
 </template>
 
 <script>
-
+import Tagbox from './Tagbox.vue';
 const ERR_OK=0;
 var moment = require('moment');
 export default {
   data(){
     return {
       comments: [],
-      title: '',
-      _user: {},
-      tips: []
+      _user: {}
     }
+  },
+  components: {
+    Tagbox: Tagbox
   },
   created(){
     this.$http.get('/api/comments').then((response) => {
       response = response.body;
       if (response.errno===ERR_OK){
-        this.tips=['label-default', 'label-primary', 'label-success', 'label-info', 'label-warning', 'label-danger'];
         this.comments=response.comments;
         this._user=response._user;
         this.comments.forEach(function(comment){

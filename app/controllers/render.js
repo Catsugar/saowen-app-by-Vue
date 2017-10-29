@@ -89,7 +89,7 @@ var _underscore=require('underscore');
       })
     })
   }
-//我的 
+//用户
   exports.user=function(req,res){
     console.log(req.session);
     if(req.session){
@@ -116,7 +116,6 @@ var _underscore=require('underscore');
 /*******单个ui*******/
   //作者详情
   exports.author=function(req,res){
-    console.log(req.session);
     if(req.session){
       var _user =req.session.user;
     }else{
@@ -138,7 +137,6 @@ var _underscore=require('underscore');
   }
   //书单详情
   exports.collect=function(req,res){
-    console.log(req.session);
     if(req.session){
       var _user =req.session.user;
     }else{
@@ -149,11 +147,11 @@ var _underscore=require('underscore');
       if(err){console.log(err);} 
     })
     collections.findOne({id: ID}).populate('editor').populate({path:'novels', populate:[{path:'author'},{path:'comments'}]})
-    .exec(function(err,collection) {
+    .exec(function(err,collect) {
       if(err){console.log(err);};
       res.json({
         errno:0,
-        collection: collection,
+        collect: collect,
         _user:_user
       })
     })

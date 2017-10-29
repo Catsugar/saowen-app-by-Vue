@@ -28,7 +28,6 @@ export default {
   data(){
     return {
       collections: [],
-      title: '',
       _user: {}
     }
   },

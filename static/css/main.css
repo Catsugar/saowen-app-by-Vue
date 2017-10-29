@@ -18,9 +18,9 @@ a:link,a:hover,a:active,a:visited{text-decoration:none;}
     margin-right: 5px;
     opacity: 1;
     display: inline-block;
-    font-size: 12px;
-}
+    font-size: 12px;}
 .label:hover{ opacity:0.6}   
+.label:visited{color:#fff}
 /**************封面****************/
 .cover{
 	width: 100%;
@@ -181,7 +181,6 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	border-radius: 50%;
 	background-size:cover;
 	background-position: center;}
-
 /********************************文单列表*********************************/
 .collectlist-box{
 	display: -webkit-flex;
@@ -310,17 +309,18 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	color:#999;}
 
 /***************小说页***************/
-.novel-box,.love-box,.commentbox, .collection-box li,.authorlist-box li{
+.novel-box,.commentlist, .collection-box li,.authorlist-box li{
     border-bottom:1px solid #999;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	padding:20px;
 	font-size:13px;
 	color:#666;
 	position:relative;}
+.love-box{padding-top:20px;}
 .novel-box h1{
 	font-size:2rem;
 	font-weight:bold;}
-.novel-box,.commentbox,.collection-box li{
+.novel-box,.commentlist,.collection-box li{
 	margin-top:10px;background-color:#fff;line-height:24px;}
 .authorlist-box li{line-height:24px;background-color:#fff;}
 .authorlist-box li hr{border:1px dotted #999;}
@@ -338,14 +338,11 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	height:30px;
 	line-height:30px;
 	margin-top:5px;}
-.commentbtn{margin-right:1rem;}
-.commentbox p,.commentbox span,.commentbox b{
+.commentlist i{font-weight: bold;}
+.commentlist p,.commentlist span,.commentlist i{
 	line-height: 25px;
-	vertical-align: middle;
-}
-.commentbox p{
-	text-indent: 3rem;
-}
+	vertical-align: middle;}
+.commentlist p{text-indent: 3rem;}
 .smallphoto{
 	width: 20px;
 	height:20px;
@@ -356,48 +353,26 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 .replytime{
 	color:#999;
 	font-size: 12px;
-	display: block;
-}
-/********实现切换效果**********/
-.state{
-	display:none;}
-.state:checked+label{
-	color:#FFF;
-	font-weight:bold;
-	background-color:#C00;}
-/********实现切换效果**********/
-.love-box button{
-	margin-left:20px;
-	margin-top:-5px;}
-.score { 
-	color:#F66;
-	margin-left:5px;
-	font-size:20px;}
-textarea{
-	width:100%;
-	height:auto;
-	min-height:80px;
-	margin-bottom:10px;}	
-.commentbox{clear:both;
+	display: block;}	
+.commentlist{clear:both;
 	display:block;
-    margin-top:40px;}
-.commentbox li{
+    margin-top:30px;}
+.commentlist li{
 	display:block;
 	margin-bottom:10px;
 	line-height:24px;
 	text-align:left;
 	font-size: 13px;
 	border-bottom:1px dotted #aaa;}
-.commentbox li img{
+.commentlist li img{
 	width:20px;  
     height:20px;
 	margin-right:10px;}
-.commentbox li a{color:#999;margin-right:10px;font-size: 13px;}
-.commentbox li, .commentbox li a,.commentbox li img{vertical-align:baseline;}
+.commentlist li a{color:#999;margin-right:10px;font-size: 13px;}
+.commentlist li, .commentlist li a,.commentlist li img{vertical-align:baseline;}
 /******小说页*****/
 .novellist-box li:first-child{
-	border-top:1px solid #999;
-}
+	border-top:1px solid #999;}
 .novellist-box li{
     border-bottom:1px solid #999;
 	padding:20px;
