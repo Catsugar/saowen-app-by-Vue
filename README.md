@@ -7,7 +7,7 @@
 
 ## 这是移动端，之前写了个web端的，去看隔壁???
 
-## [预览地址](http://47.95.114.86/)
+## [预览地址](http://www.catsugar.site/)
 ## [代码地址](https://github.com/Catsugar/saowen-web-by-Nodejs)
 
 ### 用到的技术栈
