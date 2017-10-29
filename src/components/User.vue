@@ -71,7 +71,7 @@ export default {
   },
   props: ['id'],
   created(){
-    var id='u000012';
+    var id='u000000';
     this.$http.get('/api/user/'+id).then((response) => {
       response = response.body;
       console.log(response);

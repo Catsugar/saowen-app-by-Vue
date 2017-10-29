@@ -77,7 +77,7 @@ cd (your project name)
 cnpm install
 cnpm run dev
 
-ทรฮส http://localhost:8088
+ทรฮส http://localhost:3000
 ```
 
 
