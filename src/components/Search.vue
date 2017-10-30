@@ -41,5 +41,45 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+/**********搜索页**************/
+.search {
+  width:100%;
+  height:35px;
+  margin-top: 40px;
+  border:none;
+  border-radius:5px;
+  background-color:#fff;
+  color:#666;
+  padding-left:20px;
+  padding-right: 25px;}
+.search-content{
+  padding: 20px;}
+.search-content h3{
+  border-bottom: 1px solid #ccc;
+  line-height: 30px;
+  margin-bottom:15px;
+}
+.searchbtn{
+  background-color: #fff;
+  border: none;
+  color:#CCC;
+  font-size:18px;
+  width: 25px;
+  position: absolute;
+  right:25px;
+  top:68px;
+  display: inline-block;
+}
+.tag-box span a{
+  font-size: 12px;
+  background-color:#fff;
+  color:#666;
+}
+.tag-box span a:hover{
+  color: #fff;
+}
+.tag-box span{
+  padding: 5px;
+  display: inline-block;
+}
 </style>

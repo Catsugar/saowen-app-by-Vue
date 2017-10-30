@@ -17,7 +17,7 @@ var apiRoutes=express.Router();
   apiRoutes.get('/author/:id', Render.author);
   apiRoutes.get('/collect/:id', Render.collect);
   apiRoutes.get('/novel/:id', Render.novel);
-  apiRoutes.get('/result', Render.result);
+  apiRoutes.get('/result/:key', Render.result);
   apiRoutes.use('/api',apiRoutes);
 
 module.exports = apiRoutes;

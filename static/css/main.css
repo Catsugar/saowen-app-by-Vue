@@ -309,9 +309,10 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	color:#999;}
 
 /***************小说页***************/
-.novel-box,.commentlist, .collection-box li,.authorlist-box li{
+.novel-box{
     border-bottom:1px solid #999;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.novel-box,.commentlist, .collection-box li,.authorlist-box li{
 	padding:20px;
 	font-size:13px;
 	color:#666;
@@ -387,41 +388,3 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	padding:0px;
 	margin:7px 0;
 	border-top:1px dotted #999;}
-/**********搜索页**************/
-.search {
-	width:100%;
-	height:35px;
-	margin-top: 40px;
-	border:none;
-	border-radius:5px;
-    background-color:#fff;
-	color:#666;
-    padding-left:20px;
-    padding-right: 25px;}
-.search-content{
-	padding: 20px;}
-.search-content h3{
-	border-bottom: 1px solid #ccc;
-	line-height: 30px;
-	margin-bottom:15px;
-}
-.tag-box span a{
-	font-size: 12px;
-	background-color:#fff;
-	color:#666;
-}
-.tag-box span{
-	padding: 5px;
-	display: inline-block;
-}
-.searchbtn{
-	background-color: #fff;
-	border: none;
-	color:#CCC;
-	font-size:18px;
-	width: 25px;
-	position: absolute;
-	right:25px;
-	top:68px;
-	display: inline-block;
-}

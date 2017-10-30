@@ -1,61 +1,62 @@
 <template>
   <div class="content author-content">
-    <h3><b>搜索结果：</b>&nbsp;&nbsp;&nbsp;&nbsp;共<i>10</i>篇</h3>
+    <h3><b>搜索结果：</b>&nbsp;&nbsp;&nbsp;&nbsp;共<i>{{novels.length}}</i>篇</h3>
     <ul class="novellist-box">
-        <li>
-           <a href="" class="title">《杀破狼》</a>&nbsp;&nbsp;&nbsp;&nbsp;评分：
-           <i class="score iconfont icon-wujiaoxing"></i>
-           <i class="score iconfont icon-wujiaoxing"></i>
-           <i class="score iconfont icon-wujiaoxing"></i>
-           <i class="score iconfont icon-wujiaoxing"></i>
-           <i class="score iconfont icon-wujiaoxing"></i><br>
-           <b>原创</b>/<b>已完结</b>/<b>中长</b>/<b>2016</b>/<b>清水</b>/<b>费渡、骆闻舟</b><br>
+        <li v-for="novel in allnovels">
+           <router-link :to="'/novel/'+novel.id" class="title">{{novel.name}}</router-link>&nbsp;&nbsp;平均分：
+           <Star :avg="novel.avg"></Star>
+           <br>
+           <b>{{novel.type}}</b>/
+           <b>{{novel.progress}}</b>/
+           <b>{{novel.len}}</b>/
+           <b>{{novel.year}}</b>/
+           <b>{{novel.taste}}</b>/
+           <b>{{novel.actor}}</b>/
+           <b>{{novel.web}}</b><br>
            <hr>
-           <a class="label">默认标签</a>
-           <a class="label">主要标签</a> 
-           <a class="label">成功标签</a> 
-           <a class="label">信息标签</a> 
-           <a class="label">警告标签</a> 
-           <a class="label">危险标签</a></th>
+           <Tagbox :tags="novel.tags"></Tagbox> 
         </li>
     </ul>
   </div>
 </template>
 
 <script>
+import Tagbox from './Tagbox.vue';
+import Star from './Star.vue';
 const ERR_OK=0;
-var moment = require('moment');
 export default {
   data(){
     return {
-      novel: {},
+      novels: {},
       _user: {},
       tips: []
     }
   },
-  props: ['id'],
+  components: {
+    Tagbox: Tagbox,
+    Star: Star
+  },
   created(){
-    var avg=0;
     var key='狗血';
     this.$http.get('/api/result/'+key).then((response) => {
       response = response.body;
       if (response.errno===ERR_OK){
-        this.tips=['label-default', 'label-primary', 'label-success', 'label-info', 'label-warning', 'label-danger'];
-        this.novel=response.novel;
+        this.allnovels=response.allnovels;
         this._user=response._user;
-        if (this.novel.comments!==[]){
-          var len=this.novel.comments.length;
-          this.novel.comments.forEach(function(comment){
-            //图片地址加载
-            comment.userID.photo = 'background-image:url(/static/'+comment.userID.photo+')';
-            //时间格式话
-            comment.meta.updateAt = moment(comment.meta.updateAt).format('YYYY/DD/MM');
-            //算平均分
-            avg+=comment.score;
+        if (this.allnovels!==[]){
+          this.allnovels.forEach(function(novel){
+            if (novel.comments!==[]){
+              var len=novel.comments.length;
+              var avg=0;
+              novel.comments.forEach(function(comment){
+                //算平均分
+                avg+=comment.score;
+              })
+              novel.avg=avg/len;
+            } else {
+              novel.avg=0;
+            }
           })
-          this.novel.avg=avg/len;
-        } else {
-          this.novel.avg='未评分';
         }
       }
     })

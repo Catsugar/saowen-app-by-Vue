@@ -185,16 +185,16 @@ var _underscore=require('underscore');
 //搜索页
   exports.result=function(req,res){
     if(req.session){
-      var _user =req.session.user;
+      var _user =req.params.user;
     }else{
       var _user =undefined;
     }
-    var KEY = req.query.key;
+    var KEY = req.params.key;
     novels.find({$or: [{'name': { $regex: KEY, $options: 'i' }}, {'tags': { $regex: KEY, $options: 'i' }}]})
     .populate('author').populate('comments').sort({'meta.updateAt': -1}).exec(function(err, allnovels) {  
       if(err){console.log(err);} 
       authors.find({$or: [{'name': { $regex: KEY, $options: 'i' }}]})
-      .populate({path:'novels', populate:[{path:'author'},{path:'comments'}]}).sort({'meta.updateAt': -1}).exec(function(err, authors) {
+      .populate({path:'novels', populate:[{path:'author'},{path:'comments'}]}).sort({'meta.updateAt': -1}).exec(function(err, allauthors) {
         if(err){console.log(err);} 
         allauthors.forEach(function(author){
           author.novels.forEach(function(novel){
