@@ -49,15 +49,21 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 * –¥∫√¡ÀΩÁ√Ê
 
 ‘§¿¿1<br>
-![ΩÿÕº1](https://catsugar.github.io/pics/5-1.png)<br>
+![ΩÿÕº1](https://catsugar.github.io/pics/5-1.png)
 ‘§¿¿2<br>
 ![ΩÿÕº1](https://catsugar.github.io/pics/5-2.png)<br>
 ‘§¿¿3<br>
-![ΩÿÕº1](https://catsugar.github.io/pics/5-3.png)<br>
+![ΩÿÕº1](https://catsugar.github.io/pics/5-3.png)
 ‘§¿¿4<br>
 ![ΩÿÕº1](https://catsugar.github.io/pics/5-4.png)<br>
 ‘§¿¿5<br>
-![ΩÿÕº1](https://catsugar.github.io/pics/5-5.png)<br>
+![ΩÿÕº1](https://catsugar.github.io/pics/5-5.png)
+‘§¿¿6<br>
+![ΩÿÕº1](https://catsugar.github.io/pics/5-6.png)<br>
+‘§¿¿7<br>
+![ΩÿÕº1](https://catsugar.github.io/pics/5-7.png)
+‘§¿¿8<br>
+![ΩÿÕº1](https://catsugar.github.io/pics/5-8.png)<br>
 
 ***
 
