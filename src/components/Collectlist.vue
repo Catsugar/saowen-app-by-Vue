@@ -24,6 +24,8 @@
 
 <script>
 const ERR_OK=0;
+const Purl='background-image:url(/static/';//设定开发时图片的母路径
+//const Purl='background-image:url(/47.95.114.86/';//实际上线时
 export default {
   data(){
     return {
@@ -40,7 +42,7 @@ export default {
         this._user=response._user;
         this.collections.forEach(function(collection){
           //图片地址加载
-          collection.cover = 'background-image:url(/static/'+collection.cover+')';
+          collection.cover = Purl+collection.cover+')';
         })
       }
     })

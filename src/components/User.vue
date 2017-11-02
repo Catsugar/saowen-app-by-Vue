@@ -61,6 +61,8 @@
 
 <script>
 const ERR_OK=0;
+const Purl='background-image:url(/static/';//设定开发时图片的母路径
+//const Purl='background-image:url(/47.95.114.86/';//实际上线时
 export default {
   data(){
     return {
@@ -79,7 +81,7 @@ export default {
         this.tips=['label-default', 'label-primary', 'label-success', 'label-info', 'label-warning', 'label-danger'];
         this.user=response.user;
         this._user=response._user;
-        this.user.photo = 'background-image:url(/static/'+this.user.photo+')';
+        this.user.photo = Purl+this.user.photo+')';
         if (this.user.editnovel!==[]){
           this.user.editnovel.forEach(function(novel){
             var avg=0;

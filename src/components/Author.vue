@@ -5,6 +5,7 @@
       <h1><b>{{author.name}}</b></h1>&nbsp;&nbsp;&nbsp;&nbsp;
       共<b>{{author.look}}</b>人查看&nbsp;&nbsp;
       共<i>{{author.loved.length}}</i>人收藏
+      <hr>
       <h3><b>简介</b></h3>
       <p>{{author.description}}</p>
     </div>
@@ -44,7 +45,7 @@ export default {
     Star: Star
   },
   created(){
-    var id='a000006';
+    var id=this.$route.params.id;
     this.$http.get('/api/author/'+id).then((response) => {
       response = response.body;
       if (response.errno===ERR_OK){

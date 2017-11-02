@@ -40,7 +40,6 @@
     <Lovebox :collects="novel.collects" v-show="show"></Lovebox>  
   </div>
 </template>
-
 <script>
 import Commentbox from './Commentbox.vue';
 import Tagbox from './Tagbox.vue';
@@ -64,8 +63,7 @@ export default {
   },
   created(){
     var avg=0;
-    var id='n000012';
-    console.log(id);
+    var id=this.$route.params.id;
     this.$http.get('/api/novel/'+id).then((response) => {
       response = response.body;
       if (response.errno===ERR_OK){

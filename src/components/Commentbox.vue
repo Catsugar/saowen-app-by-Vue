@@ -1,26 +1,54 @@
 <template>
-  <div class="commentbox">
-        状态：<input type="radio" name="state" class="state"  id="state-1"><label for="state-1" type="button" class="btn btn-sm btn-default">想看</label>
-           <input type="radio" name="state" class="state"  id="state-2"><label for="state-2" type="button" class="btn btn-sm btn-default">再看</label>
-           <input type="radio" name="state" class="state"  id="state-3"><label for="state-3" type="button" class="btn btn-sm btn-default">看过</label>
-           <input type="radio" name="state" class="state"  id="state-4"><label for="state-4" type="button" class="btn btn-sm btn-default">搁置</label>
-           <input type="radio" name="state" class="state"  id="state-5"><label for="state-5" type="button" class="btn btn-sm btn-default">抛弃</label><br>
-      打分：
-      <span class="scorebox">
-        <span class="reduction" v-on:click="changeNum(score,-1)">-</span>
-        <span class="select_input" >
-          <input type="text"  v-model="score">
-        </span>
-        <span class="plus" v-on:click="changeNum(score,1)">+</span>
-      </span>
-      <br>
-      添加标签：<input type="text"><button type="button" class="btn btn-danger btn-sm">确定</button>
-      <textarea ></textarea>
-      <button type="button" class="btn btn-danger pull-right btn-sm commentbtn">评论</button>
+<div class="commentbox">
+  <div class="commenttitle">
+    <h3>评一下吧</h3>  
+    <span class="pull-right" id="add">取消</span>
+    <span class="pull-right" id="sure">确定</span>
   </div>
+  <div class="commentcontent">
+  <table>
+    <tr>
+      <td>添加tag：</td>
+      <td>
+         <input type="text">
+      </td>
+    </tr>     
+    <tr>
+      <td>评个分：</td>
+      <td>
+        <span class="scorebox">
+          <span class="reduction" v-on:click="changeNum(score,-1)">-</span>
+          <span class="select_input" >
+          <input type="text"  v-model="score">
+          </span>
+          <span class="plus" v-on:click="changeNum(score,1)">+</span>
+        </span>
+      </td>
+    </tr> 
+    <tr>   
+      <td>我的状态：</td>
+      <td>
+        <input type="radio" name="state" class="state"  id="state-1"><label for="state-1" type="button" class="btn btn-sm btn-default">想看</label>
+        <input type="radio" name="state" class="state"  id="state-2"><label for="state-2" type="button" class="btn btn-sm btn-default">再看</label>
+        <input type="radio" name="state" class="state"  id="state-3"><label for="state-3" type="button" class="btn btn-sm btn-default">看过</label>
+        <input type="radio" name="state" class="state"  id="state-4"><label for="state-4" type="button" class="btn btn-sm btn-default">搁置</label>
+        <input type="radio" name="state" class="state"  id="state-5"><label for="state-5" type="button" class="btn btn-sm btn-default">抛弃</label>     
+      </td>
+    </tr>
+    <tr>   
+      <td colspan="2" align="center"><textarea ></textarea></td>
+    </tr>
+  </table>
+  </div>
+</div>
 </template>
 <script>
 export default {
+  props: {
+    collects: {
+      type: Array
+    }
+  },
   data(){
     return {
 
@@ -40,6 +68,43 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.commentbox {
+  width: 100%;
+  height:0;
+  overflow:hidden;
+  transition: height .5s;
+  position: fixed;
+  border-top:1px solid #AAA9A7;
+  color:#000;
+  left: 0;
+  bottom:50px;
+  background-color:rgba(255,255,255,0.9);
+  border-bottom-right-radius:0.25em;
+  border-bottom-left-radius:0.25em;}
+.commenttitle{
+  background-color: #333;
+  line-height:40px;
+  height:40px;}
+.commenttitle h3{
+  font-weight:bold;
+  padding-left: 5%;
+  color:#fff; 
+  display: inline-block;}
+.commenttitle span{
+  padding-right: 5%;
+  color:#fff; 
+  line-height:40px;
+  height:40px;
+  font-size: 14px;
+  font-weight: normal;}
+.commentcontent{
+  width: 100%;
+  padding:5%;
+font-size: 14px;}
+.commentcontent table{
+  width: 100%}
+.commentcontent table tr{
+  padding: 0 0.5rem}
 /********实现切换效果**********/
 .state{
   display:none;}

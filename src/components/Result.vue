@@ -37,12 +37,13 @@ export default {
     Star: Star
   },
   created(){
-    var key='狗血';
+    var key=this.$route.params.key;
     this.$http.get('/api/result/'+key).then((response) => {
       response = response.body;
       if (response.errno===ERR_OK){
         this.allnovels=response.allnovels;
         this._user=response._user;
+        console.log(this.allnovels);
         if (this.allnovels!==[]){
           this.allnovels.forEach(function(novel){
             if (novel.comments!==[]){

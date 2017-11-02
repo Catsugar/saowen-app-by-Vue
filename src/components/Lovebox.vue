@@ -1,13 +1,17 @@
 <template>
 <div class="wendan" id="wendan">
-    <h3>我的扫文单</h3>
+    <div class="wendantitle">
+	    <h3>我的扫文单</h3>  
+	    <span class="pull-right" id="add">取消</span>
+	    <span class="pull-right" id="sure">确定</span>
+    </div>
     <ul>
-      <li v-for="(collect, index) in collects":key="collect"><input type="radio" :id="index" checked>
-        <label :for="index">{{collect.name}}</label>
-        <span>共{{collect.novels.length}}篇</span>
+      <li v-for="(collect, index) in collects":key="collect"><input type="radio" :id="index">
+        <label :for="index">{{collect.name}}<span>共{{collect.novels.length}}篇</span></label>
       </li>
-    <button class="btn btn-default btn-xs pull-left" id="sure">确定</button>
-    <button class="btn btn-default btn-xs pull-right" id="add">取消</button>     
+      <li>
+        <label>新建扫文单<span class="iconfont icon-more4"></span></label> 
+      </li>  
     </ul>
 </div>
 </template>
@@ -27,37 +31,59 @@ export default {
 /****歌曲列表******/
 .wendan {
 	width: 100%;
-	height:300px;
+	height:0;
 	overflow:hidden;
     transition: height .5s;
 	position: fixed;
 	border-top:1px solid #AAA9A7;
 	color:#000;
 	left: 0;
-	bottom:0;
-	background-color:rgba(240,240,240,0.7);
+	bottom:50px;
+	background-color:rgba(255,255,255,0.9);
 	border-bottom-right-radius:0.25em;
 	border-bottom-left-radius:0.25em;}
-.wendan h3{
-	text-align:center;
-	line-height:50px;
-	height:50px;}
-.wendan ul{width:100%;padding: 5%;}
+.wendantitle{
+	background-color: #333;
+	line-height:40px;
+	height:40px;}
+.wendantitle h3{
+	font-weight:bold;
+	padding-left: 5%;
+	color:#fff;	
+	display: inline-block;}
+.wendantitle span{
+	padding-right: 5%;
+	color:#fff;	
+	line-height:40px;
+	height:40px;
+	font-size: 14px;
+	font-weight: normal;}
+.wendan ul{width:100%;}
 .wendan ul li{
 	width:100%;
 	font:14px/30px "微软雅黑";
 	height:30px;
-	list-style:inside;
-	border-bottom:1px solid #AAA9A7;}
-.wendan ul li label{text-decoration:none;color:#000;}
+	border-top:1px solid #AAA9A7;
+}
+.wendan ul li label{
+	text-decoration:none;
+	color:#333;
+	width: 100%;
+	padding-left: 5%;
+}
 .wendan ul li input{display:none;}
 .wendan ul li label:hover,.wendan ul li input:checked+label{	
     text-decoration:none;
 	color:#FF3736;
-	font-weight:bold;}
+	font-weight:bold;
+    background-color: rgba(230,230,230,1);}
 .wendan ul li span{	
     text-decoration:none;
 	color:#333;
 	font:12px/30px "微软雅黑";
-	float:right;}
+	float:right;
+    margin-right: 1rem;}
+.wendan .iconfont{
+	font:22px/30px "微软雅黑";
+}
 </style>

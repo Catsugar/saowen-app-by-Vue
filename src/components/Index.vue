@@ -31,6 +31,8 @@
 <script>
 import Tagbox from './Tagbox.vue';
 const ERR_OK=0;
+const Purl='background-image:url(/static/';//设定开发时图片的母路径
+//const Purl='background-image:url(/47.95.114.86/';//实际上线时
 var moment = require('moment');
 export default {
   data(){
@@ -50,7 +52,7 @@ export default {
         this._user=response._user;
         this.comments.forEach(function(comment){
           //图片地址加载
-          comment.userID.photo = 'background-image:url(/static/'+comment.userID.photo+')';
+          comment.userID.photo = Purl+comment.userID.photo+')';
           //时间格式话
           comment.meta.updateAt = moment(comment.meta.updateAt).format('YYYY/DD/MM     hh:mm:ss');
         })

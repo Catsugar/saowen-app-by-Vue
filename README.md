@@ -51,20 +51,19 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 т╓юю1<br>
 ![╫ьм╪1](https://catsugar.github.io/pics/5-1.png)
 т╓юю2<br>
-![╫ьм╪1](https://catsugar.github.io/pics/5-2.png)<br>
+![╫ьм╪1](https://catsugar.github.io/pics/5-2.png)
 т╓юю3<br>
 ![╫ьм╪1](https://catsugar.github.io/pics/5-3.png)
 т╓юю4<br>
-![╫ьм╪1](https://catsugar.github.io/pics/5-4.png)<br>
+![╫ьм╪1](https://catsugar.github.io/pics/5-4.png)
 т╓юю5<br>
 ![╫ьм╪1](https://catsugar.github.io/pics/5-5.png)
 т╓юю6<br>
-![╫ьм╪1](https://catsugar.github.io/pics/5-6.png)<br>
+![╫ьм╪1](https://catsugar.github.io/pics/5-6.png)
 т╓юю7<br>
 ![╫ьм╪1](https://catsugar.github.io/pics/5-7.png)
 т╓юю8<br>
 ![╫ьм╪1](https://catsugar.github.io/pics/5-8.png)<br>
-
 ***
 
 

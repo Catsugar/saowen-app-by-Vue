@@ -73,7 +73,7 @@ export default new Router({
       component: Search
     },
     {
-      path: '/result',
+      path: '/result/:key',
       name: 'Result',
       component: Result
     }

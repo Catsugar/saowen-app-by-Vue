@@ -1,6 +1,6 @@
 <template>
 <div>
-<router-link :to="'/result?key='+tag" v-for="(tag,index) in tags":key="tag" :class="['label', tips[index%6]]" >{{tag}}</router-link>
+<router-link :to="'/result/'+tag" v-for="(tag,index) in tags":key="tag" :class="['label', tips[index%6]]" >{{tag}}</router-link>
 </div>
 </template>
 <script>
