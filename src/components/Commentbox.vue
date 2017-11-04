@@ -10,19 +10,17 @@
     <tr>
       <td>添加tag：</td>
       <td>
-         <input type="text">
+         <input type="text" class="tag_input">
       </td>
     </tr>     
     <tr>
       <td>评个分：</td>
       <td>
-        <span class="scorebox">
-          <span class="reduction" v-on:click="changeNum(score,-1)">-</span>
-          <span class="select_input" >
-          <input type="text"  v-model="score">
-          </span>
-          <span class="plus" v-on:click="changeNum(score,1)">+</span>
-        </span>
+        <div class="scorebox">
+          <span class="reduction pull-left" v-on:click="changeNum(score,-1)">-</span>
+          <span type="text"  class="score_value" v-model="score">9</span>
+          <span class="plus pull-right" v-on:click="changeNum(score,1)">+</span>
+        </div>
       </td>
     </tr> 
     <tr>   
@@ -35,10 +33,8 @@
         <input type="radio" name="state" class="state"  id="state-5"><label for="state-5" type="button" class="btn btn-sm btn-default">抛弃</label>     
       </td>
     </tr>
-    <tr>   
-      <td colspan="2" align="center"><textarea ></textarea></td>
-    </tr>
   </table>
+  <textarea ></textarea>
   </div>
 </div>
 </template>
@@ -69,30 +65,26 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .commentbox {
+  padding-top: 100px;
   width: 100%;
-  height:0;
+  height:100%;
   overflow:hidden;
-  transition: height .5s;
   position: fixed;
   border-top:1px solid #AAA9A7;
   color:#000;
   left: 0;
-  bottom:50px;
-  background-color:rgba(255,255,255,0.9);
-  border-bottom-right-radius:0.25em;
-  border-bottom-left-radius:0.25em;}
+  bottom:-50px;
+  background-color:#fff;}
 .commenttitle{
-  background-color: #333;
   line-height:40px;
-  height:40px;}
+  height:40px;
+  border-bottom: 1px dotted #aaa;}
 .commenttitle h3{
   font-weight:bold;
   padding-left: 5%;
-  color:#fff; 
   display: inline-block;}
 .commenttitle span{
   padding-right: 5%;
-  color:#fff; 
   line-height:40px;
   height:40px;
   font-size: 14px;
@@ -100,11 +92,19 @@ export default {
 .commentcontent{
   width: 100%;
   padding:5%;
-font-size: 14px;}
+  font-size: 14px;}
 .commentcontent table{
   width: 100%}
 .commentcontent table tr{
-  padding: 0 0.5rem}
+  padding: 10px 0;
+  line-height: 40px;
+  height:40px;
+}
+.tag_input{
+  border:1px solid #ccc;
+  height: 28px;
+  line-height: 28px;
+}
 /********实现切换效果**********/
 .state{
   display:none;}
@@ -119,30 +119,28 @@ font-size: 14px;}
 textarea{
   width:100%;
   height:auto;
-  min-height:80px;
-  margin-bottom:10px;}
+  min-height:100px;
+  margin-top:20px;
+border:#ccc solid 1px;}
 .scorebox{
   height:100%;
-  width:136px;}
-.reduction,.plus{
-  height:28px;
-  line-height:28px;
-  text-align:center;
-  width:15px;
-  background-color:#f5f5f5;
+  width: 80px;
   border:#ccc solid 1px;
-  display: inline-block;}
-.select_input{
-  height:28px;
-  line-height:28px;
-  border-top:#ccc solid 1px;
-  border-bottom:#ccc solid 1px;
-  width:50px;
-  background-color:#fff;}
-.select_input input{
-  text-align:center;
-  width:50px;
-  height:28px;
-  line-height:28px;}
+  line-height: 28px;
+text-align:center;}
+.reduction{border-right:#ccc solid 1px;}
+.plus{border-left:#ccc solid 1px;}
+.reduction,.plus{
+  height:100%;
+  font-size: 18px;
+  width:20px;
+  line-height: 28px;
+  background-color:#f5f5f5;
+  display: inline-block;
+}
+.score_value{
+  height:100%;
+}
+
 .commentbtn{margin-right:1rem;}
 </style>

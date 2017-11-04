@@ -155,7 +155,6 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	background-color:#FFF;
 	border-bottom:1px solid #999;
 	border-top:1px solid #999;}
-
 .home hr{
 	border-top:1px dotted #aaa;
 	padding:0;
@@ -309,14 +308,13 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	color:#999;}
 
 /***************小说页***************/
-.novel-box{
-    border-bottom:1px solid #999;
-}
+.novel-box,.love-box{box-shadow: 0px 0px 4px rgba(0,0,0,0.3);}
 .novel-box,.commentlist, .collection-box li,.authorlist-box li{
 	padding:20px;
 	font-size:13px;
 	color:#666;
 	position:relative;}
+.novel-box{margin-top:-10px;}
 .love-box{padding-top:20px;}
 .novel-box h1{
 	font-size:2rem;
@@ -373,7 +371,8 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 .commentlist li, .commentlist li a,.commentlist li img{vertical-align:baseline;}
 /******小说页*****/
 .novellist-box li:first-child{
-	border-top:1px solid #999;}
+	border-top:1px solid #999;
+border-bottom:1px solid #999;}
 .novellist-box li{
     border-bottom:1px solid #999;
 	padding:20px;

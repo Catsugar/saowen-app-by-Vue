@@ -1,8 +1,8 @@
 <template>
   <div class="content">
     <div class="novel-box">
-      <span type="button" class="btn btn-warning btn-xs pull-right">加入扫文单</span>
-      <span type="button" class="btn btn-danger btn-xs pull-right">评论</span>
+      <span type="button" class="btn btn-warning btn-xs pull-right" v-on:click="showLovebox">加入扫文单</span>
+      <span type="button" class="btn btn-danger btn-xs pull-right" v-on:click="showCommentbox">评论</span>
       <h1>{{novel.name}}</h1>
       &nbsp;&nbsp;作者：
       <router-link :to="'/author/'+novel.author.id" class="author" style='font-size: 14px'>{{novel.author.name}}</router-link><br>
@@ -36,8 +36,12 @@
         </li>
       </ul>
     </div>
-    <Commentbox v-show="show"></Commentbox>
-    <Lovebox :collects="novel.collects" v-show="show"></Lovebox>  
+    <transition name="fold">
+    <Commentbox class="move" v-show="commentshow"></Commentbox>
+    </transition>
+    <transition name="fold">
+    <Lovebox :collects="novel.collects" class="move" v-show="loveshow"></Lovebox>  
+    </transition>
   </div>
 </template>
 <script>
@@ -52,7 +56,8 @@ export default {
     return {
       novel: {},
       _user: {},
-      show: true
+      commentshow: false,
+      loveshow: false
     }
   },
   components: {
@@ -60,6 +65,22 @@ export default {
     Tagbox: Tagbox,
     Lovebox: Lovebox,
     Star: Star
+  },
+  methods: {
+    showLovebox ( ) {
+      this.loveshow = true;
+      this.commentshow = false;
+    },
+    showCommentbox ( ) {
+      this.commentshow = true;
+      this.loveshow = false;
+    },
+    closeLovebox ( ) {
+      this.loveshow = false;
+    },
+    closeCommentbox ( ) {
+      this.commentshow = false;
+    }
   },
   created(){
     var avg=0;
@@ -91,5 +112,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+/*动画*/
+.move {
+    transform: translate3d(0, -100px, 0);
+}
+.fold-enter-active, .fold-leave-active {
+    transition: all 1s;
+}
+.fold-enter, .fold-leave-active {
+    transform: translate3d(0, 0, 100px);
+}
 </style>

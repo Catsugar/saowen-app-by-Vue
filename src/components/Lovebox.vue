@@ -18,9 +18,20 @@
 
 <script>
 export default {
+  data(){
+    return {
+      loveshow: false
+    }
+  },
   props: {
     collects: {
       type: Array
+    },
+    loveshow: false
+  },
+  methods: {
+    closeLovebox ( ) {
+      this.loveshow = false;
     }
   }
 }
@@ -31,29 +42,27 @@ export default {
 /****歌曲列表******/
 .wendan {
 	width: 100%;
-	height:0;
 	overflow:hidden;
-    transition: height .5s;
 	position: fixed;
 	border-top:1px solid #AAA9A7;
 	color:#000;
 	left: 0;
-	bottom:50px;
+	bottom:-50px;
 	background-color:rgba(255,255,255,0.9);
 	border-bottom-right-radius:0.25em;
 	border-bottom-left-radius:0.25em;}
 .wendantitle{
-	background-color: #333;
+    box-shadow: 0 0 10px #000;
 	line-height:40px;
-	height:40px;}
+	height:40px;
+	background-color: #ffc;
+}
 .wendantitle h3{
 	font-weight:bold;
 	padding-left: 5%;
-	color:#fff;	
 	display: inline-block;}
 .wendantitle span{
-	padding-right: 5%;
-	color:#fff;	
+	padding-right: 5%;	
 	line-height:40px;
 	height:40px;
 	font-size: 14px;

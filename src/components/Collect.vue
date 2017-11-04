@@ -104,7 +104,7 @@ transition:all ease 1s;}
 .collect-box p{
   width: 100%;
   height: 40px;
-  background-color:rgba(180,180,180,0.5);
+  background-color:rgba(180,180,180,0.7);
   color:#fff;
   position: absolute;
   bottom:-5px;
@@ -123,5 +123,4 @@ transition:all ease 1s;}
   z-index: 100}
 .collect-box button{margin-top: 15px;}
 .novel-box{margin-top: -5px;}
-
 </style>

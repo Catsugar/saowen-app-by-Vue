@@ -71,9 +71,8 @@ export default {
       tips: []
     }
   },
-  props: ['id'],
   created(){
-    var id='u000000';
+    var id=this.$route.params.id;
     this.$http.get('/api/user/'+id).then((response) => {
       response = response.body;
       console.log(response);
