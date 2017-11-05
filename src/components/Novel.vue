@@ -42,10 +42,14 @@
     <transition name="fold">
     <Lovebox :collects="novel.collects" class="move" v-show="loveshow"></Lovebox>  
     </transition>
+    <transition name="fold">
+    <Infobox class="move" v-show="alertshow"></Infobox>
+    </transition>
   </div>
 </template>
 <script>
 import Commentbox from './Commentbox.vue';
+import Infobox from './Infobox.vue';
 import Tagbox from './Tagbox.vue';
 import Lovebox from './Lovebox.vue';
 import Star from './Star.vue';
@@ -64,6 +68,7 @@ export default {
     Commentbox: Commentbox,
     Tagbox: Tagbox,
     Lovebox: Lovebox,
+    Infobox: Infobox,
     Star: Star
   },
   methods: {

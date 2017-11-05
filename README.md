@@ -1,7 +1,10 @@
 # saowen-app-by-Vue
 >仿扫文小院
->隔壁的代码改的，比较简单粗暴。
->移动端界面
+
+>后端服务器跟隔壁一样，这里主要联系前端Vue的使用。
+
+>移动端界面，界面是我自己瞎倒腾的。
+
 >所有素材来自网络，仅供个人学习和练习使用
 
 ***
@@ -12,7 +15,7 @@
 ## [代码地址](https://github.com/Catsugar/saowen-web-by-Nodejs)
 
 ### 用到的技术栈
-Nodejs+mongodb+Vue.js+webpack
+Nodejs+mongodb+Vue.js+vue-router+vuex
 
 ### Build Setup
 
@@ -63,9 +66,11 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 预览7<br>
 ![截图1](https://catsugar.github.io/pics/5-7.png)
 预览8<br>
-![截图1](https://catsugar.github.io/pics/5-8.png)<br>
-***
+![截图1](https://catsugar.github.io/pics/5-8.png)
 
+* 数据渲染完成
+
+***
 
 >下面仍旧是杂七杂八的笔记。
 
@@ -80,8 +85,8 @@ vue init webpack  (your project name)
 
 ```
 cd (your project name)
-cnpm install
-cnpm run dev
+npm install
+npm run dev
 
 访问 http://localhost:3000
 ```
