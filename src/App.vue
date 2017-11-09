@@ -13,7 +13,6 @@
       </ul>
     </div>
     <myCover v-show="show"></myCover>
-    <myLogin v-show="show"></myLogin>
   </div>
   </template>
 
@@ -21,7 +20,7 @@
 import {mapState} from 'vuex'
 import Header from './components/Header.vue'
 import Cover from './components/Cover.vue'
-import Login from './components/Login.vue'
+
 export default {
   name: 'app',
   data(){
@@ -36,8 +35,7 @@ export default {
   },
   components: {
     myHeader: Header,
-    myCover: Cover,
-    myLogin: Login
+    myCover: Cover
   }
 }
 </script>

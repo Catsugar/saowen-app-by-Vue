@@ -21,41 +21,6 @@ a:link,a:hover,a:active,a:visited{text-decoration:none;}
     font-size: 12px;}
 .label:hover{ opacity:0.6}   
 .label:visited{color:#fff}
-/**************封面****************/
-.cover{
-	width: 100%;
-	height: 100%;
-	z-index: 600;}
-.login{
-	width: 100%;
-	height: 100%;
-	z-index: 500;}
-.logo{
-	height:40%;
-	margin: auto;  
-    position: absolute;  
-    top: 0; left: 0; bottom: 0; right: 0;  }
-.cover img{
-	height:100%;
-	animation: cat 1s ease alternate infinite;
-    -webkit-animation: cat 1s ease alternate infinite;}
-.copyright{
-	position: absolute;
-	bottom:2rem;
-	width:100%;}
-.copyright h3{
-	font-size:2rem;
-	line-height:3rem;
-	text-align:center;
-	font-weight:bold;}
-.copyright p{
-	font-size:1.25rem;
-	text-align:center;}
-@-webkit-keyframes cat {
-0%{box-shadow: 0 0 0.2rem rgba(0,0,0,0.5);}
-to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
-}
-
 /***************页头*******************/
 .header ul{
   	position: fixed;
@@ -70,12 +35,12 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	background-color:rgb(39, 39, 41);
 	border-bottom: 1px solid #040000;
 	box-shadow: 0 0.25rem 0.25rem rgba(0,0,0,0.5);
-	z-index:300;}
+	z-index:3;}
 .header ul li,.header ul li h3,.header ul li i{color:#fff;height: 40px;line-height:40px;}
 .header ul li h3{font-weight:bold;}
 .header i{padding:10px;font-size:24px;}
 /**************页脚****************/
-.footer{z-index: 400}
+.footer{z-index: 4}
 .footer ul{
   	position: fixed;
   	width:100%;
@@ -99,7 +64,7 @@ to{box-shadow: 0 0 2rem rgba(0,0,0,0.5);}
 	min-height:100% !important;
 	height:auto;
 	font-size:14px;
-	z-index: 200
+	z-index: 2
 }
 /**************首页****************/
 .home li{
