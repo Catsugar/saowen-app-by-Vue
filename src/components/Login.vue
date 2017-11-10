@@ -10,18 +10,18 @@
 	  <div class="tab-pane fade in active" id="login-in">
 	    <i class="iconfont icon-wode1"></i><input type="text" placeholder="用户名" >
       <i class="iconfont icon-quanxian"></i><input type="password" placeholder="密码" >
-	    <div>
-        <button type="button" v-on:click="Login" class="btn btn-default">登录</button>
-        <button type="button" v-on:click="clean" class="btn btn-danger" >取消</button>
+	    <div class="login-btnbox">
+        <button type="button" v-on:click="Login" class="btn btn-default pull-left">登录</button>
+        <button type="button" v-on:click="clean" class="btn btn-danger pull-right" >取消</button>
       </div>
 	  </div>
     <div class="tab-pane fade" id="login-up">
 	    <i class="iconfont icon-youxiang"></i><input type="text"  placeholder="邮箱" ><br>
       <i class="iconfont icon-wode1"></i><input type="text"  placeholder="用户名" ><br>
       <i class="iconfont icon-quanxian"></i><input type="password"  placeholder="密码" ><br>
-	    <div>
-        <button type="button" v-on:click="register" class="btn btn-default">注册</button>
-        <button type="button" v-on:click="clean" class="btn btn-danger">取消</button>
+	    <div class="login-btnbox">
+        <button type="button" v-on:click="register" class="btn btn-default pull-left">注册</button>
+        <button type="button" v-on:click="clean" class="btn btn-danger pull-right">取消</button>
       </div>
 	  </div>
   </div>
@@ -56,6 +56,16 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 /**************注册与登录****************/
+.login{
+  position: fixed;
+  top:40px;
+  left: 0px;
+  right:0px;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.4);
+  background-color:rgb(239,238,235); }
 .login-btn{
   display: -webkit-flex;
   display: flex;
@@ -63,11 +73,14 @@ export default {
   justify-content:flex-start;}
 .login li i{padding:10px 20px;font-size:24px;line-height:40px;}
 .login ul li,{height: 40px;line-height:40px;}
-.login-content <div {
+.login-content < div{
+  width:86%;
+  margin-left:7%;
+  margin-top:20px;
   display: -webkit-flex;
   display: flex;
-  
-}
+  flex-flow: row nowrap;  
+  justify-content:space-between;}
 .login-content input{
   width:86%;
   height:36px;
@@ -83,15 +96,11 @@ export default {
   position:absolute;
   margin-top:25px;
   padding-left:10%;}
-.login-content div{
-  width:86%;
-  margin-left:7%;
-  margin-top:20px;
-  display: -webkit-flex;
-  display: flex;
-  flex-flow: row nowrap;  
-  justify-content:space-between;}
-.login-content div button{
+.login-btnbox{
+  width: 86%;
+  margin:20px auto;
+}
+.login-btnbox button{
   width:40%}
 
 </style>

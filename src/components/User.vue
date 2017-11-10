@@ -125,7 +125,7 @@ export default {
 <style scoped>
 /*动画*/
 .move {
-  transform: translate3d(0,0, 0);
+  transform: translate3d(0,0,0);
 }
 .fold-enter-active, .fold-leave-active {
   transition: all 1s;
