@@ -1,39 +1,39 @@
 <template>
   <div class="content search-content">
     <form>
-      <input type="text" class="search center-block" placeholder="搜索作者、作品或者标签" id="search">
-      <button type="submit" class="iconfont icon-sousuo searchbtn"></button>
+      <input type="text" class="search center-block" placeholder="搜索作者、作品或者标签" id="search"  v-model="searchtag">
+      <router-link :to="'/result/'+searchtag" class="iconfont icon-sousuo searchbtn"> 
+      </router-link>
     </form>
     <h3><b>热门tag</b></h3>
     <div class="tag-box">
-      <span><router-link :to="'/result?key='+tag" class="label label-default">文笔好</router-link></span> 
-      <span><router-link :to="'/result?key='+tag" class="label label-default">狗血</router-link></span>
-      <span><router-link :to="'/result?key='+tag" class="label label-default">年下</router-link></span>
-      <span><router-link :to="'/result?key='+tag" class="label label-default">搞笑</router-link></span>
-      <span><router-link :to="'/result?key='+tag" class="label label-default">校园</router-link></span>
-      <span><router-link :to="'/result?key='+tag" class="label label-default">生子</router-link></span>   
-      <span><router-link :to="'/result?key='+tag" class="label label-default">古风</router-link></span>
-      <span><router-link :to="'/result?key='+tag" class="label label-default">强强</router-link></span>
-      <span><router-link :to="'/result?key='+tag" class="label label-default">虐</router-link></span>   
-      <span><router-link :to="'/result?key='+tag" class="label label-default">he</router-link></span>
-      <span><router-link :to="'/result?key='+tag" class="label label-default">短篇</router-link></span>
-      <span><router-link :to="'/result?key='+tag" class="label label-default">脑洞</router-link></span>   
-      <span><router-link :to="'/result?key='+tag" class="label label-default">文笔好</router-link></span> 
-      <span><router-link :to="'/result?key='+tag" class="label label-default">娱乐圈</router-link></span> 
-      <span><router-link :to="'/result?key='+tag" class="label label-default">奇幻</router-link></span>
-      <span><router-link :to="'/result?key='+tag" class="label label-default">主攻</router-link></span>
-      <span><router-link :to="'/result?key='+tag" class="label label-default">1V1</router-link></span> 
-      <span><router-link :to="'/result?key='+tag" class="label label-default">重生</router-link></span>   
+      <span><router-link :to="'/result/文笔好'" class="label label-default">文笔好</router-link></span> 
+      <span><router-link :to="'/result/狗血'" class="label label-default">狗血</router-link></span>
+      <span><router-link :to="'/result/年下'" class="label label-default">年下</router-link></span>
+      <span><router-link :to="'/result/搞笑'" class="label label-default">搞笑</router-link></span>
+      <span><router-link :to="'/result/校园'" class="label label-default">校园</router-link></span>
+      <span><router-link :to="'/result/生子'" class="label label-default">生子</router-link></span>   
+      <span><router-link :to="'/result/古风'" class="label label-default">古风</router-link></span>
+      <span><router-link :to="'/result/强强'" class="label label-default">强强</router-link></span>
+      <span><router-link :to="'/result/虐'" class="label label-default">虐</router-link></span>   
+      <span><router-link :to="'/result/he'" class="label label-default">he</router-link></span>
+      <span><router-link :to="'/result/短篇'" class="label label-default">短篇</router-link></span>
+      <span><router-link :to="'/result/脑洞'" class="label label-default">脑洞</router-link></span>   
+      <span><router-link :to="'/result/文笔好'" class="label label-default">文笔好</router-link></span> 
+      <span><router-link :to="'/result/娱乐圈'" class="label label-default">娱乐圈</router-link></span> 
+      <span><router-link :to="'/result/奇幻'" class="label label-default">奇幻</router-link></span>
+      <span><router-link :to="'/result/主攻'" class="label label-default">主攻</router-link></span>
+      <span><router-link :to="'/result/1V1'" class="label label-default">1V1</router-link></span> 
+      <span><router-link :to="'/result/重生'" class="label label-default">重生</router-link></span>   
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'hello',
   data () {
     return {
-      msg: '打板单'
+      searchtag: ''
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="content author-content">
-    <h3><b>搜索结果：</b>&nbsp;&nbsp;&nbsp;&nbsp;共<i>{{novels.length}}</i>篇</h3>
+    <h3><b>搜索结果：</b>&nbsp;&nbsp;&nbsp;&nbsp;共{{allnovels.length}}篇</h3>
     <ul class="novellist-box">
         <li v-for="novel in allnovels">
            <router-link :to="'/novel/'+novel.id" class="title">{{novel.name}}</router-link>&nbsp;&nbsp;平均分：
@@ -27,7 +27,7 @@ const ERR_OK=0;
 export default {
   data(){
     return {
-      novels: {},
+      allnovels: [],
       _user: {},
       tips: []
     }
@@ -37,13 +37,12 @@ export default {
     Star: Star
   },
   created(){
-    var key=this.$route.params.key;
+    var key=this.$route.params.id;
     this.$http.get('/api/result/'+key).then((response) => {
       response = response.body;
       if (response.errno===ERR_OK){
         this.allnovels=response.allnovels;
         this._user=response._user;
-        console.log(this.allnovels);
         if (this.allnovels!==[]){
           this.allnovels.forEach(function(novel){
             if (novel.comments!==[]){

@@ -62,7 +62,7 @@ export default new Router({
       component: resolve => require(['@/components/Search.vue'], resolve)
     },
     {
-      path: '/result/:key',
+      path: '/result/:id',
       name: 'Result',
       component: resolve => require(['@/components/Result.vue'], resolve)
     }
