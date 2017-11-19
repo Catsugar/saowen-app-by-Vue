@@ -8,7 +8,7 @@
   </ul>
   <div id="myTabContent" class="login-content tab-content">
 	  <div class="tab-pane fade in active" id="login-in">
-	    <i class="iconfont icon-wode1"></i><input type="text" placeholder="用户名" >
+	    <i class="iconfont icon-wode1"></i><input type="text" placeholder="用户名" ><br>
       <i class="iconfont icon-quanxian"></i><input type="password" placeholder="密码" >
 	    <div class="login-btnbox">
         <button type="button" v-on:click="Login" class="btn btn-default pull-left">登录</button>
