@@ -50,7 +50,6 @@ export default {
       novelRanks: [],
       authorRanks: [],
       collectionRanks: [],
-      title: '',
       _user: {}
     }
   },

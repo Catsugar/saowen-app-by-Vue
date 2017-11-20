@@ -8,21 +8,25 @@
   </ul>
   <div id="myTabContent" class="login-content tab-content">
 	  <div class="tab-pane fade in active" id="login-in">
-	    <i class="iconfont icon-wode1"></i><input type="text" placeholder="用户名" ><br>
-      <i class="iconfont icon-quanxian"></i><input type="password" placeholder="密码" >
-	    <div class="login-btnbox">
-        <button type="button" v-on:click="Login" class="btn btn-default pull-left">登录</button>
-        <button type="button" v-on:click="clean" class="btn btn-danger pull-right" >取消</button>
-      </div>
+      <form action="" name="loginform">
+  	    <i class="iconfont icon-wode1"></i><input type="text" placeholder="用户名" v-model="login_username"><br>
+        <i class="iconfont icon-quanxian"></i><input type="password" placeholder="密码" v-model="login_password">
+  	    <div class="login-btnbox">
+          <button type="button" v-on:click="login" class="btn btn-default pull-left">登录</button>
+          <button type="button" v-on:click="clean" class="btn btn-danger pull-right" >取消</button>
+        </div>
+      </form>
 	  </div>
     <div class="tab-pane fade" id="login-up">
-	    <i class="iconfont icon-youxiang"></i><input type="text"  placeholder="邮箱" ><br>
-      <i class="iconfont icon-wode1"></i><input type="text"  placeholder="用户名" ><br>
-      <i class="iconfont icon-quanxian"></i><input type="password"  placeholder="密码" ><br>
-	    <div class="login-btnbox">
-        <button type="button" v-on:click="register" class="btn btn-default pull-left">注册</button>
-        <button type="button" v-on:click="clean" class="btn btn-danger pull-right">取消</button>
-      </div>
+      <form action="" name="registerform">
+  	    <i class="iconfont icon-youxiang"></i><input type="text"  placeholder="邮箱" v-model="register_email"><br>
+        <i class="iconfont icon-wode1"></i><input type="text"  placeholder="用户名" v-model="register_username"><br>
+        <i class="iconfont icon-quanxian"></i><input type="password"  placeholder="密码" v-model="register_password"><br>
+  	    <div class="login-btnbox">
+          <button type="button" v-on:click="register" class="btn btn-default pull-left">注册</button>
+          <button type="button" v-on:click="clean" class="btn btn-danger pull-right">取消</button>
+        </div>
+      </form>
 	  </div>
   </div>
 </div>
@@ -31,18 +35,61 @@
 <script>
 import {mapGetters} from 'vuex';
 export default {
+  data () {
+    return {
+      register_email: '',
+      register_username: '',
+      register_password: '',
+      login_username: '',
+      login_password: ''
+    }
+  },
   methods: {
-    Login: function(){
-      console.log('我是登录君····················');
+    //登录
+    login: function(){
+      var name = this.login_username
+      var password = this.login_password
+      console.log(this.login_username);
+      console.log(this.login_password);
+      if (name !== '' && password !== '') {
+        var data = {
+          name: name,
+          password: password
+        }
+        this.$store.dispatch('changedialoginfo', data)
+      } else {
+        this.$store.commit('changedialog')
+        this.$store.commit('changedialoginfo', '帐号密码不能为空')
+      }
     },
+    //注册
     register: function(){
-      console.log('我是注册妹子~~~~~~~~~~~');
+      var email = this.register_email
+      var name = this.register_username
+      var password = this.register_password
+      var src = './static/img/' + Math.ceil(Math.random() * 10) + '.jpg'
+      if (name !== '' && password !== '') {
+        var data = {
+          name: name,
+          password: password,
+          email: email,
+          src: src
+        }
+        this.$store.dispatch('registersubmit', data)
+      } else {
+        this.$store.commit('changedialog')
+        this.$store.commit('changedialoginfo', '帐号密码不能为空')
+      }
     },
     clean: function(){
-      console.log('我是注册妹子~~~~~~~~~~~');
+      this.register_email=''
+      this.register_username=''
+      this.register_password=''
+      this.login_username=''
+      this.login_password=''
     },
     returnback: function(){
-      console.log('我是注册妹子~~~~~~~~~~~');
+      this.$store.commit('changedialog')
     }
   },
   computed: {

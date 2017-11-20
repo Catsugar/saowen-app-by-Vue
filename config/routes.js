@@ -18,7 +18,16 @@ var apiRoutes=express.Router();
   apiRoutes.get('/collect/:id', Render.collect);
   apiRoutes.get('/novel/:id', Render.novel);
   apiRoutes.get('/result/:key', Render.result);
+
+  
+  //apiRoutes.get('/new/user').post(Admin.Adduser);//注册
+  //apiRoutes.get('/user/signin').post(Admin.Signin);//登录
+  //apiRoutes.get('/user/logout').get(Admin.Logout);//登出
+
+
   apiRoutes.use('/api',apiRoutes);
+
+
 
 module.exports = apiRoutes;
 
@@ -30,14 +39,10 @@ module.exports = apiRoutes;
     res.locals.user = _user;
     next();
   });*/
-
-
-  
   /*app.route('/search').post(Search.search);
   app.route('/new/novel').post(Add.Addnovel);
   app.route('/new/collect').post(Add.Addcover,Add.Addcollect);
   app.route('/new/comment').post(Add.Addcomment);
-  app.route('/new/user').post(Admin.Adduser);//注册
   app.route('/edit/novel').post(Edit.Editnovel);
   app.route('/edit/author').post(Edit.Editauthor);
   app.route('/edit/collect').post(Add.Addcover,Edit.Editcollect);
@@ -46,8 +51,7 @@ module.exports = apiRoutes;
   app.route('/back/admin').delete(Del.Delete);
   app.route('/back/love').post(Love.Love);//收藏
   app.route('/back/cancel').post(Love.Cancel);//取消收藏
-  app.route('/user/signin').post(Admin.Signin);//登录
-  app.route('/user/logout').get(Admin.Logout);//登出
+
 }*/
 
 

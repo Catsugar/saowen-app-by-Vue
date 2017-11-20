@@ -12,7 +12,9 @@
         <li><router-link to="/myhome"><i class="iconfont icon-wode1"></i><br>我的</router-link></li>
       </ul>
     </div>
-    <myCover v-show="show"></myCover>
+    <myCover></myCover>
+    <!--信息框-->
+    <dialogBox></dialogBox>
   </div>
   </template>
 
@@ -20,14 +22,9 @@
 import {mapState} from 'vuex'
 import Header from './components/Header.vue'
 import Cover from './components/Cover.vue'
-
+import dialogBox from './components/Dialogbox.vue'
 export default {
   name: 'app',
-  data(){
-    return {
-      show: false
-    }
-  },
   computed: {
     ...mapState([
       'islogin'
@@ -35,7 +32,8 @@ export default {
   },
   components: {
     myHeader: Header,
-    myCover: Cover
+    myCover: Cover,
+    dialogBox: dialogBox
   }
 }
 </script>

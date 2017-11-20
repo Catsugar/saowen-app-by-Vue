@@ -3,7 +3,7 @@
     <!---我的-->
     <div class="tab-pane" id="myback">
       <div class="backheader">
-          <div style="background-image:url(/static/images/login.png)" v-if="user==null" class="backimg"></div>
+          <div style="background-image:url(/static/images/login.png)" v-if="user==null" class="backimg" v-on:click="showLogin"></div>
           <div :style="user.photo" v-if="user!=null" class="backimg"></div>
           <div class="backtitle">
              <span v-if="user!=null"><b>{{user.name}}</b><br>{{user.description }}</span>

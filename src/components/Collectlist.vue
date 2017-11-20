@@ -38,7 +38,6 @@ export default {
       response = response.body;
       if (response.errno===ERR_OK){
         this.collections=response.collections;
-        this.title=response.title;
         this._user=response._user;
         this.collections.forEach(function(collection){
           //图片地址加载

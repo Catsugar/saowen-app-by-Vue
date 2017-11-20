@@ -49,7 +49,6 @@
 </template>
 <script>
 import Commentbox from './Commentbox.vue';
-import Infobox from './Infobox.vue';
 import Tagbox from './Tagbox.vue';
 import Lovebox from './Lovebox.vue';
 import Star from './Star.vue';
@@ -68,7 +67,6 @@ export default {
     Commentbox: Commentbox,
     Tagbox: Tagbox,
     Lovebox: Lovebox,
-    Infobox: Infobox,
     Star: Star
   },
   methods: {
