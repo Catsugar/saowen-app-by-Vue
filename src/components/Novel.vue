@@ -42,9 +42,6 @@
     <transition name="fold">
     <Lovebox :collects="novel.collects" class="move" v-show="loveshow"></Lovebox>  
     </transition>
-    <transition name="fold">
-    <Infobox class="move" v-show="alertshow"></Infobox>
-    </transition>
   </div>
 </template>
 <script>
@@ -58,9 +55,7 @@ export default {
   data(){
     return {
       novel: {},
-      _user: {},
-      commentshow: false,
-      loveshow: false
+      _user: {}
     }
   },
   components: {
@@ -71,18 +66,10 @@ export default {
   },
   methods: {
     showLovebox ( ) {
-      this.loveshow = true;
-      this.commentshow = false;
+      this.$store.commit('changelovebox')
     },
     showCommentbox ( ) {
-      this.commentshow = true;
-      this.loveshow = false;
-    },
-    closeLovebox ( ) {
-      this.loveshow = false;
-    },
-    closeCommentbox ( ) {
-      this.commentshow = false;
+      this.$store.commit('changecommentbox')
     }
   },
   created(){

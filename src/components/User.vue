@@ -60,7 +60,7 @@
         </label>
       </div>
     </div>
-    <transition name="fold">><myLogin v-show="loginshow" class="move"></myLogin></transition>
+    <transition name="fold"><myLogin class="move"></myLogin></transition>
   </div>
 </template>
 
@@ -68,14 +68,13 @@
 const ERR_OK=0;
 const Purl='background-image:url(/static/';//设定开发时图片的母路径
 //const Purl='background-image:url(/47.95.114.86/';//实际上线时
-import Login from './Login.vue'
+import Login from './Login.vue';
 export default {
   data(){
     return {
       user: {},
       _user: {},
-      tips: [],
-      loginshow: false
+      tips: []
     }
   },
   components: {
@@ -111,16 +110,11 @@ export default {
   },
   methods: {
     showLogin ( ) {
-      this.loginshow = true;
-    },
-    closeLogin ( ) {
-      this.loginshow = false;
+      this.$store.commit('changelogin')
     }
   }
 }
 </script>
-
-
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 /*动画*/

@@ -1,9 +1,9 @@
 <template>
-<div class="wendan" id="wendan">
+<div class="wendan" id="wendan" v-if="getlovebox">
     <div class="wendantitle">
 	    <h3>我的扫文单</h3>  
-	    <span class="pull-right" id="add">取消</span>
-	    <span class="pull-right" id="sure">确定</span>
+	    <span class="pull-right" id="add" v-on:click="closeLovebox">取消</span>
+	    <span class="pull-right" id="sure" v-on:click="closeLovebox">确定</span>
     </div>
     <ul>
       <li v-for="(collect, index) in collects":key="collect"><input type="radio" :id="index">
@@ -17,22 +17,22 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex';
 export default {
-  data(){
-    return {
-      loveshow: false
-    }
-  },
   props: {
     collects: {
       type: Array
-    },
-    loveshow: false
+    }
   },
   methods: {
     closeLovebox ( ) {
-      this.loveshow = false;
+      this.$store.commit('changelovebox')
     }
+  },
+  computed: {
+    ...mapGetters([
+      'getlovebox'
+    ])
   }
 }
 </script>

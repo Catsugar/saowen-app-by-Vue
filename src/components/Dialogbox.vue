@@ -2,8 +2,8 @@
 <div>
 <div class="info" v-if="getdialog">
   <h3>{{getdialoginfo}}</h3>
-  <button class="btn btn-sm btn-danger pull-right"  @click="close">确定</button>
-  <button class="btn btn-sm btn-danger pull-right"  @click="close">取消</button>
+  <button class="btn btn-sm btn-danger pull-right"  @click="closeDialog">确定</button>
+  <button class="btn btn-sm btn-danger pull-right"  @click="closeDialog">取消</button>
 </div>
 </div>
 </template>
@@ -12,10 +12,7 @@
 import { mapGetters } from 'vuex'
 export default {
   methods: {
-    open () {
-      this.$store.commit('changedialog')
-    },
-    close () {
+    closeDialog () {
       this.$store.commit('changedialog')
     }
   },

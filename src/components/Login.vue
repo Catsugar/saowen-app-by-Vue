@@ -1,5 +1,5 @@
 <template>
-<div class="login">
+<div class="login" v-if="getlogin">
 <!---登录界面-->
   <ul id="myTab" class="login-btn nav nav-tabs">
      <li @click="returnback"><i class="iconfont icon-fanhui1"></i></li>
@@ -31,7 +31,6 @@
   </div>
 </div>
 </template>
-
 <script>
 import {mapGetters} from 'vuex';
 export default {
@@ -49,8 +48,6 @@ export default {
     login: function(){
       var name = this.login_username
       var password = this.login_password
-      console.log(this.login_username);
-      console.log(this.login_password);
       if (name !== '' && password !== '') {
         var data = {
           name: name,
@@ -75,12 +72,13 @@ export default {
           email: email,
           src: src
         }
-        this.$store.dispatch('registersubmit', data)
+        this.$store.dispatch('changedialoginfo', data)
       } else {
         this.$store.commit('changedialog')
         this.$store.commit('changedialoginfo', '帐号密码不能为空')
       }
     },
+    //清除
     clean: function(){
       this.register_email=''
       this.register_username=''
@@ -89,12 +87,12 @@ export default {
       this.login_password=''
     },
     returnback: function(){
-      this.$store.commit('changedialog')
+      this.$store.commit('changelogin')
     }
   },
   computed: {
     ...mapGetters([
-      'getLogin'
+      'getlogin'
     ])
   }
 }

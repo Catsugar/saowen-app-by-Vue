@@ -27,16 +27,24 @@ const store = new Vuex.Store({
     // 是否显示封面
     iscover: true,
     // 是否登录
-    islogin: false
+    islogin: false,
+    //是否有评论框
+    iscommentbox: false,
+    //是否有收藏框，
+    islovebox: false
   },
   getters: {
     getdialog: state => state.isdialog,
     getdialoginfo: state => state.dialoginfo,
-    getcover: state => state.iscover
+    getcover: state => state.iscover,
+    getlogin: state => state.islogin,
+    getcommentbox: state => state.iscommentbox,
+    getlovebox: state => state.islovebox
   },
   mutations: {
+    //信息提示框
     changedialog(state) {
-      state.dialog = !state.isdialog
+      state.isdialog = !state.isdialog
     },
     changedialoginfo(state, data) {
       state.dialoginfo = data
@@ -44,8 +52,19 @@ const store = new Vuex.Store({
     //隐藏封面
     hiddencover(state) {
       state.iscover = false
+    },
+    //登录页面控制
+    changelogin(state) {
+      state.islogin = !state.islogin
+    },
+    // 评论框控制
+    changecommentbox(state) {
+      state.iscommentbox = !state.iscommentbox
+    },
+    // 收藏框控制
+    changelovebox(state) {
+      state.islovebox = !state.islovebox
     }
   }
-
 })
 export default store

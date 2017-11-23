@@ -1,9 +1,9 @@
 <template>
-<div class="commentbox">
+<div class="commentbox" v-if="getcommentbox">
   <div class="commenttitle">
     <h3>评一下吧</h3>  
-    <span class="pull-right" id="add">取消</span>
-    <span class="pull-right" id="sure">确定</span>
+    <span class="pull-right" id="add" v-on:click="closeCommentbox">取消</span>
+    <span class="pull-right" id="sure" v-on:click="closeCommentbox">确定</span>
   </div>
   <div class="commentcontent">
   <table>
@@ -39,18 +39,17 @@
 </div>
 </template>
 <script>
+import {mapGetters} from 'vuex';
 export default {
   props: {
     collects: {
       type: Array
     }
   },
-  data(){
-    return {
-
-    }
-  },
   methods: {
+    closeCommentbox ( ) {
+      this.$store.commit('changecommentbox')
+    },
     changeNum: function(score, way){
       if (way>0 && score<10 ){
         score++;
@@ -58,6 +57,11 @@ export default {
         score--;
       }
     }
+  },
+  computed: {
+    ...mapGetters([
+      'getcommentbox'
+    ])
   }
 }
 </script>

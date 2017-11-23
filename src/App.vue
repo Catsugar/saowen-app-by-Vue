@@ -12,12 +12,12 @@
         <li><router-link to="/myhome"><i class="iconfont icon-wode1"></i><br>我的</router-link></li>
       </ul>
     </div>
-    <myCover></myCover>
+    <!--封面-->
+    <transition name="fade" mode="out-in"><myCover></myCover></transition>
     <!--信息框-->
-    <dialogBox></dialogBox>
+    <transition name="fold"><dialogBox class="move"></dialogBox></transition>
   </div>
   </template>
-
 <script>
 import {mapState} from 'vuex'
 import Header from './components/Header.vue'
@@ -45,5 +45,16 @@ export default {
 
 .fade-enter, .fade-leave-active {
     opacity: 0.1;
+}
+/*动画*/
+.move {
+    transform: translate3d(0, -100px, 0);
+}
+.fold-enter-active, .fold-leave-active {
+    transition: all 0.5s;
+}
+.fold-enter, .fold-leave-active {
+    transform: translate3d(0, 0, 100px);
+    /*opacity: 0.1;*/
 }
 </style>
