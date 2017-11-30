@@ -31,7 +31,9 @@ const store = new Vuex.Store({
     //是否有评论框
     iscommentbox: false,
     //是否有收藏框，
-    islovebox: false
+    islovebox: false,
+    //是否有添加文单框，
+    isaddcollectbox: false
   },
   getters: {
     getdialog: state => state.isdialog,
@@ -39,7 +41,8 @@ const store = new Vuex.Store({
     getcover: state => state.iscover,
     getlogin: state => state.islogin,
     getcommentbox: state => state.iscommentbox,
-    getlovebox: state => state.islovebox
+    getlovebox: state => state.islovebox,
+    getaddcollectbox: state => state.isaddcollectbox
   },
   mutations: {
     //信息提示框
@@ -64,6 +67,18 @@ const store = new Vuex.Store({
     // 收藏框控制
     changelovebox(state) {
       state.islovebox = !state.islovebox
+    },
+    // 添加文单框控制
+    changeaddcollectbox(state) {
+      state.isaddcollectbox = !state.isaddcollectbox
+    },
+    // 评论框关闭
+    closecommentbox(state) {
+      state.iscommentbox = false
+    },
+    // 收藏框关闭
+    closelovebox(state) {
+      state.islovebox = false
     }
   }
 })

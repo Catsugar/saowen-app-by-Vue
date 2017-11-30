@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+
     <myHeader></myHeader>
     <transition name="fade" mode="out-in"><router-view></router-view></transition>
     <!--尾部-->
@@ -14,8 +15,10 @@
     </div>
     <!--封面-->
     <transition name="fade" mode="out-in"><myCover></myCover></transition>
+    <!--登录页面-->
+    <transition name="fold1"><myLogin class="move1"></myLogin></transition>
     <!--信息框-->
-    <transition name="fold"><dialogBox class="move"></dialogBox></transition>
+    <transition name="fold2"><dialogBox class="move2"></dialogBox></transition>    
   </div>
   </template>
 <script>
@@ -23,6 +26,7 @@ import {mapState} from 'vuex'
 import Header from './components/Header.vue'
 import Cover from './components/Cover.vue'
 import dialogBox from './components/Dialogbox.vue'
+import Login from './components/Login.vue';
 export default {
   name: 'app',
   computed: {
@@ -33,7 +37,8 @@ export default {
   components: {
     myHeader: Header,
     myCover: Cover,
-    dialogBox: dialogBox
+    dialogBox: dialogBox,
+    myLogin: Login
   }
 }
 </script>
@@ -46,15 +51,30 @@ export default {
 .fade-enter, .fade-leave-active {
     opacity: 0.1;
 }
+
 /*动画*/
-.move {
-    transform: translate3d(0, -100px, 0);
+.move1 {
+  transform: translate3d(0,0,0);
+  transition: all 1s;
 }
-.fold-enter-active, .fold-leave-active {
-    transition: all 0.5s;
+.fold1-enter-active, .fold1-leave-active {
+  transform: translate3d(0, 0, 0);
 }
-.fold-enter, .fold-leave-active {
-    transform: translate3d(0, 0, 100px);
-    /*opacity: 0.1;*/
+.fold1-enter {
+  transform: translate3d(300px, 0, 0);
+}
+.fold1-leave {
+  transform: translate3d(-300px, 0, 0);
+}
+/*动画*/
+.move2 {
+    transform: translate3d(0, 0, 0);
+}
+.fold2-enter-active, .fold2-leave-active {
+    transition: all 1s;
+}
+.fold2-enter, .fold2-leave-active {
+    transform: translate3d(0, 100px,0);
+    opacity: 0.1;
 }
 </style>

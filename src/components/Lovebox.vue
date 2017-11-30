@@ -3,14 +3,14 @@
     <div class="wendantitle">
 	    <h3>我的扫文单</h3>  
 	    <span class="pull-right" id="add" v-on:click="closeLovebox">取消</span>
-	    <span class="pull-right" id="sure" v-on:click="closeLovebox">确定</span>
+	    <span class="pull-right" id="sure" v-on:click="loveSure">确定</span>
     </div>
     <ul>
       <li v-for="(collect, index) in collects":key="collect"><input type="radio" :id="index">
         <label :for="index">{{collect.name}}<span>共{{collect.novels.length}}篇</span></label>
       </li>
       <li>
-        <label>新建扫文单<span class="iconfont icon-more4"></span></label> 
+        <label v-on:click="showAddcollectbox" >新建扫文单<span class="iconfont icon-more4"></span></label> 
       </li>  
     </ul>
 </div>
@@ -27,6 +27,13 @@ export default {
   methods: {
     closeLovebox ( ) {
       this.$store.commit('changelovebox')
+    },
+    loveSure(){
+      this.$store.commit('changelovebox')
+    },
+    showAddcollectbox ( ) {
+      this.$store.commit('changeaddcollectbox')
+      this.$store.commit('closelovebox')
     }
   },
   computed: {
@@ -56,6 +63,7 @@ export default {
 	line-height:40px;
 	height:40px;
 	background-color: #ffc;
+	font-weight: bold;
 }
 .wendantitle h3{
 	font-weight:bold;

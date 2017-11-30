@@ -46,7 +46,7 @@ export default {
   methods: {
     //登录
     login: function(){
-      var name = this.login_username
+      /*var name = this.login_username
       var password = this.login_password
       if (name !== '' && password !== '') {
         var data = {
@@ -54,10 +54,10 @@ export default {
           password: password
         }
         this.$store.dispatch('changedialoginfo', data)
-      } else {
-        this.$store.commit('changedialog')
-        this.$store.commit('changedialoginfo', '帐号密码不能为空')
-      }
+      } else {*/
+      this.$store.commit('changedialog')
+      this.$store.commit('changedialoginfo', '帐号密码不能为空')
+      /*}*/
     },
     //注册
     register: function(){
@@ -103,14 +103,16 @@ export default {
 /**************注册与登录****************/
 .login{
   position: fixed;
-  top:40px;
+  top:0px;
   left: 0px;
   right:0px;
   bottom: 0px;
   width: 100%;
   height: 100%;
   box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.4);
-  background-color:rgb(239,238,235); }
+  background-color:rgb(239,238,235); 
+ /* z-index: 10;*/
+}
 .login-btn{
   display: -webkit-flex;
   display: flex;

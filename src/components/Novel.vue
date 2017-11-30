@@ -36,19 +36,21 @@
         </li>
       </ul>
     </div>
-    <transition name="fold">
-    <Commentbox class="move" v-show="commentshow"></Commentbox>
-    </transition>
-    <transition name="fold">
-    <Lovebox :collects="novel.collects" class="move" v-show="loveshow"></Lovebox>  
-    </transition>
+    <!--收藏框-->
+    <transition name="fold"><Lovebox :collects="novel.collects" class="move"></Lovebox></transition>
+    <!--评论框-->
+    <transition name="fold"><Commentbox class="move"></Commentbox></transition>
+    <!--增加文集框-->
+    <transition name="fold"><Addcollectbox class="move"></Addcollectbox></transition>
   </div>
 </template>
 <script>
 import Commentbox from './Commentbox.vue';
+import Addcollectbox from './Addcollectbox.vue';
 import Tagbox from './Tagbox.vue';
 import Lovebox from './Lovebox.vue';
 import Star from './Star.vue';
+
 const ERR_OK=0;
 var moment = require('moment');
 export default {
@@ -60,6 +62,7 @@ export default {
   },
   components: {
     Commentbox: Commentbox,
+    Addcollectbox: Addcollectbox,
     Tagbox: Tagbox,
     Lovebox: Lovebox,
     Star: Star
@@ -67,9 +70,11 @@ export default {
   methods: {
     showLovebox ( ) {
       this.$store.commit('changelovebox')
+      this.$store.commit('closecommentbox')
     },
     showCommentbox ( ) {
       this.$store.commit('changecommentbox')
+      this.$store.commit('closelovebox')
     }
   },
   created(){
@@ -107,9 +112,10 @@ export default {
     transform: translate3d(0, -100px, 0);
 }
 .fold-enter-active, .fold-leave-active {
-    transition: all 1s;
+    transition: all 0.5s;
 }
 .fold-enter, .fold-leave-active {
     transform: translate3d(0, 0, 100px);
+    opacity: 0.1;
 }
 </style>

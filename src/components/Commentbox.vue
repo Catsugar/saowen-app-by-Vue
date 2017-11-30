@@ -2,8 +2,8 @@
 <div class="commentbox" v-if="getcommentbox">
   <div class="commenttitle">
     <h3>评一下吧</h3>  
-    <span class="pull-right" id="add" v-on:click="closeCommentbox">取消</span>
-    <span class="pull-right" id="sure" v-on:click="closeCommentbox">确定</span>
+    <span class="pull-right" id="add" @click="closeCommentbox">取消</span>
+    <span class="pull-right" id="sure" @click="commentSure">确定</span>
   </div>
   <div class="commentcontent">
   <table>
@@ -50,6 +50,9 @@ export default {
     closeCommentbox ( ) {
       this.$store.commit('changecommentbox')
     },
+    commentSure(){
+      this.$store.commit('changecommentbox')
+    },
     changeNum: function(score, way){
       if (way>0 && score<10 ){
         score++;
@@ -69,7 +72,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .commentbox {
-  padding-top: 100px;
+  padding-top: 50px;
   width: 100%;
   height:100%;
   overflow:hidden;
@@ -82,7 +85,8 @@ export default {
 .commenttitle{
   line-height:40px;
   height:40px;
-  border-bottom: 1px dotted #aaa;}
+  border-bottom: 1px dotted #aaa;
+  font-weight: bold;}
 .commenttitle h3{
   font-weight:bold;
   padding-left: 5%;

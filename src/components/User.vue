@@ -60,7 +60,6 @@
         </label>
       </div>
     </div>
-    <transition name="fold"><myLogin class="move"></myLogin></transition>
   </div>
 </template>
 
@@ -68,7 +67,6 @@
 const ERR_OK=0;
 const Purl='background-image:url(/static/';//设定开发时图片的母路径
 //const Purl='background-image:url(/47.95.114.86/';//实际上线时
-import Login from './Login.vue';
 export default {
   data(){
     return {
@@ -76,9 +74,6 @@ export default {
       _user: {},
       tips: []
     }
-  },
-  components: {
-    myLogin: Login
   },
   created(){
     var id=this.$route.params.id;
@@ -117,14 +112,5 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-/*动画*/
-.move {
-  transform: translate3d(0,0,0);
-}
-.fold-enter-active, .fold-leave-active {
-  transition: all 1s;
-}
-.fold-enter, .fold-leave-active {
-  transform: translate3d(300px, 0, 0);
-}
+
 </style>

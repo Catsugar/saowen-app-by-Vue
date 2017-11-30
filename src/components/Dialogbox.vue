@@ -1,10 +1,16 @@
 <template>
-<div>
-<div class="info" v-if="getdialog">
-  <h3>{{getdialoginfo}}</h3>
-  <button class="btn btn-sm btn-danger pull-right"  @click="closeDialog">确定</button>
-  <button class="btn btn-sm btn-danger pull-right"  @click="closeDialog">取消</button>
-</div>
+<div class="infodialog" v-if="getdialog">
+  <div class="infodialog-box">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" @click="closeDialog">&times;</button>
+        <h3 class="modal-title"><b>提&nbsp;&nbsp;示</b></h3>
+      </div>
+      <div class="modal-body">
+        <h3 class="modal-title"><b>{{getdialoginfo}}</b></h3>
+      </div>
+    </div>
+  </div>
 </div>
 </template>
 
@@ -26,22 +32,23 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.info{
-  font-size: 14px;
-  box-shadow: 0 0 3px #ccc;
-  border-radius: 1rem;
-  padding: 20px;
-  background-color: #eee;
+<style>
+.infodialog{
   position: fixed;
-  top:0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 10;
+  width: 100%;height: 150%;
+  top:-100px;bottom:0;right: 0;left: 0;
+  background-color: rgba(0,0,0,0.4);
 }
-.info h3{
+.infodialog-box{
+  width: 40%;
+  height: 50%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: -100px; right: 0;
+}
+.infodialog-box h3{
   text-align: center;
-  font:bold 16px/24px #333;
 }
+
 </style>
