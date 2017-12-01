@@ -69,6 +69,11 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 ![截图1](https://catsugar.github.io/pics/5-8.png)
 
 * 数据渲染完成
+* 搜索功能完成
+* 界面搭建完成
+
+#### to do
+* 数据库的添删改查
 
 ***
 

@@ -9,7 +9,7 @@
           <router-link :to="'/collect/'+collect.id">
             <h3>{{collect.name}}</h3>
             <h5>by&nbsp;<i>{{collect.editor.name}}</i></h5>
-            <button type="button" class="btn btn-xs btn-danger center-block">收藏</button>
+            <button type="button" class="btn btn-xs btn-danger center-block" @click="love">收藏</button>
           </router-link>
           </div>
           <p>
@@ -31,6 +31,12 @@ export default {
     return {
       collections: [],
       _user: {}
+    }
+  },
+  methods: {
+    love: function(){
+      this.$store.commit('changedialog')
+      this.$store.commit('changedialoginfo', '收藏成功了哟！！')
     }
   },
   created(){

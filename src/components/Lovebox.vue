@@ -6,8 +6,8 @@
 	    <span class="pull-right" id="sure" v-on:click="loveSure">确定</span>
     </div>
     <ul>
-      <li v-for="(collect, index) in collects":key="collect"><input type="radio" :id="index">
-        <label :for="index">{{collect.name}}<span>共{{collect.novels.length}}篇</span></label>
+      <li v-for="(collect, index) in collects":key="collect" ><input type="radio" :id="index">
+        <label :for="index" @click="love">{{collect.name}}<span>共{{collect.novels.length}}篇</span></label>
       </li>
       <li>
         <label v-on:click="showAddcollectbox" >新建扫文单<span class="iconfont icon-more4"></span></label> 
@@ -33,6 +33,11 @@ export default {
     },
     showAddcollectbox ( ) {
       this.$store.commit('changeaddcollectbox')
+      this.$store.commit('closelovebox')
+    },
+    love: function(){
+      this.$store.commit('changedialog')
+      this.$store.commit('changedialoginfo', '收藏成功了哟！！')
       this.$store.commit('closelovebox')
     }
   },

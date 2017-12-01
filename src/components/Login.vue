@@ -46,33 +46,40 @@ export default {
   methods: {
     //登录
     login: function(){
-      /*var name = this.login_username
+      var name = this.login_username
       var password = this.login_password
+      console.log('你输入的密码是'+name);
+      console.log('你输入的密码是'+password);
       if (name !== '' && password !== '') {
-        var data = {
+        /*var data = {
           name: name,
           password: password
-        }
-        this.$store.dispatch('changedialoginfo', data)
-      } else {*/
-      this.$store.commit('changedialog')
-      this.$store.commit('changedialoginfo', '帐号密码不能为空')
-      /*}*/
+        }*/
+        this.$store.commit('changedialog')
+        this.$store.commit('changedialoginfo', '登录成功')
+      } else {
+        this.$store.commit('changedialog')
+        this.$store.commit('changedialoginfo', '帐号密码不能为空')
+      }
     },
     //注册
     register: function(){
       var email = this.register_email
       var name = this.register_username
       var password = this.register_password
-      var src = './static/img/' + Math.ceil(Math.random() * 10) + '.jpg'
-      if (name !== '' && password !== '') {
-        var data = {
+      console.log('你输入的名字是'+name);
+      console.log('你输入的密码是'+password);
+      console.log('你输入的邮箱是'+email);
+      //var src = './static/img/' + Math.ceil(Math.random() * 10) + '.jpg'
+      if (name !== '' && password !== '' && email !== '') {
+        /*var data = {
           name: name,
           password: password,
           email: email,
           src: src
-        }
-        this.$store.dispatch('changedialoginfo', data)
+        }*/
+        this.$store.commit('changedialog')
+        this.$store.commit('changedialoginfo', '注册成功，请登录！！')
       } else {
         this.$store.commit('changedialog')
         this.$store.commit('changedialoginfo', '帐号密码不能为空')
@@ -111,7 +118,6 @@ export default {
   height: 100%;
   box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.4);
   background-color:rgb(239,238,235); 
- /* z-index: 10;*/
 }
 .login-btn{
   display: -webkit-flex;
@@ -149,5 +155,4 @@ export default {
 }
 .login-btnbox button{
   width:40%}
-
 </style>

@@ -8,16 +8,16 @@
       </div>
       <div class="modal-body">
         <form method="post"enctype="multipart/form-data">
-          <input type="text"  placeholder="输入名称" name='' class="wholeinput"><br>
-          <input type="text"  placeholder="一句话描述文単" name='' class="wholeinput"><br>
+          <input type="text"  placeholder="输入名称" name='' class="wholeinput" v-model="name"><br>
+          <input type="text"  placeholder="一句话描述文単" name='' class="wholeinput" v-model="description"><br>
           <div class="input-append wholeinput">
-            <input id="lefile" type="file" style="display:none" name='upposter' >
+            <input id="lefile" type="file" style="display:none" name='upposter'>
             <input id="photoCover" class="input-large" type="text" style="height:30px;">
             <span class="btn btn-sm btn-default uploadbtn pull-right" onclick="$('input[id=lefile]').click();" style="width:50px;">上传</span>
           </div>
           <div class="modal-btn">
-            <button type="submit" class="btn btn-default" >确定</button>
-            <button type="button" class="btn btn-danger" data-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-default" @click="Addsure">确定</button>
+            <button type="button" class="btn btn-danger" @click="closeAddcollectbox">取消</button>
           </div>
         </form>
       </div>
@@ -29,9 +29,36 @@
 <script>
 import { mapGetters } from 'vuex'
 export default {
+  data(){
+    return {
+      name: '',
+      description: '',
+      cover: ''
+    }
+  },
   methods: {
     closeAddcollectbox () {
       this.$store.commit('changeaddcollectbox')
+    },
+    Addsure () {
+      var name = this.name;
+      var description = this.description;
+      var cover = this.cover || './static/img/' + Math.ceil(Math.random() * 10) + '.jpg';
+      console.log(name+'---------'+description+'------'+cover);
+      if (name !== '' && description !== '' && cover !== '' ) {
+        var data = {
+          name: name,
+          description: description,
+          cover: cover
+        }
+        console.log(data);
+        this.$store.commit('changeaddcollectbox')
+        this.$store.commit('changedialog')
+        this.$store.commit('changedialoginfo', '添加文单成功！！！')
+      } else {
+        this.$store.commit('changedialog')
+        this.$store.commit('changedialoginfo', '一定是忘记输入什么啦！！！')
+      }
     }
   },
   computed: {
@@ -66,8 +93,12 @@ export default {
 .wholeinput{
   width: 100%;
   margin-bottom: 20px;
+ font-size: 13px;
+  line-height: 24px;
 }
 .wholeinput input{
   width:80%;
+  font-size: 13px;
+  line-height: 24px;
 }
 </style>

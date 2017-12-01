@@ -3,7 +3,7 @@
     <div class="collect-box" style="background-image: url(/static/images/author.jpg)">
       <div class="cover">
         <h3>{{author.name}}</h3>
-        <button type="button" class="btn btn-ms btn-danger center-block" >收藏</button>  
+        <button type="button" class="btn btn-ms btn-danger center-block" @click="love">收藏</button>  
       </div>  
       <p>
         <span class="pull-left">by&nbsp;{{author.editor.name}}</span>
@@ -49,6 +49,12 @@ export default {
   components: {
     Tagbox: Tagbox,
     Star: Star
+  },
+  methods: {
+    love: function(){
+      this.$store.commit('changedialog')
+      this.$store.commit('changedialoginfo', '收藏成功了哟！！')
+    }
   },
   created(){
     var id=this.$route.params.id;

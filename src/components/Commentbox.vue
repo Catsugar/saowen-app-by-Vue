@@ -10,7 +10,7 @@
     <tr>
       <td>添加tag：</td>
       <td>
-         <input type="text" class="tag_input">
+         <input type="text" class="tag_input" v-model="tag">
       </td>
     </tr>     
     <tr>
@@ -26,21 +26,29 @@
     <tr>   
       <td>我的状态：</td>
       <td>
-        <input type="radio" name="state" class="state"  id="state-1"><label for="state-1" type="button" class="btn btn-sm btn-default">想看</label>
-        <input type="radio" name="state" class="state"  id="state-2"><label for="state-2" type="button" class="btn btn-sm btn-default">再看</label>
-        <input type="radio" name="state" class="state"  id="state-3" checked><label for="state-3" type="button" class="btn btn-sm btn-default" >看过</label>
-        <input type="radio" name="state" class="state"  id="state-4"><label for="state-4" type="button" class="btn btn-sm btn-default">搁置</label>
-        <input type="radio" name="state" class="state"  id="state-5"><label for="state-5" type="button" class="btn btn-sm btn-default">抛弃</label>     
+        <input type="radio" name="state" v-model="state" class="state"  id="state-1"><label for="state-1" type="button" class="btn btn-sm btn-default">想看</label>
+        <input type="radio" name="state"  v-model="state" class="state"  id="state-2"><label for="state-2" type="button" class="btn btn-sm btn-default">再看</label>
+        <input type="radio" name="state"  v-model="state" class="state"  id="state-3" checked><label for="state-3" type="button" class="btn btn-sm btn-default" >看过</label>
+        <input type="radio" name="state"  v-model="state" class="state"  id="state-4"><label for="state-4" type="button" class="btn btn-sm btn-default">搁置</label>
+        <input type="radio" name="state"  v-model="state" class="state"  id="state-5"><label for="state-5" type="button" class="btn btn-sm btn-default">抛弃</label>     
       </td>
     </tr>
   </table>
-  <textarea ></textarea>
+  <textarea v-model="text"></textarea>
   </div>
 </div>
 </template>
 <script>
 import {mapGetters} from 'vuex';
 export default {
+  data () {
+    return {
+      tag: '',
+      score: '',
+      state: '',
+      text: ''
+    }
+  },
   props: {
     collects: {
       type: Array
@@ -51,7 +59,26 @@ export default {
       this.$store.commit('changecommentbox')
     },
     commentSure(){
-      this.$store.commit('changecommentbox')
+      var tag = this.tag;
+      var score = this.score;
+      var state = this.state;
+      var text = this.text;
+      console.log(tag+'---------'+score+'------'+state+'----'+text);
+      if (tag !== '' && score !== '' && state !== '' && text !== '') {
+        var data = {
+          tag: tag,
+          score: score,
+          state: state,
+          text: text
+        }
+        console.log(data);
+        this.$store.commit('changecommentbox')
+        this.$store.commit('changedialog')
+        this.$store.commit('changedialoginfo', '评论成功！！！')
+      } else {
+        this.$store.commit('changedialog')
+        this.$store.commit('changedialoginfo', '一定是忘记输入什么啦！！！')
+      }
     },
     changeNum: function(score, way){
       if (way>0 && score<10 ){
@@ -149,6 +176,5 @@ text-align:center;}
 .score_value{
   height:100%;
 }
-
 .commentbtn{margin-right:1rem;}
 </style>
