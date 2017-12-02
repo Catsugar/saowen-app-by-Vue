@@ -53,20 +53,38 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 Ô¤ÀÀ1<br>
 ![½ØÍ¼1](https://catsugar.github.io/pics/5-1.png)
-Ô¤ÀÀ2<br>
 ![½ØÍ¼1](https://catsugar.github.io/pics/5-2.png)
-Ô¤ÀÀ3<br>
 ![½ØÍ¼1](https://catsugar.github.io/pics/5-3.png)
-Ô¤ÀÀ4<br>
+Ô¤ÀÀ2<br>
 ![½ØÍ¼1](https://catsugar.github.io/pics/5-4.png)
-Ô¤ÀÀ5<br>
 ![½ØÍ¼1](https://catsugar.github.io/pics/5-5.png)
-Ô¤ÀÀ6<br>
 ![½ØÍ¼1](https://catsugar.github.io/pics/5-6.png)
-Ô¤ÀÀ7<br>
+Ô¤ÀÀ3<br>
 ![½ØÍ¼1](https://catsugar.github.io/pics/5-7.png)
-Ô¤ÀÀ8<br>
 ![½ØÍ¼1](https://catsugar.github.io/pics/5-8.png)
+![½ØÍ¼1](https://catsugar.github.io/pics/5-9.png)
+Ô¤ÀÀ4<br>
+![½ØÍ¼1](https://catsugar.github.io/pics/5-10.png)
+![½ØÍ¼1](https://catsugar.github.io/pics/5-11.png)
+![½ØÍ¼1](https://catsugar.github.io/pics/5-12.png)
+Ô¤ÀÀ5<br>
+![½ØÍ¼1](https://catsugar.github.io/pics/5-13.png)
+![½ØÍ¼1](https://catsugar.github.io/pics/5-14.png)
+![½ØÍ¼1](https://catsugar.github.io/pics/5-15.png)
+Ô¤ÀÀ6<br>
+![½ØÍ¼1](https://catsugar.github.io/pics/5-16.png)
+![½ØÍ¼1](https://catsugar.github.io/pics/5-17.png)
+![½ØÍ¼1](https://catsugar.github.io/pics/5-18.png)
+Ô¤ÀÀ7<br>
+![½ØÍ¼1](https://catsugar.github.io/pics/5-19.png)
+![½ØÍ¼1](https://catsugar.github.io/pics/5-20.png)
+![½ØÍ¼1](https://catsugar.github.io/pics/5-21.png)
+Ô¤ÀÀ8<br>
+![½ØÍ¼1](https://catsugar.github.io/pics/5-22.png)
+![½ØÍ¼1](https://catsugar.github.io/pics/5-23.png)
+![½ØÍ¼1](https://catsugar.github.io/pics/5-24.png)
+
+
 
 * Êı¾İäÖÈ¾Íê³É
 * ËÑË÷¹¦ÄÜÍê³É
