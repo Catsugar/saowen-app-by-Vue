@@ -1,21 +1,35 @@
 # saowen-app-by-Vue
->仿扫文小院
+>仿扫文小院,但界面是瞎搞的。
 
->后端服务器跟隔壁一样，这里主要联系前端Vue的使用。
+>这个项目主要为了学习了Vue和vue-router，vuex等，学习单页面应用的构建。
 
->移动端界面，界面是我自己瞎倒腾的。
+>在隔壁node项目的基础上做的，共用一个数据库。
+
+>还没写<b>数据的交互</b>，现在还只是界面（所以现在怎么点也不会改变数据）。
+
+>为了调试方便，程序里存了图片，但是服务器上的没有。
 
 >所有素材来自网络，仅供个人学习和练习使用
 
 ***
+## 项目地址
 
-## 这是移动端，之前写了个web端的，去看隔壁???
+## [代码地址](https://github.com/Catsugar/saowen-app-by-Vue)
+## [电脑端地址](http://saowen.catsugar.site:3389/)
+## 手机预览，扫二维码：
+![截图1](https://catsugar.github.io/pics/erweima.png)
+
+***
+
+## 之前写了个web端的node项目，去看隔壁???
 
 ## [预览地址](http://saowen.catsugar.site/)
 ## [代码地址](https://github.com/Catsugar/saowen-web-by-Nodejs)
 
+***
+
 ### 用到的技术栈
-Nodejs+mongodb+Vue.js+vue-router+vuex
+Nodejs+mongodb+webpack+Vue.js+vue-router+vuex
 
 ### Build Setup
 
@@ -47,9 +61,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 ***
 
-#### 进度记录
-
-* 写好了界面
+#### 界面预览
 
 预览1<br>
 ![截图1](https://catsugar.github.io/pics/5-1.png)
@@ -84,18 +96,20 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 ![截图1](https://catsugar.github.io/pics/5-23.png)
 ![截图1](https://catsugar.github.io/pics/5-24.png)
 
+#### 进度记录
 
-
+* 写好静态界面
 * 数据渲染完成
 * 搜索功能完成
 * 界面搭建完成
+* 初步了解Vue项目的部署，已经部署上线
 
 #### to do
+* 没有和数据库实现交互
 * 数据库的添删改查
-
 ***
 
->下面仍旧是杂七杂八的笔记。
+>下面仍旧是杂七杂八没有条理也没有卵用的笔记。
 
 #### 创建模板
 
@@ -113,5 +127,12 @@ npm run dev
 
 访问 http://localhost:3000
 ```
+#### 打包
 
+```
+
+npm run build
+
+
+```
 
