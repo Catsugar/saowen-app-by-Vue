@@ -66,7 +66,7 @@
 <script>
 const ERR_OK=0;
 const Purl='background-image:url(/static/';//设定开发时图片的母路径
-//const Purl='background-image:url(/47.95.114.86/';//实际上线时
+//const Purl='background-image:url(http://47.95.114.86/';//实际上线时
 export default {
   data(){
     return {

@@ -18,7 +18,7 @@
       <td>
         <div class="scorebox">
           <span class="reduction pull-left" v-on:click="changeNum(score,-1)">-</span>
-          <span type="text"  class="score_value" v-model="score">9</span>
+          <span type="text"  class="score_value">{{score}}</span>
           <span class="plus pull-right" v-on:click="changeNum(score,1)">+</span>
         </div>
       </td>
@@ -44,7 +44,7 @@ export default {
   data () {
     return {
       tag: '',
-      score: '',
+      score: 9,
       state: '',
       text: ''
     }

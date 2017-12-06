@@ -2,7 +2,9 @@
   <div id="app">
 
     <myHeader></myHeader>
-    <transition name="fade" mode="out-in"><router-view></router-view></transition>
+    <transition name="fade" mode="out-in">
+      <router-view keep-alive></router-view>
+    </transition>
     <!--尾部-->
     <div class="footer">
       <ul>
@@ -55,16 +57,13 @@ export default {
 /*动画*/
 .move1 {
   transform: translate3d(0,0,0);
-  transition: all 1s;
 }
 .fold1-enter-active, .fold1-leave-active {
   transform: translate3d(0, 0, 0);
+  transition: all 1s;
 }
-.fold1-enter {
+.fold1-enter, .fold1-leave-active {
   transform: translate3d(300px, 0, 0);
-}
-.fold1-leave {
-  transform: translate3d(-300px, 0, 0);
 }
 /*动画*/
 .move2 {

@@ -40,7 +40,7 @@ export default {
   background-color: rgba(0,0,0,0.4);
 }
 .infodialog-box{
-  width: 40%;
+  width: 60%;
   height: 50%;
   overflow: auto;
   margin: auto;
