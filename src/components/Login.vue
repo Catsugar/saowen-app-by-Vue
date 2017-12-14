@@ -34,6 +34,11 @@
 <script>
 import {mapGetters} from 'vuex';
 export default {
+  props: {
+    _user: {
+      type: Object
+    }
+  },
   data () {
     return {
       register_email: '',
@@ -48,15 +53,12 @@ export default {
     login: function(){
       var name = this.login_username
       var password = this.login_password
-      console.log('你输入的密码是'+name);
-      console.log('你输入的密码是'+password);
       if (name !== '' && password !== '') {
-        /*var data = {
+        var data = {
           name: name,
           password: password
-        }*/
-        this.$store.commit('changedialog')
-        this.$store.commit('changedialoginfo', '登录成功')
+        }
+        this.$store.dispatch('signinsummit', data);
       } else {
         this.$store.commit('changedialog')
         this.$store.commit('changedialoginfo', '帐号密码不能为空')
@@ -67,19 +69,15 @@ export default {
       var email = this.register_email
       var name = this.register_username
       var password = this.register_password
-      console.log('你输入的名字是'+name);
-      console.log('你输入的密码是'+password);
-      console.log('你输入的邮箱是'+email);
-      //var src = './static/img/' + Math.ceil(Math.random() * 10) + '.jpg'
+      var src = './static/img/' + Math.ceil(Math.random() * 10) + '.jpg'
       if (name !== '' && password !== '' && email !== '') {
-        /*var data = {
+        var data = {
           name: name,
           password: password,
           email: email,
           src: src
-        }*/
-        this.$store.commit('changedialog')
-        this.$store.commit('changedialoginfo', '注册成功，请登录！！')
+        }
+        this.$store.dispatch('signupsummit', data);
       } else {
         this.$store.commit('changedialog')
         this.$store.commit('changedialoginfo', '帐号密码不能为空')

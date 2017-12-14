@@ -17,17 +17,12 @@ var apiRoutes=express.Router();
   apiRoutes.get('/author/:id', Render.author);
   apiRoutes.get('/collect/:id', Render.collect);
   apiRoutes.get('/novel/:id', Render.novel);
-  apiRoutes.get('/result/:key', Render.result);
-
-  
-  //apiRoutes.get('/new/user').post(Admin.Adduser);//注册
-  //apiRoutes.get('/user/signin').post(Admin.Signin);//登录
-  //apiRoutes.get('/user/logout').get(Admin.Logout);//登出
-
-
+  apiRoutes.get('/result/:key', Render.result);  
   apiRoutes.use('/api',apiRoutes);
 
-
+  apiRoutes.use('/signup').post(Admin.Signup);//注册
+  apiRoutes.use('/signin').post(Admin.Signin);//登录
+  apiRoutes.use('/logout').get(Admin.Logout);//登出
 
 module.exports = apiRoutes;
 

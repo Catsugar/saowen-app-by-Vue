@@ -26,7 +26,7 @@
       <ul class="commentlist">
         <li v-for="comment in novel.comments">
           <span class="replytime pull-right">{{comment.meta.updateAt}}</span>
-          <router-link :to="'/user/'+comment.novelID.id">
+          <router-link :to="'/user/'+comment.userID.id">
             <span :style="comment.userID.photo" class="smallphoto"></span>
             <span class="title">{{comment.userID.name}}</span>
             &nbsp;&nbsp;&nbsp;&nbsp;<span>状态：<i>{{comment.state}}</i></span>
@@ -50,7 +50,8 @@ import Addcollectbox from './Addcollectbox.vue';
 import Tagbox from './Tagbox.vue';
 import Lovebox from './Lovebox.vue';
 import Star from './Star.vue';
-
+const Purl='background-image:url(/static/';//设定开发时图片的母路径
+//const Purl='background-image:url(http://47.95.114.86/';//实际上线时
 const ERR_OK=0;
 var moment = require('moment');
 export default {
@@ -89,7 +90,7 @@ export default {
           var len=this.novel.comments.length;
           this.novel.comments.forEach(function(comment){
             //图片地址加载
-            comment.userID.photo = 'background-image:url(/static/'+comment.userID.photo+')';
+            comment.userID.photo = Purl+comment.userID.photo+')';
             //时间格式话
             comment.meta.updateAt = moment(comment.meta.updateAt).format('YYYY/DD/MM');
             //算平均分

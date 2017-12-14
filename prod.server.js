@@ -80,6 +80,5 @@ if ('development' === app.get('env')) {
 var server = app.listen(port)
 console.log(port+'端口启动');
 app.locals.moment = require('moment'); 
-//require('./config/routes')(app);
 //声明静态资源地址
 app.use(express.static('./dist'));

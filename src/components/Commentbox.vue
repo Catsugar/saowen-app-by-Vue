@@ -17,20 +17,20 @@
       <td>评个分：</td>
       <td>
         <div class="scorebox">
-          <span class="reduction pull-left" v-on:click="changeNum(score,-1)">-</span>
+          <span class="reduction pull-left" v-on:click="changeNum(-1)">-</span>
           <span type="text"  class="score_value">{{score}}</span>
-          <span class="plus pull-right" v-on:click="changeNum(score,1)">+</span>
+          <span class="plus pull-right" v-on:click="changeNum(1)">+</span>
         </div>
       </td>
     </tr> 
     <tr>   
       <td>我的状态：</td>
       <td>
-        <input type="radio" name="state" v-model="state" class="state"  id="state-1"><label for="state-1" type="button" class="btn btn-sm btn-default">想看</label>
-        <input type="radio" name="state"  v-model="state" class="state"  id="state-2"><label for="state-2" type="button" class="btn btn-sm btn-default">再看</label>
-        <input type="radio" name="state"  v-model="state" class="state"  id="state-3" checked><label for="state-3" type="button" class="btn btn-sm btn-default" >看过</label>
-        <input type="radio" name="state"  v-model="state" class="state"  id="state-4"><label for="state-4" type="button" class="btn btn-sm btn-default">搁置</label>
-        <input type="radio" name="state"  v-model="state" class="state"  id="state-5"><label for="state-5" type="button" class="btn btn-sm btn-default">抛弃</label>     
+        <input type="radio" name="state" v-model="state" value="想看" class="state"  id="state-1"><label for="state-1" type="button" class="btn btn-sm btn-default">想看</label>
+        <input type="radio" name="state"  v-model="state" value="在看" class="state"  id="state-2"><label for="state-2" type="button" class="btn btn-sm btn-default">在看</label>
+        <input type="radio" name="state"  v-model="state" value="看过" class="state"  id="state-3"><label for="state-3" type="button" class="btn btn-sm btn-default" >看过</label>
+        <input type="radio" name="state"  v-model="state" value="搁置" class="state"  id="state-4"><label for="state-4" type="button" class="btn btn-sm btn-default">搁置</label>
+        <input type="radio" name="state"  v-model="state"  value="抛弃" class="state"  id="state-5"><label for="state-5" type="button" class="btn btn-sm btn-default">抛弃</label>   
       </td>
     </tr>
   </table>
@@ -45,7 +45,7 @@ export default {
     return {
       tag: '',
       score: 9,
-      state: '',
+      state: '看过',
       text: ''
     }
   },
@@ -63,7 +63,7 @@ export default {
       var score = this.score;
       var state = this.state;
       var text = this.text;
-      console.log(tag+'---------'+score+'------'+state+'----'+text);
+      //console.log(tag+'---------'+score+'------'+state+'----'+text);
       if (tag !== '' && score !== '' && state !== '' && text !== '') {
         var data = {
           tag: tag,
@@ -80,11 +80,11 @@ export default {
         this.$store.commit('changedialoginfo', '一定是忘记输入什么啦！！！')
       }
     },
-    changeNum: function(score, way){
-      if (way>0 && score<10 ){
-        score++;
-      } else if ( way<0 && score>1 ){
-        score--;
+    changeNum: function(way){
+      if (way>0 && this.score<10 ){
+        this.score++;
+      } else if ( way<0 && this.score>1 ){
+        this.score--;
       }
     }
   },

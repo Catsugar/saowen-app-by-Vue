@@ -1,7 +1,7 @@
 
 import Vue from 'vue'
 import Vuex from 'vuex'
-
+import axios from 'axios'
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
@@ -79,6 +79,46 @@ const store = new Vuex.Store({
     // 收藏框关闭
     closelovebox(state) {
       state.islovebox = false
+    }
+  },
+  actions: {
+    signupsummit({commit}, data) {
+      //console.log(data);
+      axios.post('/signup', data)
+      .then(function (data) {
+        if (data.data.success === 1) {
+          commit('changedialog')
+          commit('changedialoginfo', '注册成功，请登录！！')
+        } else if (data.data.success === 2){
+          commit('changedialog')
+          commit('changedialoginfo', '已经被人注册辣!!')
+        } else {
+          commit('changedialog')
+          commit('changedialoginfo', '注册失败，请重试！！')
+        }
+      })
+      .catch(function (err) {
+        console.log(err)
+      })
+    },
+    signinsummit({commit}, data) {
+      //console.log(data);
+      axios.post('/signin', data)
+      .then(function (data) {
+        if (data.data.success === 1) {
+          commit('changedialog')
+          commit('changedialoginfo', '登录成功!!')
+        } else if (data.data.success === 2){
+          commit('changedialog')
+          commit('changedialoginfo', '不存在该用户!!')
+        } else if (data.data.success === 0){
+          commit('changedialog')
+          commit('changedialoginfo', '密码错误，登录失败!!')
+        }
+      })
+      .catch(function (err) {
+        console.log(err)
+      })
     }
   }
 })
