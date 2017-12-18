@@ -83,7 +83,6 @@ const store = new Vuex.Store({
   },
   actions: {
     signupsummit({commit}, data) {
-      //console.log(data);
       axios.post('/signup', data)
       .then(function (data) {
         if (data.data.success === 1) {
@@ -102,7 +101,6 @@ const store = new Vuex.Store({
       })
     },
     signinsummit({commit}, data) {
-      //console.log(data);
       axios.post('/signin', data)
       .then(function (data) {
         if (data.data.success === 1) {

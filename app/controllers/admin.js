@@ -9,8 +9,9 @@ var bcrypt= require('bcryptjs'),//加密库
     SALT_WORK_FACTOR=10;
  //增加用户----注册
   exports.Signup=function(req,res){
-    var userObj = req.body.data;
-    console.log("我爱你----------"+userObj)
+    var userObj =req.body;
+    console.log("我爱你----------");
+    console.log(userObj);
     var Newname=userObj.name;
     var Newemaill=userObj.emaill;
     users.findOne({}).sort({'id': -1}).exec(function(err,lastuser) {
@@ -35,8 +36,9 @@ var bcrypt= require('bcryptjs'),//加密库
   }
   //登录
   exports.Signin=function(req,res){
-    var userObj = req.body.newuser;
-    console.log("我爱你----------"+userObj)
+    var userObj =req.body;
+    console.log("我爱你----------");
+    console.log(userObj);
     var logname=userObj.name;
     var logpassword=userObj.password;
     users.findOne({name:logname}).exec(function (err, user) {

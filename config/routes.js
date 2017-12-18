@@ -20,9 +20,9 @@ var apiRoutes=express.Router();
   apiRoutes.get('/result/:key', Render.result);  
   apiRoutes.use('/api',apiRoutes);
 
-  apiRoutes.use('/signup').post(Admin.Signup);//注册
-  apiRoutes.use('/signin').post(Admin.Signin);//登录
-  apiRoutes.use('/logout').get(Admin.Logout);//登出
+  apiRoutes.route('/signup').post(Admin.Signup);//注册
+  apiRoutes.route('/signin').post(Admin.Signin);//登录
+  apiRoutes.route('/logout').get(Admin.Logout);//登出
 
 module.exports = apiRoutes;
 
