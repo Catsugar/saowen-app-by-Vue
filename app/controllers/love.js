@@ -7,15 +7,18 @@ var comments=require('../models/comment.js');
 var _underscore=require('underscore');
   //收藏作者或者文单
   exports.Love=function (req, res) {
-    var tid= req.query.tid;
-    var uid= req.query.uid;
-    if (tid && uid) {
+    var tid= req.query.loveobj;
+    var uid= req.query.user;
+    console.log("收藏-----------"+req.query);
+    console.log(req.body);
+    //if (tid && uid) {
       //收藏作者
       authors.findOne({_id:tid}).exec(function (err, author) {
-        if (err) {console.log(err);}
+        if (err) {console.log(err);res.json({success: 0});}
         if(author!==null){
           users.findOne({_id:uid}).exec(function (err, user){
             if (err) {console.log(err);}
+            console.log(author);
             //在作者处加入喜爱人
             var authorObj=author;
             if(authorObj.loved.indexOf(uid)===-1){
@@ -32,7 +35,9 @@ var _underscore=require('underscore');
             }
             var _user = _underscore.extend(user, userObj); 
             _user.save(function (err, user) {
-              if (err) {console.log(err);}
+              if (err) {
+                console.log(err);res.json({success: 0});
+              }
               res.json({success: 1});
             })
           })
@@ -94,7 +99,7 @@ var _underscore=require('underscore');
           })
         }
       }) 
-    }
+    //}
   }
   
   /****************************************************************/

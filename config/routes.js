@@ -7,6 +7,12 @@ var Love = require('../app/controllers/love.js');
 var express = require('express');
 var Edit = require('../app/controllers/edit.js'); 
 var apiRoutes=express.Router();
+
+  /*apiRoutes.use((req, res, next) => {
+    var _user = req.session.user;
+    res.locals.user = _user;
+    next();
+  });*/
   //各种模型路由
   apiRoutes.get('/cover', Render.cover);
   apiRoutes.get('/login', Render.login);
@@ -23,18 +29,12 @@ var apiRoutes=express.Router();
   apiRoutes.route('/signup').post(Admin.Signup);//注册
   apiRoutes.route('/signin').post(Admin.Signin);//登录
   apiRoutes.route('/logout').get(Admin.Logout);//登出
+  apiRoutes.route('/back/love').post(Love.Love);//收藏
+  apiRoutes.route('/back/cancel').post(Love.Cancel);//取消收藏
+  
+  module.exports = apiRoutes;
 
-module.exports = apiRoutes;
-
-
-//*********************抛出模块
-/*module.exports=function (app) {
-  app.use((req, res, next) => {
-    var _user = req.session.user;
-    res.locals.user = _user;
-    next();
-  });*/
-  /*app.route('/search').post(Search.search);
+/*
   app.route('/new/novel').post(Add.Addnovel);
   app.route('/new/collect').post(Add.Addcover,Add.Addcollect);
   app.route('/new/comment').post(Add.Addcomment);
@@ -44,8 +44,6 @@ module.exports = apiRoutes;
   app.route('/edit/user/photo').post(Add.Addphoto,Edit.Edituser);
   app.route('/edit/user/des').post(Edit.Edituser);
   app.route('/back/admin').delete(Del.Delete);
-  app.route('/back/love').post(Love.Love);//收藏
-  app.route('/back/cancel').post(Love.Cancel);//取消收藏
 
 }*/
 

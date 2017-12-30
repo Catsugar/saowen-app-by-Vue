@@ -6,6 +6,7 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
+    //登录用户
     _user: {
       id: '',
       name: '',
@@ -33,16 +34,20 @@ const store = new Vuex.Store({
     //是否有收藏框，
     islovebox: false,
     //是否有添加文单框，
-    isaddcollectbox: false
+    isaddcollectbox: false,
+    //是否收藏
+    islove: false
   },
   getters: {
+    getuser: state => state.isuser,
     getdialog: state => state.isdialog,
     getdialoginfo: state => state.dialoginfo,
     getcover: state => state.iscover,
     getlogin: state => state.islogin,
     getcommentbox: state => state.iscommentbox,
     getlovebox: state => state.islovebox,
-    getaddcollectbox: state => state.isaddcollectbox
+    getaddcollectbox: state => state.isaddcollectbox,
+    getislove: state => state.islove
   },
   mutations: {
     //信息提示框
@@ -79,10 +84,14 @@ const store = new Vuex.Store({
     // 收藏框关闭
     closelovebox(state) {
       state.islovebox = false
+    },
+    // 收藏模式改变
+    changlovestate(state) {
+      state.islove = !state.islove
     }
   },
   actions: {
-    signupsummit({commit}, data) {
+    signupsummit({commit}, data) { //注册
       axios.post('/signup', data)
       .then(function (data) {
         if (data.data.success === 1) {
@@ -100,7 +109,8 @@ const store = new Vuex.Store({
         console.log(err)
       })
     },
-    signinsummit({commit}, data) {
+    signinsummit({commit}, data) { //登录
+      console.log(data);
       axios.post('/signin', data)
       .then(function (data) {
         if (data.data.success === 1) {
@@ -112,6 +122,40 @@ const store = new Vuex.Store({
         } else if (data.data.success === 0){
           commit('changedialog')
           commit('changedialoginfo', '密码错误，登录失败!!')
+        }
+      })
+      .catch(function (err) {
+        console.log(err)
+      })
+    },
+    addlove({commit}, data) { //收藏
+      console.log(data);
+      axios.post('/back/love', data)
+      .then(function (data) {
+        if (data.data.success === 1) {
+          commit('changedialog')
+          commit('changedialoginfo', '收藏成功!!')
+          commit('changlovestate')
+        } else if (data.data.success === 0){
+          commit('changedialog')
+          commit('changedialoginfo', '收藏失败!!')
+        }
+      })
+      .catch(function (err) {
+        console.log(err)
+      })
+    },
+    cancellove({commit}, data) { //取消收藏
+      console.log(data);
+      axios.post('/back/cancel', data)
+      .then(function (data) {
+        if (data.data.success === 1) {
+          commit('changedialog')
+          commit('changedialoginfo', '取消收藏!!')
+          commit('changlovestate')
+        } else if (data.data.success === 0){
+          commit('changedialog')
+          commit('changedialoginfo', '取消收藏失败!!')
         }
       })
       .catch(function (err) {

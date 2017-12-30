@@ -7,7 +7,6 @@ var comments=require('../models/comment.js');
 var _underscore=require('underscore');
 //covel
   exports.cover=function(req,res){
-    console.log(req.session);
     if(req.session){
       var _user =req.session.user;
     }else{
@@ -20,7 +19,6 @@ var _underscore=require('underscore');
   }
 //login
   exports.login=function(req,res){
-    console.log(req.session);
     if(req.session){
       var _user =req.session.user;
     }else{
@@ -66,7 +64,6 @@ var _underscore=require('underscore');
   }
 //排行榜
   exports.ranklist=function(req,res){
-    console.log(req.session);
     if(req.session){
       var _user =req.session.user;
     }else{
@@ -91,7 +88,6 @@ var _underscore=require('underscore');
   }
 //用户
   exports.user=function(req,res){
-    console.log(req.session);
     if(req.session){
       var _user =req.session.user;
     }else{

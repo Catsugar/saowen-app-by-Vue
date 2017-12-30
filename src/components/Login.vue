@@ -69,13 +69,13 @@ export default {
       var email = this.register_email
       var name = this.register_username
       var password = this.register_password
-      var src = './static/img/' + Math.ceil(Math.random() * 10) + '.jpg'
+      //var src = './static/img/' + Math.ceil(Math.random() * 10) + '.jpg'
       if (name !== '' && password !== '' && email !== '') {
         var data = {
           name: name,
           password: password,
-          email: email,
-          src: src
+          email: email
+          //src: src
         }
         this.$store.dispatch('signupsummit', data);
       } else {

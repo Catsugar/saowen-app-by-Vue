@@ -14,6 +14,7 @@ var bcrypt= require('bcryptjs'),//加密库
     console.log(userObj);
     var Newname=userObj.name;
     var Newemaill=userObj.emaill;
+
     users.findOne({}).sort({'id': -1}).exec(function(err,lastuser) {
       var userLen=parseInt(lastuser.id.slice(2));
       users.findOne({$or: [{name:Newname}, {emaill:Newemaill}]}).exec(function (err, user) {
@@ -36,11 +37,13 @@ var bcrypt= require('bcryptjs'),//加密库
   }
   //登录
   exports.Signin=function(req,res){
-    var userObj =req.body;
-    console.log("我爱你----------");
-    console.log(userObj);
-    var logname=userObj.name;
-    var logpassword=userObj.password;
+    var _user =req.body;
+    console.log("登录时----------");
+    console.log(req.body);
+    console.log(req.query);
+    var logname=_user.name;
+    var logpassword=_user.password;
+    console.log(logname+logpassword);
     users.findOne({name:logname}).exec(function (err, user) {
       if (err) {console.log(err);}
       if(user==null){
@@ -63,6 +66,7 @@ var bcrypt= require('bcryptjs'),//加密库
   }
   //登出
   exports.Logout=function(req,res){
+    delete req.session.user;
     console.log("退出成功");
     res.redirect('/');
   }

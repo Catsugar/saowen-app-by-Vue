@@ -3,7 +3,8 @@
     <div class="collect-box" v-bind:style="collect.cover">
       <div class="cover">
         <h3>{{collect.name}}</h3>
-        <button type="button" class="btn btn-ms btn-danger center-block" @click="love">收藏</button>  
+        <button v-if="!getislove" type="button" class="btn btn-ms btn-danger center-block" @click="addlove">收藏</button> 
+        <button v-if="getislove" type="button" class="btn btn-ms btn-default center-block" @click="cancellove">取消收藏</button> 
       </div>  
       <p>
         <span class="pull-left">by&nbsp;{{collect.editor.name}}</span>
@@ -53,9 +54,35 @@ export default {
     Star: Star
   },
   methods: {
-    love: function(){
-      this.$store.commit('changedialog')
-      this.$store.commit('changedialoginfo', '收藏成功了哟！！')
+    //收藏
+    addlove: function(){
+      var user= this._user
+      var loveobj = this.collect
+      var data = {
+        user: user,
+        loveobj: loveobj
+      }
+      if (user!==undefined) {
+        this.$store.dispatch('addlove', data);
+      } else {
+        this.$store.commit('changedialog')
+        this.$store.commit('changedialoginfo', '你还没有登录呢？？')
+      }
+    },
+    //取消收藏
+    cancellove: function(){
+      var user= this._user
+      var loveobj = this.collect
+      var data = {
+        user: user,
+        loveobj: loveobj
+      }
+      if (user!==undefined) {
+        this.$store.dispatch('cancellove', data);
+      } else {
+        this.$store.commit('changedialog')
+        this.$store.commit('changedialoginfo', '你还没有登录呢？？')
+      }
     }
   },
   created(){
